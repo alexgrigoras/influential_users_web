@@ -30,7 +30,8 @@ class MongoDB:
 
         # connect to database
         try:
-            self.__mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+            #self.__mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+            self.__mongo_client = pymongo.MongoClient("mongodb+srv://admin:<Gigel#123>@influential-users-cluster-slepf.gcp.mongodb.net/test?retryWrites=true&w=majority")
             self.__mongo_client.server_info()
         except errors.ConnectionFailure as e:
             self.logger.critical("MongoDB database: " + str(e))

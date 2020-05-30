@@ -23,19 +23,44 @@ The main components of the application are
 ## Application structure
 ```
 influential_users_web
-├── youtube_sentiment_analysis
-|   ├── data
-|   ├── modules
-|   |   ├── __init__.py
-|   |   ├── crawler.py
-|   |   ├── analysis.py
-|   |   └── storage.py
+├── application
 |   ├── __init__.py
-|   └── __main__.py
+|   ├── message_loader.py
+|   ├── mongodb.py
+|   ├── network_analysis.py
+|   ├── plotly_display.py
+|   └── youtube_api.py
+├── pages
+|   ├── auth_pages
+|   |   ├── __init__.py
+|   |   ├── change_password.py
+|   |   ├── forgot_password.py
+|   |   ├── login.py
+|   |   ├── logout.py
+|   |   └── register.py
+|   ├── __init__.py
+|   ├── analysis.py
+|   ├── home.py
+|   └── profile.py
+├── static
+|   ├── images
+|   |   ├── influential_users.png
+|   |   └── logo.png
+├── utilities
+|   ├── __init__.py
+|   ├── auth.py
+|   ├── config.py
+|   └── keys.py
+├── __init__.py
+├── app.yaml
+├── config.txt
+├── create_tables.py
 ├── LICENSE
+├── main.py
 ├── README.md
 ├── requirements.txt
-└── setup.py
+├── server.py
+└── users.db
 ```
 
 ## Resources
@@ -44,5 +69,6 @@ influential_users_web
 
 1. <b>Web content</b>
 - https://github.com/russellromney/dash-auth-flow
-- 
+- https://plotly.com/python/network-graphs/
+- https://plotly.com/python/v3/3d-network-graph/
 

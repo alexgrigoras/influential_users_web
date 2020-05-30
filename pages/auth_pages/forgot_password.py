@@ -71,7 +71,6 @@ def forgot_submit(submit, email):
         where(table.c.email == email)
     conn = engine.connect()
     resp = list(conn.execute(statement))
-    resp[0].first
     if len(resp) == 0:
         return failure_alert, no_update
     else:

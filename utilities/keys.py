@@ -1,4 +1,4 @@
-MAILJET_API_KEY = '1659c7e07717a62d1abc95b65156b8ea'
-MAILJET_API_SECRET = 'f5be04a20cceb37f2d1f169626fc70dc'
+MAILJET_API_KEY = 'ea76fe4292c42a363afef7845555f551'
+MAILJET_API_SECRET = 'ac3df47795af2c6e5fee01ed2dc6c521'
 
-FROM_EMAIL = 'alexgrigoras10@gmail.com'
+FROM_EMAIL = 'influential-users@yandex.com'

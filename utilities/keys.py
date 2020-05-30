@@ -1,0 +1,4 @@
+MAILJET_API_KEY = 'fe0da5c981f5952f5e716a5e2b3c0564'
+MAILJET_API_SECRET = 'a17c3620f6d63d6f4a8f344af64113e5'
+
+FROM_EMAIL = 'alex_grigoras_10@yahoo.com'

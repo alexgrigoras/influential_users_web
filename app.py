@@ -114,4 +114,4 @@ def user_logout(input1):
 
 
 if __name__ == '__main__':
-    app.run_server(host='127.0.0.1', port=5000, debug=False)
+    app.run_server(host='0.0.0.0', port=5000, debug=False)

@@ -75,12 +75,12 @@ def del_user(email, engine):
 
 
 def user_exists(email, engine):
-    '''
+    """
     checks if the user exists with email <email>
     returns
         True if user exists
         False if user exists
-    '''
+    """
     table = user_table()
     statement = table. \
         select(). \
@@ -146,13 +146,13 @@ def password_change_table():
 
 
 def send_password_key(email, firstname, engine):
-    '''
+    """
     ensure email exists
     create random 6-number password key
     send email with Twilio Sendgrid containing that password key
     return True if that all worked
     return False if one step fails
-    '''
+    """
 
     # make sure email exists
     if not user_exists(email, engine):
@@ -197,7 +197,7 @@ def send_password_key(email, firstname, engine):
         result = mailjet.send.create(data=data)
         print(result.status_code)
         if result.status_code != '200':
-            print('status not 200')
+            print('Status: ' + str(result.status_code))
         print(result.json())
         print('SENT EMAIL')
     except Exception as e:
@@ -253,7 +253,7 @@ def validate_password_key(email, key, engine):
 
 
 def layout_auth(mode):
-    '''
+    """
     if mode is 'require-authentication':
         if user is not authenticated, sends the user to login page instead of returning the output of the function
         i.e. the user needs to be logged in to see the page content (e.g. profile, home, etc.)
@@ -261,7 +261,7 @@ def layout_auth(mode):
     if mode is 'require-nonauthentication':
         if user is authenticated, sends the user to login page instead of returning the output of the function
         i.e. the user needs to be logged out to see the page content (e.g. register, login, etc.)
-    '''
+    """
 
     def this_decorator(f):
         @wraps(f)

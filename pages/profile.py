@@ -1,3 +1,5 @@
+import time
+
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -6,7 +8,8 @@ from dash.dependencies import Input, Output, State
 from flask_login import current_user
 
 from server import app, engine
-from utilities.auth import change_user, change_password, layout_auth
+from utilities.auth import change_user, change_password, layout_auth, del_user, send_delete_confirmation, \
+    send_profile_change
 
 success_alert = dbc.Alert(
     'Changes saved successfully.',
@@ -20,6 +23,14 @@ login_alert = dbc.Alert(
     'User not logged in. Taking you to login.',
     color='warning',
 )
+success_delete = dbc.Alert(
+    'Account deleted successfully.',
+    color='success',
+)
+failure_delete = dbc.Alert(
+    'Account cannot be deleted',
+    color='danger',
+)
 
 
 @layout_auth('require-authentication')
@@ -29,10 +40,13 @@ def layout():
             [
                 dcc.Location(id='profile-url', refresh=True, pathname='/profile'),
                 html.Div(1, id='profile-trigger', style=dict(display='none')),
+                html.Div(1, id='redirect-trigger', style=dict(display='none')),
 
                 html.H3('Profile', id='profile-title'),
                 html.Div(id='profile-alert'),
                 html.Div(id='profile-alert-login'),
+                html.Div(id='profile-alert-delete'),
+                html.Div(id='profile-delete-trigger', style=dict(display='none')),
                 html.Div(id='profile-login-trigger', style=dict(display='none')),
                 html.Br(),
 
@@ -71,7 +85,7 @@ def layout():
                         html.Br(),
 
                         dbc.Button('Save changes', color='primary', id='profile-submit', disabled=True),
-
+                        dbc.Button('Delete account', color='secondary', id='profile-delete')
                     ]  # end formgroup
                 )
             ],  # end col
@@ -190,11 +204,54 @@ def profile_save_changes(n_clicks, first, last, password):
     if password is blank, pull the current password and submit it
     assumes all inputs are valid and checked by validator callback before submitting (enforced by disabling button otherwise)
     """
-    email = current_user.email
+    try:
+        email = current_user.email
+    except AttributeError:
+        return failure_alert, 0
 
     if change_user(first, last, email, engine):
         if password not in ['', None]:
             change_password(email, password, engine)
+        if not send_profile_change(email, first):
+            return failure_alert, 0
+
         return success_alert, 1
 
     return failure_alert, 0
+
+
+# function to save changes
+@app.callback(
+    [Output('profile-alert-delete', 'children'),
+     Output('profile-delete-trigger', 'children')],
+    [Input('profile-delete', 'n_clicks')]
+)
+def profile_delete(n_clicks):
+    """
+    Delete account
+    """
+    if n_clicks and n_clicks > 0:
+        email = current_user.email
+        first = current_user.first
+
+        if del_user(email, engine):
+            if send_delete_confirmation(email, first):
+                print("Confirmation sent to " + email + " " + first)
+            else:
+                print("Confirmation NOT sent to " + email + " " + first)
+            return success_delete, 1
+
+        return failure_delete, 0
+    else:
+        return no_update, no_update
+
+
+@app.callback(
+    Output('redirect-trigger', 'children'),
+    [Input('profile-delete-trigger', 'children')]
+)
+def register_success(value):
+    if value is 1:
+        print("redirect")
+        time.sleep(2)
+        return dcc.Location(pathname='/home', id="redirect")

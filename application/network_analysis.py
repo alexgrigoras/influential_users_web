@@ -180,11 +180,18 @@ class NetworkAnalysis:
         #                 labels=self.__labels)\
         # self.__draw_graph()
 
+    @staticmethod
+    def __check_value(array, value):
+        if value in array:
+            return array[value]
+        else:
+            return "x"
+
     def display_plotly(self):
         node_sizes = self.get_node_sizes(self.__graph)
         # edge_weights = self.get_edge_weights(graph)
         node_ids = self.get_node_labels(self.__graph)
-        node_labels = [self.__labels[n_id] for n_id in node_ids]
+        node_labels = [self.__check_value(self.__labels, n_id) for n_id in node_ids]
         edge_weights = None
         layout = "graphviz"
         # layout = "spring"

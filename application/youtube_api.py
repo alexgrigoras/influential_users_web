@@ -418,7 +418,11 @@ class YoutubeAPI:
                             f.write(com["authorId"] + " " + rep["authorId"] + "\n")
                             channel_names[rep["authorId"]] = rep["authorName"]
             else:
-                channel_names.pop(channel_id)
+                try:
+                    channel_names.pop(channel_id)
+                except KeyError:
+                    self.__logger.warning("Invalid key on channel_names.pop")
+
 
         # export data to
         pickle.dump(channel_names, open(path + file_name + OBJECT_EXTENSION, "wb"))

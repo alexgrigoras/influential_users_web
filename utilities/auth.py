@@ -67,11 +67,18 @@ def show_users(engine):
 def del_user(email, engine):
     table = user_table()
 
-    delete = table.delete().where(table.c.email == email)
+    print("User deleted")
+
+    try:
+        delete = table.delete().where(table.c.email == email)
+    except:
+        return False
 
     conn = engine.connect()
     conn.execute(delete)
     conn.close()
+
+    return True
 
 
 def user_exists(email, engine):
@@ -145,11 +152,48 @@ def password_change_table():
     return Table('password_change', PasswordChange.metadata)
 
 
+def send_mail(email, firstname, title, text, id):
+    # send password key via email
+    try:
+        mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3.1')
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": FROM_EMAIL,
+                        "Name": "Influential Users"
+                    },
+                    "To": [
+                        {
+                            "Email": email,
+                            "Name": firstname,
+                        }
+                    ],
+                    "Subject": "Greetings from Influential Users App",
+                    "TextPart": title,
+                    "HTMLPart": text,
+                    "CustomID": id
+                }
+            ]
+        }
+        result = mailjet.send.create(data=data)
+        print(result.status_code)
+        if result.status_code != '200':
+            print('Status: ' + str(result.status_code))
+        print(result.json())
+        print('SENT EMAIL')
+        return True
+
+    except Exception as e:
+        print(e)
+        return False
+
+
 def send_password_key(email, firstname, engine):
     """
     ensure email exists
     create random 6-number password key
-    send email with Twilio Sendgrid containing that password key
+    send email containing that password key
     return True if that all worked
     return False if one step fails
     """
@@ -170,38 +214,10 @@ def send_password_key(email, firstname, engine):
         else:
             first = resp[0].first
 
-    # send password key via email
-    try:
-        mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3.1')
-        data = {
-            'Messages': [
-                {
-                    "From": {
-                        "Email": FROM_EMAIL,
-                        "Name": "My App"
-                    },
-                    "To": [
-                        {
-                            "Email": email,
-                            "Name": first,
-                        }
-                    ],
-                    "Subject": "Greetings from Mailjet.",
-                    "TextPart": "My App password reset code",
-                    "HTMLPart": "<p>Dear {},<p> <p>Your My App password reset code is: <strong>{}</strong>".format(
-                        firstname, key),
-                    "CustomID": "AppGettingStartedTest"
-                }
-            ]
-        }
-        result = mailjet.send.create(data=data)
-        print(result.status_code)
-        if result.status_code != '200':
-            print('Status: ' + str(result.status_code))
-        print(result.json())
-        print('SENT EMAIL')
-    except Exception as e:
-        print(e)
+    # send email
+    if not send_mail(email, first, "Password reset code",
+                     "<p>Dear {},<p> <p>Your password reset code is: <strong>{}</strong>".format(firstname, key),
+                     "AppResetPassword"):
         return False
 
     # store that key in the password_key table
@@ -231,6 +247,88 @@ def send_password_key(email, firstname, engine):
     return True
 
 
+def send_registration_confirmation(email, firstname, engine):
+    """
+    ensure email exists
+    send confirmation email
+    return True if that all worked
+    return False if one step fails
+    """
+
+    # make sure email exists
+    if not user_exists(email, engine):
+        return False
+
+    table = user_table()
+    statement = select([table.c.first]).where(table.c.email == email)
+    with engine.connect() as conn:
+        resp = list(conn.execute(statement))
+        if len(resp) == 0:
+            return False
+        else:
+            first = resp[0].first
+
+    # send email
+    if not send_mail(email, first, "Registration Successful",
+                     "<p>Dear {},<p> <p>Your account was successfully created".format(first),
+                     "AppRegistration"):
+        return False
+
+    # finished successfully
+    return True
+
+
+def send_delete_confirmation(email, firstname):
+    """
+    send confirmation email
+    return True if that all worked
+    return False if one step fails
+    """
+
+    # send email
+    if not send_mail(email, firstname, "Deleted Successful",
+                     "<p>Dear {},<p> <p>Your account was deleted".format(firstname),
+                     "AppAccountDelete"):
+        return False
+
+    # finished successfully
+    return True
+
+
+def send_finished_process_confirmation(email, firstname, keyword):
+    """
+    send finished process email
+    return True if that all worked
+    return False if one step fails
+    """
+
+    # send email
+    if not send_mail(email, firstname, "Finished processing",
+                     "<p>Dear {},<p> <p>Your processing for {} was finished".format(firstname, keyword),
+                     "AppProcessing"):
+        return False
+
+    # finished successfully
+    return True
+
+
+def send_profile_change(email, firstname):
+    """
+    send profile update
+    return True if that all worked
+    return False if one step fails
+    """
+
+    # send email
+    if not send_mail(email, firstname, "Profile updated",
+                     "<p>Dear {},<p> <p>Your profile data has changed".format(firstname),
+                     "AppProfileUpdate"):
+        return False
+
+    # finished successfully
+    return True
+
+
 def validate_password_key(email, key, engine):
     # email exists
     if not user_exists(email, engine):
@@ -247,9 +345,6 @@ def validate_password_key(email, key, engine):
                 print('PASSWORD KEY IS VALID')
                 return True
         return False
-
-    # finished with no erros; return True
-    return True
 
 
 def layout_auth(mode):
@@ -277,7 +372,9 @@ def layout_auth(mode):
                 print('require-nonauthentication')
                 if not current_user.is_authenticated:
                     return f(*args, **kwargs)
-                return children
+                return html.Div(
+                    dcc.Location(id=shortuuid.uuid(), refresh=True, pathname='/login')
+                )
 
         return decorated_function
 

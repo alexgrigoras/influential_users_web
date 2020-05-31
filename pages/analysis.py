@@ -1,15 +1,14 @@
-import time
-
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
 from dash.dependencies import Output, Input, State
+from flask_login import current_user
 
 from application.network_analysis import NetworkAnalysis
 from application.youtube_api import YoutubeAPI
 from server import app
-from utilities.auth import layout_auth
+from utilities.auth import layout_auth, send_finished_process_confirmation
 
 success_alert = dbc.Alert(
     'Finished searching',
@@ -29,8 +28,6 @@ login_alert = dbc.Alert(
 )
 
 location = dcc.Location(id='analysis-url', refresh=True, pathname='/analysis')
-
-n = True
 
 
 @layout_auth('require-authentication')
@@ -87,30 +84,24 @@ def input_triggers_spinner(value):
     return value
 
 
-@app.callback(Output("loading-output-1", "children"), [Input('submit-button', 'n_clicks')])
-def input_triggers_spinner(value):
-    while n is True:
-        time.sleep(1)
-    return ''
-
-
 @app.callback([Output('output-div', 'children'),
-               Output('output-alert', 'children')],
+               Output('output-alert', 'children'),
+               Output("loading-output-1", "children")],
               [Input('submit-button', 'n_clicks')],
               [State('keyword', 'value'),
                State('nr_videos', 'value')])
 def update_output(clicks, keyword, nr_videos):
     if clicks is not None:
-        global n
-
         if not keyword or not nr_videos:
-            print("invalid")
-            n = False
-            return '', failure_alert
+            print("invalid data")
+            return '', failure_alert, ''
+
+        if current_user.is_authenticated:
+            print("user authenticated")
+        else:
+            print("user not authenticated")
 
         print("Searching for data with keyword " + keyword)
-
-        n = True
 
         # create crawler and network object
         crawler = YoutubeAPI()
@@ -133,10 +124,13 @@ def update_output(clicks, keyword, nr_videos):
         columns = ['Value', 'Name']
         values = []
         for i in ranks:
-            val = {"Value": ranks[i], 'Name': labels[i]}
+            val = {"Value": check_value(ranks, i), 'Name': check_value(labels, i)}
             values.append(val)
 
-        n = False
+        if send_finished_process_confirmation(current_user.email, current_user.first, keyword):
+            print("Confirmation sent to " + current_user.email + " " + current_user.first)
+        else:
+            print("Confirmation NOT sent to " + current_user.email + " " + current_user.first)
 
         # Create Layout
         return html.Div(
@@ -151,7 +145,7 @@ def update_output(clicks, keyword, nr_videos):
                 create_data_table_network(values, columns)
             ],
             id='dash-container'
-        ), success_alert
+        ), success_alert, ''
 
 
 def create_data_table_network(values, columns):
@@ -171,3 +165,10 @@ def create_data_table_network(values, columns):
         page_size=20
     )
     return table
+
+
+def check_value(array, value):
+    if value in array:
+        return array[value]
+    else:
+        return "x"

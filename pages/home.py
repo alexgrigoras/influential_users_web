@@ -18,7 +18,7 @@ def layout():
         dbc.Col(
             [
                 location,
-                html.H3('Welcome to the home page!', style={"textAlign":"center"}),
+                html.H3('Welcome to the home page!', style={"textAlign": "center"}),
                 html.Br(),
                 html.Img(src='/static/images/influential_users.png')
             ],

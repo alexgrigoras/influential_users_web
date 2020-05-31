@@ -1,16 +1,14 @@
 # Dash app initialization
-import dash
-import dash_bootstrap_components as dbc
-
 # global imports
 import os
+
+import dash
+import dash_bootstrap_components as dbc
 from flask_login import LoginManager, UserMixin
-import random
 
 # local imports
 from utilities.auth import db, User as base
 from utilities.config import config, engine
-
 
 app = dash.Dash(
     __name__,
@@ -19,8 +17,6 @@ app = dash.Dash(
 
 server = app.server
 app.config.suppress_callback_exceptions = True
-#app.css.config.serve_locally = True
-#app.scripts.config.serve_locally = True
 app.title = 'Influential Users'
 
 # config

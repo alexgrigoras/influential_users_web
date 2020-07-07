@@ -19,7 +19,7 @@ from pages.auth_pages import (
     forgot_password,
     change_password
 )
-from server import app
+from server import app, server
 
 header = dbc.Navbar(
     dbc.Container(

@@ -1,5 +1,5 @@
 # Dash app initialization
-# global imports
+
 import os
 
 import dash
@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 from flask_login import LoginManager, UserMixin
 
 # local imports
-from utilities.auth import db, User as base
+from utilities.auth import db, User as Base
 from utilities.config import config, engine
 
 app = dash.Dash(
@@ -35,7 +35,7 @@ login_manager.login_view = '/login'
 
 
 # Create User class with UserMixin
-class User(UserMixin, base):
+class User(UserMixin, Base):
     pass
 
 

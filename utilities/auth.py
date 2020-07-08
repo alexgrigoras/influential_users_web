@@ -12,10 +12,14 @@ from sqlalchemy import Table
 from sqlalchemy.sql import select, and_
 from werkzeug.security import generate_password_hash
 
+from application.message_logger import MessageLogger
 from utilities.keys import *
 
 db = SQLAlchemy()
 Column, String, Integer, DateTime = db.Column, db.String, db.Integer, db.DateTime
+
+ml = MessageLogger('auth')
+logger = ml.get_logger()
 
 
 class User(db.Model):
@@ -59,7 +63,7 @@ def show_users(engine):
     rs = conn.execute(statement)
 
     for row in rs:
-        print(row)
+        logger.info(row)
 
     conn.close()
 
@@ -67,7 +71,7 @@ def show_users(engine):
 def del_user(email, engine):
     table = user_table()
 
-    print("User deleted")
+    logger.info("User with email " + email + " deleted")
 
     try:
         delete = table.delete().where(table.c.email == email)
@@ -177,15 +181,14 @@ def send_mail(email, firstname, title, text, id):
             ]
         }
         result = mailjet.send.create(data=data)
-        print(result.status_code)
-        if result.status_code != '200':
-            print('Status: ' + str(result.status_code))
-        print(result.json())
-        print('SENT EMAIL')
+        if result.status_code != 200:
+            logger.warning('Request status for email sending: ' + str(result.status_code))
+            logger.warning(str(result.json()))
+            return False
         return True
 
     except Exception as e:
-        print(e)
+        logger.error("Send email error: " + str(e))
         return False
 
 
@@ -231,7 +234,7 @@ def send_password_key(email, firstname, engine):
     try:
         with engine.connect() as conn:
             conn.execute(statement)
-        print('STORED KEY')
+        logger.info('Stored temporary reset password key')
     except:
         return False
 
@@ -239,7 +242,7 @@ def send_password_key(email, firstname, engine):
     # first, get first and last name
     random_password = ''.join([random.choice('1234567890') for x in range(15)])
     if change_password(email, random_password, engine):
-        print('CHANGED USER PASSWORD')
+        logger.info("Changed user " + firstname + " password")
     else:
         return False
 
@@ -247,7 +250,7 @@ def send_password_key(email, firstname, engine):
     return True
 
 
-def send_registration_confirmation(email, firstname, engine):
+def send_registration_confirmation(email, engine):
     """
     ensure email exists
     send confirmation email
@@ -342,7 +345,7 @@ def validate_password_key(email, key, engine):
         resp = list(conn.execute(statement))
         if len(resp) == 1:
             if (resp[0].timestamp - (datetime.now() - timedelta(1))).days < 1:
-                print('PASSWORD KEY IS VALID')
+                logger.info('Password key is valid')
                 return True
         return False
 
@@ -362,14 +365,14 @@ def layout_auth(mode):
         @wraps(f)
         def decorated_function(*args, **kwargs):
             if mode == 'require-authentication':
-                print('require-authentication')
+                logger.info('User authenticated')
                 if current_user.is_authenticated:
                     return f(*args, **kwargs)
                 return html.Div(
                     dcc.Location(id=shortuuid.uuid(), refresh=True, pathname='/login')
                 )
             else:  # mode=='require-nonauthentication':
-                print('require-nonauthentication')
+                logger.info('User not authenticated')
                 if not current_user.is_authenticated:
                     return f(*args, **kwargs)
                 return html.Div(

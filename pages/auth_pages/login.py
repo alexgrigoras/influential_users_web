@@ -6,8 +6,8 @@ from dash import no_update
 
 from flask_login import login_user, current_user
 from werkzeug.security import check_password_hash
-import time
 
+from application.message_logger import MessageLogger
 from server import app, User
 from utilities.auth import layout_auth
 
@@ -19,13 +19,18 @@ success_alert = dbc.Alert(
 failure_alert = dbc.Alert(
     'Login unsuccessful. Try again.',
     color='danger',
-    dismissable=True
+    dismissable=True,
+    duration=5000
 )
 already_login_alert = dbc.Alert(
     'User already logged in. Taking you home!',
     color='warning',
-    dismissable=True
+    dismissable=True,
+    duration=5000
 )
+
+ml = MessageLogger('login')
+logger = ml.get_logger()
 
 
 @layout_auth('require-nonauthentication')
@@ -33,13 +38,19 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
+                html.H3('LOGIN'),
+                html.Br(),
+
                 dcc.Location(id='login-url', refresh=True, pathname='/login'),
                 html.Div(id='login-trigger', style=dict(display='none')),
                 html.Div(id='login-alert'),
                 dbc.FormGroup(
                     [
-                        dbc.Alert('Try test@test, test', color='info', dismissable=True),
-                        html.Br(),
+                        dbc.Alert(
+                            'You need to authenticate to use the application!',
+                            color='info',
+                            dismissable=True
+                        ),
 
                         dbc.Input(id='login-email', autoFocus=True),
                         dbc.FormText('Email'),
@@ -83,12 +94,20 @@ def login_success(n_clicks, email, password):
         if user:
             if check_password_hash(user.password, password):
                 login_user(user)
+                if email:
+                    logger.info("User " + email + " logged in")
                 return '/home', success_alert
             else:
+                if email:
+                    logger.error("User " + email + " failed to log in")
                 return no_update, failure_alert
         else:
+            if email:
+                logger.error("User " + email + " failed to log in")
             return no_update, failure_alert
     else:
+        if email:
+            logger.error("User " + email + " failed to log in")
         return no_update, ''
 
 
@@ -99,5 +118,4 @@ def login_success(n_clicks, email, password):
 def login_wait_and_reload(url):
     if url is None or url == '':
         return no_update
-    time.sleep(1.5)
     return url

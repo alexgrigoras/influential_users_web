@@ -38,6 +38,14 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
+                html.H3('REGISTER'),
+                html.Br(),
+
+                dbc.Alert(
+                    'Enter the data below to register to the application',
+                    color='info',
+                    dismissable=True
+                ),
                 dcc.Location(id='register-url', refresh=True, pathname='/register'),
                 html.Div(id='register-trigger', style=dict(display='none')),
                 html.Div(id='register-alert'),
@@ -160,7 +168,7 @@ def register_success(n_clicks, first, last, email, password, confirm):
             return no_update, no_update
 
     if add_user(first, last, password, email, engine):
-        send_registration_confirmation(email, first, engine)
+        send_registration_confirmation(email, engine)
         return '/login', success_alert
     else:
         return '', failure_alert

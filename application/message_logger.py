@@ -11,17 +11,24 @@ class MessageLogger:
         Class constructor - creates a message logger for the module
         :param module_name: the name of the module
         """
-        self.logger = logging.getLogger(module_name)
-        self.logger.setLevel(logging.DEBUG)
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
+        self.__logger = logging.getLogger(module_name)
+        self.__logger.setLevel(logging.DEBUG)
+        self.__console_handler = logging.StreamHandler()
+        self.__console_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-        console_handler.setFormatter(formatter)
-        self.logger.addHandler(console_handler)
+        self.__console_handler.setFormatter(formatter)
+        self.__logger.addHandler(self.__console_handler)
 
     def get_logger(self):
         """
         Return the logger object that can be used for logging messages
         :return: logging object
         """
-        return self.logger
+        return self.__logger
+
+    def get_handler(self):
+        """
+        Return the handler object that can be used for logging messages
+        :return: handler object
+        """
+        return self.__console_handler

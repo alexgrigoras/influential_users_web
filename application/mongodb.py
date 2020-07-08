@@ -30,7 +30,9 @@ class MongoDB:
 
         # connect to database
         try:
-            self.__mongo_client = pymongo.MongoClient("mongodb+srv://admin:gigel123@influential-users-cluster-slepf.gcp.mongodb.net/test?retryWrites=true&w=majority")
+            self.__mongo_client = pymongo.MongoClient(
+                "mongodb+srv://admin:gigel123@influential-users-cluster-slepf.gcp.mongodb.net/test?"
+                "retryWrites=true&w=majority")
             self.__mongo_client.server_info()
         except errors.ConnectionFailure as e:
             self.logger.critical("MongoDB database: " + str(e))
@@ -246,5 +248,3 @@ class MongoDB:
             self.__tokens_col.delete_one({'_id': token_id})
         except errors.InvalidId as e:
             self.logger.error("Invalid id: " + str(e))
-
-

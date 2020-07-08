@@ -1,7 +1,6 @@
 import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 from plotly.graph_objs import *
-from plotly.offline import plot as offpy
 
 
 def reformat_graph_layout(graph, layout):
@@ -14,21 +13,20 @@ def reformat_graph_layout(graph, layout):
     if layout == "graphviz":
         positions = graphviz_layout(graph)
     elif layout == "spring":
-        positions = nx.fruchterman_reingold_layout(graph, k=0.5, iterations=1000)
+        positions = nx.fruchterman_reingold_layout(graph, dim=3, k=0.5, iterations=1000)
     elif layout == "spectral":
         positions = nx.spectral_layout(graph, scale=0.1)
     elif layout == "random":
         positions = nx.random_layout(graph)
+
     else:
         raise Exception("please specify the layout from graphviz, spring, spectral or random")
 
     return positions
 
 
-def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layout="graphviz",
-                    filename="netwrokx", title=""):
+def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layout="graphviz", title=""):
     """
-
     :param graph:
     :param node_labels:
     :param node_sizes:
@@ -48,7 +46,7 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
     edge_trace = Scatter(
         x=[],
         y=[],
-        line=Line(width=[], color='rgba(136, 136, 136, .8)'),
+        line=dict(width=0.5, color='#888'), #Line(width=[], color='rgba(136, 136, 136, .8)'),
         hoverinfo='none',
         mode='lines')
 
@@ -68,26 +66,28 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
         x=[],
         y=[],
         text=[],
-        mode='markers+text',
-        textfont=dict(family='Calibri (Body)', size=25, color='black'),
-        opacity=100,
-        # hoverinfo='text',
+        mode='markers',
+        #textfont=dict(family='Calibri (Body)', size=25, color='black'),
+        #opacity=100,
+        hoverinfo='text',
         marker=Marker(
             showscale=True,
             # colorscale options
-            # 'Greys' | 'Greens' | 'Bluered' | 'Hot' | 'Picnic' | 'Portland' |
-            # Jet' | 'RdBu' | 'Blackbody' | 'Earth' | 'Electric' | 'YIOrRd' | 'YIGnBu'
-            colorscale='Jet',
+            # 'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
+            # 'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
+            # 'Hot' | 'Blackbody' | 'Earth' | 'Electric' | 'Viridis' |
+            colorscale='YlGnBu',
             reversescale=True,
             color=[],
-            size=[],
+            size=100,
             colorbar=dict(
                 thickness=15,
                 title='Node Connections',
                 xanchor='left',
                 titleside='right'
             ),
-            line=dict(width=2)))
+            line=dict(width=2))
+    )
 
     for node in graph.nodes():
         x, y = positions[node]
@@ -107,17 +107,16 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
         for size in node_sizes:
             node_trace['marker']['size'].append(size)
     else:
-        node_trace['marker']['size'] = [1] * len(graph.nodes())
+        node_trace['marker']['size'] = [10] * len(graph.nodes())
 
     fig = Figure(data=Data([edge_trace, node_trace]),
                  layout=Layout(
-                     title='<br>' + title,
+                     title=title,
                      titlefont=dict(size=16),
                      showlegend=False,
-                     width=1500,
                      height=800,
                      hovermode='closest',
-                     margin=dict(b=20, l=350, r=5, t=200),
+                     margin=dict(b=20,l=5,r=5,t=40),
                      # family='Courier New, monospace', size=18, color='#7f7f7f',
                      annotations=[dict(
                          text="",
@@ -127,12 +126,10 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
                      xaxis=XAxis(showgrid=False, zeroline=False, showticklabels=False),
                      yaxis=YAxis(showgrid=False, zeroline=False, showticklabels=False)))
 
-    # offpy(fig, filename=filename, auto_open=True, show_link=False)
-
     return fig
 
 
-def visualize_graph_3d(graph, node_labels, node_sizes, filename, title="3d"):
+def visualize_graph_3d(graph, node_labels, node_sizes, layout="spring", title="3D Visualization"):
     """
 
     :param graph:
@@ -171,7 +168,7 @@ def visualize_graph_3d(graph, node_labels, node_sizes, filename, title="3d"):
                            hoverinfo='text'
                            )
 
-    positions = nx.fruchterman_reingold_layout(graph, dim=3, k=0.5, iterations=1000)
+    positions = reformat_graph_layout(graph, layout)
 
     for edge in graph.edges():
         x0, y0, z0 = positions[edge[0]]
@@ -231,7 +228,5 @@ def visualize_graph_3d(graph, node_labels, node_sizes, filename, title="3d"):
 
     data = Data([node_trace, edge_trace])
     fig = Figure(data=data, layout=layout)
-
-    #offpy(fig, filename=filename, auto_open=True, show_link=False)
 
     return fig

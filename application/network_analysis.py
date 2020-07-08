@@ -42,7 +42,7 @@ class NetworkAnalysis:
         """
         self.file_name = file_name
 
-    def __get_graph_info(self):
+    def et_graph_info(self):
         """
         Prints the graph information
         :return: returns the graph information
@@ -82,9 +82,8 @@ class NetworkAnalysis:
         self.__graph = nx.read_edgelist(NETWORKS_FOLDER + "/" + self.file_name + TEXT_EXTENSION,
                                         create_using=nx.Graph(),
                                         edgetype=str, delimiter=" ")
-        self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.file_name + OBJECT_EXTENSION, "rb"))
 
-        print(self.__get_graph_info())
+        self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.file_name + OBJECT_EXTENSION, "rb"))
 
     def compute_page_rank(self):
         """
@@ -145,41 +144,6 @@ class NetworkAnalysis:
                          labels=self.__labels)
         self.__draw()
 
-    def display_graph(self):
-        """
-        Display the created graph
-        """
-        if not self.file_name:
-            self.logger.critical("No file name was set")
-            exit(0)
-
-        node_color, node_size = self.__configure_display('Graph')
-        pos = nx.spring_layout(self.__graph)
-
-        nx.draw_networkx(self.__graph, pos=pos, with_labels=True, node_color=node_color, node_size=node_size,
-                         labels=self.__labels)
-        self.__draw()
-
-    def display_graphviz(self):
-        """
-        Display the created graph
-        """
-        if not self.file_name:
-            self.logger.critical("No file name was set")
-            exit(0)
-
-        # node_color, node_size = self.__configure_display('Graph')
-        # pos = nx.spring_layout(self.__graph)
-
-        tree = nx.minimum_spanning_tree(self.__graph)
-        G = nx.nx_agraph.to_agraph(tree)
-        G.layout()
-        G.draw('test_graph1.gif')
-
-        # nx.draw_networkx(self.__graph, pos=pos, with_labels=True, node_color=node_color, node_size=node_size,
-        #                 labels=self.__labels)\
-        # self.__draw_graph()
-
     @staticmethod
     def __check_value(array, value):
         if value in array:
@@ -187,21 +151,25 @@ class NetworkAnalysis:
         else:
             return "x"
 
-    def display_plotly(self):
-        node_sizes = self.get_node_sizes(self.__graph)
+    def display_plotly(self, nodes, graph_type):
+        subgraph = self.__graph.subgraph(nodes)
+        node_sizes = self.get_node_sizes(subgraph)
         # edge_weights = self.get_edge_weights(graph)
-        node_ids = self.get_node_labels(self.__graph)
+        node_ids = self.get_node_labels(subgraph)
         node_labels = [self.__check_value(self.__labels, n_id) for n_id in node_ids]
         edge_weights = None
-        layout = "graphviz"
-        # layout = "spring"
-        filename = "outputs/" + layout + "3d.html"
-        fig = visualize_graph_3d(self.__graph, node_labels, node_sizes, filename=filename, title="3D visualization")
-        # visualize_graph(graph, node_labels, node_sizes, edge_weights, layout, filename="outputs/" + layout + ".html",
-        #                title=layout)
+
+        if graph_type == "3":
+            fig = visualize_graph_3d(subgraph, node_labels, node_sizes, "spring", "3D visualization")
+        elif graph_type == "2":
+            tree = nx.minimum_spanning_tree(subgraph)
+            fig = visualize_graph(tree, node_labels, node_sizes, edge_weights, "graphviz", "2D visualization")
+        else:
+            return None
+
         return fig
 
-    def getLabels(self):
+    def get_labels(self):
         return self.__labels
 
     @staticmethod

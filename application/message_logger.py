@@ -1,6 +1,8 @@
-import datetime
 import logging
-from logging.handlers import TimedRotatingFileHandler
+from google.cloud.logging import Client
+
+# google cloud logging client
+client = Client()
 
 
 class MessageLogger:
@@ -15,7 +17,8 @@ class MessageLogger:
         """
         self.__logger = logging.getLogger(module_name)
         self.__logger.setLevel(logging.DEBUG)
-        self.__console_handler = TimedRotatingFileHandler("logs/app_logs.log", when="midnight")
+        self.__console_handler = client.get_default_handler()
+        # self.__console_handler = TimedRotatingFileHandler("logs/app_logs.log", when="midnight") # for local logging
         self.__console_handler.setLevel(logging.DEBUG)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         self.__console_handler.setFormatter(formatter)

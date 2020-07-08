@@ -7,6 +7,7 @@ from dash import no_update
 from dash.dependencies import Input, Output, State
 from sqlalchemy.sql import select
 
+from application.message_logger import MessageLogger
 from server import app, engine
 from utilities.auth import (
     send_password_key,
@@ -26,6 +27,9 @@ already_login_alert = dbc.Alert(
     'User already logged in. Taking you to your profile.',
     color='warning'
 )
+
+ml = MessageLogger('forgot_password')
+logger = ml.get_logger()
 
 
 @layout_auth('require-nonauthentication')
@@ -63,23 +67,26 @@ def layout():
     [Input('forgot-button', 'n_clicks')],
     [State('forgot-email', 'value')]
 )
-def forgot_submit(submit, email):
-    # get first name
-    print('getting first name')
-    table = user_table()
-    statement = select([table.c.first]). \
-        where(table.c.email == email)
-    conn = engine.connect()
-    resp = list(conn.execute(statement))
-    if len(resp) == 0:
-        return failure_alert, no_update
-    else:
-        firstname = resp[0].first
-    conn.close()
+def forgot_submit(n_clicks, email):
+    if n_clicks > 0:
+        logger.info("Verifying if user " + email + " exists")
+        table = user_table()
+        statement = select([table.c.first]).where(table.c.email == email)
+        conn = engine.connect()
+        resp = list(conn.execute(statement))
+        if len(resp) == 0:
+            return failure_alert, no_update
+        else:
+            firstname = resp[0].first
+        conn.close()
 
-    # if it does, send password reset and save info
-    if send_password_key(email, firstname, engine):
-        return success_alert, '/change'
+        # if it does, send password reset and save info
+        if send_password_key(email, firstname, engine):
+            logger.info("Changing password for user " + email)
+            return success_alert, '/change'
+        else:
+            logger.info("Cannot change password for user " + email)
+            return failure_alert, no_update
     else:
         return failure_alert, no_update
 
@@ -89,9 +96,8 @@ def forgot_submit(submit, email):
     [Input('forgot-trigger', 'children')]
 )
 def forgot_send_to_change(url):
-    print(url)
     if url is None or url == '':
         return no_update
-    print('FORGOT - CHANGING URL')
+    logger.info("Password forgot - changing URL")
     time.sleep(1.5)
     return url

@@ -6,6 +6,7 @@ import dash_html_components as html
 from dash import no_update
 from dash.dependencies import Input, Output, State
 
+from application.message_logger import MessageLogger
 from server import app, engine
 from utilities.auth import (
     validate_password_key,
@@ -14,7 +15,7 @@ from utilities.auth import (
 )
 
 success_alert = dbc.Alert(
-    'Reset successful. Taking you to login!',
+    'Reset successful. Redirecting to login!',
     color='success',
 )
 failure_alert = dbc.Alert(
@@ -22,9 +23,12 @@ failure_alert = dbc.Alert(
     color='danger',
 )
 already_login_alert = dbc.Alert(
-    'User already logged in. Taking you to your profile.',
+    'User already logged in. Redirecting your profile.',
     color='warning'
 )
+
+ml = MessageLogger('change_password')
+logger = ml.get_logger()
 
 
 @layout_auth('require-nonauthentication')
@@ -124,15 +128,15 @@ def submit_change(submit, email, key, password, confirm):
     # all inputs have been previously validated
     # validate_password_key(email,key,engine)
     if validate_password_key(email, key, engine):
-        print('validate password success')
+        logger.info('Validate password success')
         # if that returns true, update the user information
         if change_password(email, password, engine):
             return success_alert, '/login'
         else:
-            print('validate password failed - at after change user')
+            logger.error('Validate password failed after change user')
             pass
     else:
-        print('validate password failed')
+        logger.error('Validate password failed')
         pass
     return failure_alert, no_update
 
@@ -144,6 +148,6 @@ def submit_change(submit, email, key, password, confirm):
 def change_send_to_login(url):
     if url is None or url == '':
         return no_update
-    print('sleeping and going to profile')
+    logger.info('Redirecting to profile')
     time.sleep(1.5)
     return url

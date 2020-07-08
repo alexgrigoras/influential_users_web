@@ -61,10 +61,10 @@ class YoutubeAPI:
         :return:
         """
 
-        print("Searching resources by keyword [" + keyword + "]:")
+        self.__logger.info("Searching resources by keyword [" + keyword + "]")
 
         if not keyword:
-            print("Empty keyword")
+            self.__logger.warning("Empty keyword")
             return False
 
         nr_pages = 1
@@ -75,18 +75,18 @@ class YoutubeAPI:
             self.__max_results = nr_results
 
         if search_type not in ['keyword', 'location']:
-            print("Invalid search type")
+            self.__logger.error("Invalid search type")
             return False
 
         if order not in ['date', 'rating', 'relevance', 'title', 'videoCount', 'viewCount']:
-            print("Invalid order")
+            self.__logger.error("Invalid order")
             return False
 
         if content_type is None:
             content_type = ['video', 'channel', 'playlist']
             for ct in content_type:
                 if ct not in ['video', 'channel', 'playlist']:
-                    print("Invalid content type")
+                    self.__logger.error("Invalid content type")
                     return False
         content_str = ""
         for s in content_type:
@@ -105,7 +105,7 @@ class YoutubeAPI:
         search_results = self.__check_search_cache(search_query)
 
         if not search_results:
-            print("Requesting data from youtube api")
+            self.__logger.info("Requesting data from youtube api")
 
             if search_type is 'keyword':
                 results, etag, total_results = self.__get_search_results(nr_pages, q=keyword, part='id,snippet',
@@ -117,11 +117,11 @@ class YoutubeAPI:
                                                                          type=content_str, pageToken=page_token,
                                                                          locationRadius=location_radius)
             else:
-                print("Invalid search parameters")
+                self.__logger.error("Invalid search parameters")
                 return False
 
             if results is False:
-                print("Data cannot be obtained")
+                self.__logger.error("Data cannot be obtained")
                 return False
 
             search_results.append({
@@ -154,7 +154,7 @@ class YoutubeAPI:
         channels_list = []
 
         if not search_results:
-            print("Search results are empty")
+            self.__logger.warning("Search results are empty")
             return
 
         for item in search_results[0]['results']:
@@ -164,7 +164,7 @@ class YoutubeAPI:
             kind = item['id']['kind']
 
             if kind == 'youtube#channel':
-                print(" > Channel: " + title)
+                self.__logger.info("[RESULT] Channel: " + title)
 
                 channel_id = item['id']['channelId']
                 channels_list.append(channel_id)
@@ -193,7 +193,7 @@ class YoutubeAPI:
                 })
 
             if kind == 'youtube#playlist':
-                print(" > Playlist: " + title)
+                self.__logger.info("[RESULT] Playlist: " + title)
 
                 playlist_id = item['id']['playlistId']
 
@@ -212,7 +212,7 @@ class YoutubeAPI:
                 )
 
             elif kind == 'youtube#video':
-                print(" > Video: " + title)
+                self.__logger.info("[RESULT] Video: " + title)
 
                 video_id = item['id']['videoId']
                 channel_id = item['snippet']['channelId']
@@ -258,7 +258,7 @@ class YoutubeAPI:
         tokens = self.__db.get_tokens()
 
         if tokens and tokens.count() > 0:
-            print("Processing remaining page tokens:")
+            self.__logger.info("Processing remaining page tokens:")
             for t in tokens:
                 token_type = t['type']
                 args = t['query']
@@ -266,7 +266,7 @@ class YoutubeAPI:
                 args['pageToken'] = token_id
                 result_success = False
 
-                print(" > " + token_type + " token [" + token_id + "]")
+                self.__logger.info(" > " + token_type + " token [" + token_id + "]")
 
                 if token_type == "search":
                     keyword = t['keyword']
@@ -304,10 +304,10 @@ class YoutubeAPI:
                     pass
 
                 if result_success is not False:
-                    print(" > Removing token [" + token_id + "]")
+                    self.__logger.info(" > Removing token [" + token_id + "]")
                     self.__db.remove_token(token_id)
         else:
-            print("! No remaining tokens")
+            self.__logger.warning("No remaining tokens!")
 
     def get_channel_data(self):
         """
@@ -383,7 +383,7 @@ class YoutubeAPI:
 
         # get channels list
         if missing_channels:
-            print("Getting channel details from Youtube Api")
+            self.__logger.info("Getting channel details from Youtube Api")
             channels_id_str = ','.join(missing_channels)
             result_validation = self.__get_channel(part='snippet,statistics', id=channels_id_str, maxResults=50)
 
@@ -392,7 +392,7 @@ class YoutubeAPI:
                 for channel in channels_list:
                     channel_result = self.__db.get_channel({'_id': channel}, {'title': 1})
                     if channel_result is None:
-                        print("Channels is missing: " + channel)
+                        self.__logger.warning("Channels is missing: " + channel)
                         return
                     else:
                         title = channel_result.next()["title"]
@@ -423,7 +423,6 @@ class YoutubeAPI:
                 except KeyError:
                     self.__logger.warning("Invalid key on channel_names.pop")
 
-
         # export data to
         pickle.dump(channel_names, open(path + file_name + OBJECT_EXTENSION, "wb"))
 
@@ -452,7 +451,7 @@ class YoutubeAPI:
         try:
             results = self.__service.search().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False, False, False
 
         if results:
@@ -477,7 +476,7 @@ class YoutubeAPI:
                         }
                     index += 1
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False, False, False
             else:
                 break
@@ -499,7 +498,7 @@ class YoutubeAPI:
         try:
             results = self.__service.channels().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results:
             for item in results['items']:
@@ -531,7 +530,7 @@ class YoutubeAPI:
                             'query': kwargs
                         }
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -553,7 +552,7 @@ class YoutubeAPI:
         try:
             results = self.__service.channels().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results:
             for item in results['items']:
@@ -580,7 +579,7 @@ class YoutubeAPI:
                             'query': kwargs
                         }
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -603,7 +602,7 @@ class YoutubeAPI:
         try:
             results = self.__service.playlists().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results:
             for item in results['items']:
@@ -629,7 +628,7 @@ class YoutubeAPI:
                             'query': kwargs
                         }
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -652,7 +651,7 @@ class YoutubeAPI:
         try:
             results = self.__service.playlistItems().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results:
             for item in results['items']:
@@ -678,7 +677,7 @@ class YoutubeAPI:
                             'query': kwargs
                         }
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -700,7 +699,7 @@ class YoutubeAPI:
         try:
             results = self.__service.videos().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results:
             for item in results['items']:
@@ -729,7 +728,7 @@ class YoutubeAPI:
                             'query': kwargs
                         }
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -754,7 +753,7 @@ class YoutubeAPI:
         try:
             results = self.__service.commentThreads().list(**kwargs).execute()
         except HttpError as e:
-            print("HTTP error: " + str(e))
+            self.__logger.error("HTTP error: " + str(e))
             return False
         while results and index < nr_pages:
             for item in results['items']:
@@ -795,7 +794,7 @@ class YoutubeAPI:
                         }
                     index += 1
                 except HttpError as e:
-                    print("HTTP error: " + str(e))
+                    self.__logger.error("HTTP error: " + str(e))
                     return False
             else:
                 break
@@ -828,7 +827,7 @@ class YoutubeAPI:
 
         results = self.__db.get_search_results(query)
         if results:
-            print("Getting cached search with keyword: " + query['keyword'])
+            self.__logger.info("Getting cached search with keyword: " + query['keyword'])
             return results.next()
         else:
             return []

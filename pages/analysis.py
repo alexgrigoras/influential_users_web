@@ -23,6 +23,12 @@ failure_alert = dbc.Alert(
     dismissable=True
 )
 
+quota_exceeded_alert = dbc.Alert(
+    'Data retrieval from YouTube is limited! Try the next day.',
+    color='danger',
+    dismissable=True
+)
+
 login_alert = dbc.Alert(
     'User not logged in. Taking you to login.',
     color='danger'
@@ -136,7 +142,11 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         results = crawler.search(keyword, int(nr_videos))
         crawler.process_search_results(results)
 
-        file_name = crawler.create_network(results[0]['_id'])
+        try:
+            network_data = results[0]['_id']
+            file_name = crawler.create_network(network_data)
+        except TypeError:
+            return '', quota_exceeded_alert, ''
 
         # create users network
         network.set_file_name(file_name)

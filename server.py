@@ -12,7 +12,7 @@ from utilities.config import config, engine
 
 app = dash.Dash(
     __name__,
-    external_stylesheets=[dbc.themes.LUX]
+    external_stylesheets=[dbc.themes.FLATLY]
 )
 
 server = app.server

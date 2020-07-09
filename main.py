@@ -74,7 +74,7 @@ def router(pathname):
         return logout.layout()
 
     # app pages
-    elif pathname == '/' or pathname == '/home' or pathname == '/home':
+    elif pathname == '/' or pathname == '/home':
         return home.layout()
     elif pathname == '/profile' or pathname == '/profile':
         return profile.layout()
@@ -99,7 +99,7 @@ def profile_link(content, children):
                 dbc.DropdownMenuItem("Logout", href="/logout"),
             ],
             nav=True,
-            #in_navbar=True,
+            in_navbar=True,
             toggle_style={"color": "white"},
             label=current_user.first
         )

@@ -1,7 +1,7 @@
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 from flask_login import current_user
 
 from application.message_logger import MessageLogger
@@ -23,20 +23,19 @@ from server import app
 header = dbc.Navbar(
     dbc.Container(
         [
-            dbc.NavbarBrand([html.Img(src="static/images/logo.png", height="20px"), " Influential Users"],
-                            href="/home"),
+            dbc.NavbarBrand(["Influential Users"],
+                            href="/home", style={"color": "white"}),
             dbc.Nav(
                 [
                     dbc.NavItem(dbc.NavLink("Home", href="/home", style={"color": "white"})),
                     dbc.NavItem(dbc.NavLink("Analysis", href="/analysis", style={"color": "white"})),
-                    dbc.NavItem(dbc.NavLink(id='user-name', href='/profile', style={"color": "white"})),
-                    dbc.NavItem(dbc.NavLink('Login', id='user-action', href='Login', style={"color": "white"}))
+                    html.Div(id='dropdown-container'),
+                    dbc.NavItem(dbc.NavLink('Login', id='user-action', href='/login', style={"color": "white"}))
                 ]
             )
         ]
     ),
-    color="dark",
-    dark=True,
+    color="info",
     className="mb-5",
 )
 
@@ -86,14 +85,25 @@ def router(pathname):
 
 
 @app.callback(
-    Output('user-name', 'children'),
-    [Input('page-content', 'children')])
-def profile_link(content):
+    Output('dropdown-container', 'children'),
+    [Input('page-content', 'children')],
+    [State('dropdown-container', 'children')])
+def profile_link(content, children):
     """
     returns a navbar link to the user profile if the user is authenticated
     """
     if current_user.is_authenticated:
-        return html.Div("[" + current_user.first + "]")
+        new_dropdown = dbc.DropdownMenu(
+            children=[
+                dbc.DropdownMenuItem("Profile", href='/profile'),
+                dbc.DropdownMenuItem("Logout", href="/logout"),
+            ],
+            nav=True,
+            #in_navbar=True,
+            toggle_style={"color": "white"},
+            label=current_user.first
+        )
+        return new_dropdown
     else:
         return ''
 
@@ -107,7 +117,7 @@ def user_logout(user_input):
     returns a navbar link to /logout or /login, respectively, if the user is authenticated or not
     """
     if current_user.is_authenticated:
-        return 'Logout', '/logout'
+        return '', ''
     else:
         return 'Login', '/login'
 

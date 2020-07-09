@@ -156,12 +156,6 @@ def visualize_graph_3d(graph, node_labels, node_sizes, layout="spring", title="3
                                          size=[],
                                          color=[],
                                          colorscale='Jet',  # 'Viridis',
-                                         colorbar=dict(
-                                             thickness=15,
-                                             title='Node Connections',
-                                             xanchor='left',
-                                             titleside='right'
-                                         ),
                                          line=Line(color='rgb(50,50,50)', width=0.5)
                                          ),
                            text=[],
@@ -202,7 +196,13 @@ def visualize_graph_3d(graph, node_labels, node_sizes, layout="spring", title="3
 
     layout = Layout(
         title=title,
-        height=800,
+        height=1000,
+        margin=Margin(
+            l=0,  # left margin
+            r=0,  # right margin
+            b=0,  # bottom margin
+            t=0  # top margin
+        ),
         showlegend=False,
         scene=Scene(
             xaxis=XAxis(axis),

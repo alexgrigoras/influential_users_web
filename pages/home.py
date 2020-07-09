@@ -19,7 +19,7 @@ def layout():
                 location,
                 html.H3('Welcome to the home page!', style={"textAlign": "center"}),
                 html.Br(),
-                html.Img(src='/static/images/influential_users.png')
+                html.Img(src='/static/images/influential_users.png', width="100%")
             ],
             width=10,
             align="center"

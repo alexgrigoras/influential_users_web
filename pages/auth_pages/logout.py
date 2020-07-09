@@ -12,12 +12,12 @@ from server import app
 from utilities.auth import layout_auth
 
 success_alert = dbc.Alert(
-    'Logged out. Taking you to login.',
+    'Logged out. Redirecting to home.',
     color='success',
     dismissable=True,
 )
 failure_alert = dbc.Alert(
-    'Redirecting to login.',
+    'Redirecting to home.',
     color='danger',
     dismissable=True,
     duration=5000
@@ -66,9 +66,9 @@ def logout_card(n_clicks):
     try:
         logout_user()
         logger.info("User " + current_user.email + " logged out")
-        return '/login', success_alert
+        return '/home', success_alert
     except:
-        return '/login', failure_alert
+        return '/home', failure_alert
 
 
 @app.callback(

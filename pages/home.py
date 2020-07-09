@@ -12,7 +12,6 @@ home_login_alert = dbc.Alert(
 location = dcc.Location(id='home-url', refresh=True, pathname='/home')
 
 
-@layout_auth('require-authentication')
 def layout():
     return dbc.Row(
         dbc.Col(

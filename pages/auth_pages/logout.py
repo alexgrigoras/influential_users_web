@@ -32,21 +32,26 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                dbc.Alert(
-                    'Are you sure you want to logout?',
-                    color='info',
-                    dismissable=True
-                ),
-                dcc.Location(id='logout-url', refresh=True, pathname='/logout'),
-                html.Div(id='logout-hidden-url', style=dict(display='none')),
-                html.Div(id='logout-trigger', style=dict(display='none')),
-                html.Div(id='logout-message'),
-                dbc.Button('Confirm Logout', id='logout-button', color='danger', block=True, size='lg')
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4("LOGOUT", className="card-title"),
+                            dbc.Alert(
+                                'Are you sure you want to logout?',
+                                color='info',
+                                dismissable=True
+                            ),
+                            dcc.Location(id='logout-url', refresh=True, pathname='/logout'),
+                            html.Div(id='logout-hidden-url', style=dict(display='none')),
+                            html.Div(id='logout-trigger', style=dict(display='none')),
+                            html.Div(id='logout-message'),
+                            dbc.Button('Confirm Logout', id='logout-button', color='danger', block=True, size='lg')
+                        ]
+                    ),
+                    style={"width": "20rem", "margin": "0 auto"},
+                )
             ],
-            width=4,
-            align="center"
         ),
-        justify="center"
     )
 
 

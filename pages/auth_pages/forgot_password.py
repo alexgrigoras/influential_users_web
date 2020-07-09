@@ -37,27 +37,31 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                html.H3('Forgot Password'),
-                dcc.Location(id='forgot-url', refresh=True, pathname='/forgot'),
-                dbc.FormGroup(
-                    [
-                        html.Div(id='forgot-alert'),
-                        html.Div(id='forgot-trigger', style=dict(display='none')),
-                        html.Br(),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4("Forgot Password", className="card-title"),
+                            dcc.Location(id='forgot-url', refresh=True, pathname='/forgot'),
+                            dbc.FormGroup(
+                                [
+                                    html.Div(id='forgot-alert'),
+                                    html.Div(id='forgot-trigger', style=dict(display='none')),
+                                    html.Br(),
 
-                        dbc.Input(id='forgot-email', autoFocus=True),
-                        dbc.FormText('Email'),
-                        html.Br(),
+                                    dbc.Input(id='forgot-email', autoFocus=True),
+                                    dbc.FormText('Email'),
+                                    html.Br(),
 
-                        dbc.Button('Submit email to receive code', id='forgot-button', color='primary'),
+                                    dbc.Button('Submit email to receive code', id='forgot-button', color='primary'),
 
-                    ]
+                                ]
+                            )
+                        ]
+                    ),
+                    style={"width": "20rem", "margin": "0 auto"},
                 )
             ],
-            width=4,
-            align="center"
         ),
-        justify="center"
     )
 
 

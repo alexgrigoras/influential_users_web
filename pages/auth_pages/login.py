@@ -38,43 +38,44 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                html.H3('LOGIN'),
-                html.Br(),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4("LOGIN", className="card-title"),
+                            dcc.Location(id='login-url', refresh=True, pathname='/login'),
+                            html.Div(id='login-trigger', style=dict(display='none')),
+                            html.Div(id='login-alert'),
+                            dbc.FormGroup(
+                                [
+                                    dbc.Alert(
+                                        'You need to authenticate to use the application!',
+                                        color='info',
+                                        dismissable=True
+                                    ),
+                                    dbc.Input(id='login-email', autoFocus=True),
+                                    dbc.FormText('Email'),
 
-                dcc.Location(id='login-url', refresh=True, pathname='/login'),
-                html.Div(id='login-trigger', style=dict(display='none')),
-                html.Div(id='login-alert'),
-                dbc.FormGroup(
-                    [
-                        dbc.Alert(
-                            'You need to authenticate to use the application!',
-                            color='info',
-                            dismissable=True
-                        ),
+                                    html.Br(),
+                                    dbc.Input(id='login-password', type='password'),
+                                    dbc.FormText('Password'),
 
-                        dbc.Input(id='login-email', autoFocus=True),
-                        dbc.FormText('Email'),
+                                    html.Br(),
+                                    dbc.Button('Submit', color='primary', id='login-button'),
+                                    # dbc.FormText(id='output-state')
 
-                        html.Br(),
-                        dbc.Input(id='login-password', type='password'),
-                        dbc.FormText('Password'),
-
-                        html.Br(),
-                        dbc.Button('Submit', color='primary', id='login-button'),
-                        # dbc.FormText(id='output-state')
-
-                        html.Br(),
-                        html.Br(),
-                        dcc.Link('Register', href='/register'),
-                        html.Br(),
-                        dcc.Link('Forgot Password', href='/forgot')
-                    ]
+                                    html.Br(),
+                                    html.Br(),
+                                    dcc.Link('Register', href='/register'),
+                                    html.Br(),
+                                    dcc.Link('Forgot Password', href='/forgot')
+                                ]
+                            )
+                        ]
+                    ),
+                    style={"width": "20rem", "margin": "0 auto"},
                 )
             ],
-            width=4,
-            align="center"
         ),
-        justify="center"
     )
 
 

@@ -36,39 +36,44 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                html.H3('Change Password'),
-                dcc.Location(id='change-url', refresh=True, pathname='/change'),
-                html.Div(id='change-trigger', style=dict(display='none')),
-                dbc.FormGroup(
-                    [
-                        html.Div(id='change-alert'),
-                        html.Br(),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4("Change Password", className="card-title"),
 
-                        dbc.Input(id='change-email', autoFocus=True),
-                        dbc.FormText('Email'),
-                        html.Br(),
+                            dcc.Location(id='change-url', refresh=True, pathname='/change'),
+                            html.Div(id='change-trigger', style=dict(display='none')),
+                            dbc.FormGroup(
+                                [
+                                    html.Div(id='change-alert'),
+                                    html.Br(),
 
-                        dbc.Input(id='change-key', type='password'),
-                        dbc.FormText('Code'),
-                        html.Br(),
+                                    dbc.Input(id='change-email', autoFocus=True),
+                                    dbc.FormText('Email'),
+                                    html.Br(),
 
-                        dbc.Input(id='change-password', type='password'),
-                        dbc.FormText('New password'),
-                        html.Br(),
+                                    dbc.Input(id='change-key', type='password'),
+                                    dbc.FormText('Code'),
+                                    html.Br(),
 
-                        dbc.Input(id='change-confirm', type='password'),
-                        dbc.FormText('Confirm new password'),
-                        html.Br(),
+                                    dbc.Input(id='change-password', type='password'),
+                                    dbc.FormText('New password'),
+                                    html.Br(),
 
-                        dbc.Button('Submit password change', id='change-button', color='primary'),
+                                    dbc.Input(id='change-confirm', type='password'),
+                                    dbc.FormText('Confirm new password'),
+                                    html.Br(),
 
-                    ]
+                                    dbc.Button('Submit password change', id='change-button', color='primary'),
+
+                                ]
+                            )
+                        ]
+                    ),
+                    style={"width": "20rem", "margin": "0 auto"},
                 )
             ],
-            width=4,
-            align="center"
         ),
-        justify="center"
     )
 
 

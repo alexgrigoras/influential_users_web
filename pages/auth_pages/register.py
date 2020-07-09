@@ -38,41 +38,46 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                html.H3('REGISTER'),
-                html.Br(),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H4("REGISTER", className="card-title"),
+                            dbc.Alert(
+                                'Enter the data below to register to the application',
+                                color='info',
+                                dismissable=True
+                            ),
+                            dcc.Location(id='register-url', refresh=True, pathname='/register'),
+                            html.Div(id='register-trigger', style=dict(display='none')),
+                            html.Div(id='register-alert'),
+                            dbc.FormGroup(
+                                [
+                                    dbc.Input(id='register-first', autoFocus=True),
+                                    dbc.FormText('First'),
+                                    html.Br(),
 
-                dbc.Alert(
-                    'Enter the data below to register to the application',
-                    color='info',
-                    dismissable=True
-                ),
-                dcc.Location(id='register-url', refresh=True, pathname='/register'),
-                html.Div(id='register-trigger', style=dict(display='none')),
-                html.Div(id='register-alert'),
-                dbc.FormGroup(
-                    [
-                        dbc.Input(id='register-first', autoFocus=True),
-                        dbc.FormText('First'),
-                        html.Br(),
+                                    dbc.Input(id='register-last'),
+                                    dbc.FormText('Last'),
+                                    html.Br(),
 
-                        dbc.Input(id='register-last'),
-                        dbc.FormText('Last'),
-                        html.Br(),
+                                    dbc.Input(id='register-email'),
+                                    dbc.FormText('Email', id='register-email-formtext', color='secondary'),
+                                    html.Br(),
 
-                        dbc.Input(id='register-email'),
-                        dbc.FormText('Email', id='register-email-formtext', color='secondary'),
-                        html.Br(),
+                                    dbc.Input(id='register-password', type='password'),
+                                    dbc.FormText('Password'),
+                                    html.Br(),
 
-                        dbc.Input(id='register-password', type='password'),
-                        dbc.FormText('Password'),
-                        html.Br(),
+                                    dbc.Input(id='register-confirm', type='password'),
+                                    dbc.FormText('Confirm password'),
+                                    html.Br(),
 
-                        dbc.Input(id='register-confirm', type='password'),
-                        dbc.FormText('Confirm password'),
-                        html.Br(),
-
-                        dbc.Button('Submit', color='primary', id='register-button'),
-                    ]
+                                    dbc.Button('Submit', color='primary', id='register-button'),
+                                ]
+                            )
+                        ]
+                    ),
+                    style={"width": "20rem", "margin": "0 auto"},
                 )
             ],
             width=4,

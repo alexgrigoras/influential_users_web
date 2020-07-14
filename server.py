@@ -12,9 +12,20 @@ from utilities.config import config, engine
 
 app = dash.Dash(
     __name__,
-    external_stylesheets=[dbc.themes.COSMO],
+    external_stylesheets=[
+        dbc.themes.COSMO,
+        "vendor/fontawesome-free/css/all.min.css",
+        "vendor/simple-line-icons/css/simple-line-icons.css",
+        "https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic",
+        "css/landing-page.min.css"
+    ],
     meta_tags=[
-        {"name": "viewport", "content": "width=device-width, initial-scale=1"}
+        {
+            "name": "viewport",
+            "content": "width=device-width, initial-scale=1, shrink-to-fit=no",
+            "description": "",
+            "author": ""
+        }
     ],
 )
 

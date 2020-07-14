@@ -18,25 +18,28 @@ from pages.auth_pages import (
     forgot_password,
     change_password
 )
-from server import app
+from server import app, server
 
-header = dbc.Navbar(
-    dbc.Container(
-        [
-            dbc.NavbarBrand(["Influential Users"],
-                            href="/home", style={"color": "white"}),
-            dbc.Nav(
-                [
-                    dbc.NavItem(dbc.NavLink("Home", href="/home", style={"color": "white"})),
-                    dbc.NavItem(dbc.NavLink("Analysis", href="/analysis", style={"color": "white"})),
-                    html.Div(id='dropdown-container'),
-                    dbc.NavItem(dbc.NavLink('Login', id='user-action', href='/login', style={"color": "white"}))
-                ]
-            )
-        ]
-    ),
-    color="info",
+header = dbc.NavbarSimple(
+    children=[
+            dbc.NavItem(dbc.NavLink("Home", href="/home", style={"color": "white"})),
+            dbc.NavItem(dbc.NavLink("Analysis", href="/analysis", style={"color": "white"})),
+            html.Div(id='dropdown-container'),
+            dbc.NavItem(dbc.NavLink('Login', id='user-action', href='/login', style={"color": "white"}))
+    ],
+    brand="Influential Users",
+    brand_href="/home",
+    color="primary",
+    dark=True,
     className="mb-5",
+)
+
+footer = html.Footer(
+    children=[
+        html.Hr(),
+        html.Div(html.Span("© 2020 Copyright: Alexandru GRIGORAS", className="text-muted"), className="container")
+    ],
+    className="footer",
 )
 
 app.layout = html.Div(
@@ -46,9 +49,11 @@ app.layout = html.Div(
             [
                 dbc.Container(
                     id='page-content'
-                )
+                ),
+                html.Br()
             ]
         ),
+        footer,
         dcc.Location(id='base-url', refresh=False),
     ]
 )
@@ -126,4 +131,4 @@ if __name__ == '__main__':
     ml = MessageLogger('werkzeug')
     handler = ml.get_handler()
     app.logger.addHandler(handler)
-    app.run_server(host='0.0.0.0', port=5000, debug=False)
+    app.run_server(host='127.0.0.1', port=80, debug=False)

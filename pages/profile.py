@@ -101,7 +101,7 @@ def layout():
                             ),
                         ]
                     ),
-                    style={"width": "24rem", "margin": "0 auto"},
+                    style={"width": "20rem", "margin": "0 auto"},
                 ),
                 html.Br(),
                 html.Br(),

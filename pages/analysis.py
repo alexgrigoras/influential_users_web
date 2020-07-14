@@ -65,7 +65,6 @@ def layout():
                 html.H5('To use the application, enter the options on the right and click SEARCH'),
             ]
         ),
-        color="info", outline=True
     )
 
     search_card = dbc.Card(
@@ -97,7 +96,6 @@ def layout():
                 dbc.Button('Search', color='primary', id='submit-button'),
             ]
         ),
-        color="info", outline=True
     )
 
 
@@ -113,7 +111,6 @@ def layout():
                 dbc.Col(html.Div(id='output-div', style={"width": "100%"}))
             ]
         ),
-        color="info", outline=True
     )
 
     return dbc.Row(
@@ -132,7 +129,9 @@ def layout():
                 dbc.Row(
                     dbc.Col(result_card, width=12),
                     className="mb-20",
-                )
+                ),
+                html.Br(),
+                html.Br(),
             ]
         )
     )

@@ -38,61 +38,75 @@ def layout():
     return dbc.Row(
         dbc.Col(
             [
-                dcc.Location(id='profile-url', refresh=True, pathname='/profile'),
-                html.Div(1, id='profile-trigger', style=dict(display='none')),
-                html.Div(1, id='redirect-trigger', style=dict(display='none')),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            dcc.Location(id='profile-url', refresh=True, pathname='/profile'),
+                            html.Div(1, id='profile-trigger', style=dict(display='none')),
+                            html.Div(1, id='redirect-trigger', style=dict(display='none')),
 
-                html.H3('Profile', id='profile-title'),
-                html.Div(id='profile-alert'),
-                html.Div(id='profile-alert-login'),
-                html.Div(id='profile-alert-delete'),
-                html.Div(id='profile-delete-trigger', style=dict(display='none')),
-                html.Div(id='profile-login-trigger', style=dict(display='none')),
+                            html.H3('Profile', id='profile-title'),
+                            html.Div(id='profile-alert'),
+                            html.Div(id='profile-alert-login'),
+                            html.Div(id='profile-alert-delete'),
+                            html.Div(id='profile-delete-trigger', style=dict(display='none')),
+                            html.Div(id='profile-login-trigger', style=dict(display='none')),
+                            html.Br(),
+
+                            dbc.FormGroup(
+                                [
+                                    # First, first input, and formtext
+                                    dbc.Label('First:', id='profile-first'),
+                                    dbc.Input(placeholder='Change first name...', id='profile-first-input'),
+                                    dbc.FormText(id='profile-first-formtext', color='secondary'),
+                                    html.Br(),
+
+                                    # last, last input, and formtext
+                                    dbc.Label('Last:', id='profile-last'),
+                                    dbc.Input(placeholder='Change last name...', id='profile-last-input'),
+                                    dbc.FormText(id='profile-last-formtext', color='secondary'),
+                                    html.Br(),
+
+                                    # email, formtext
+                                    dbc.Label('Email:', id='profile-email'),
+                                    dbc.FormText('Cannot change email', color='secondary'),
+
+                                    html.Hr(),
+
+                                    # password, input, confirm input
+                                    dbc.Label('Change password', id='profile-password'),
+                                    html.Br(),
+                                    dbc.Input(placeholder='Change password...', id='profile-password-input',
+                                              type='password'),
+                                    dbc.FormText('Change password', color='secondary',
+                                                 id='profile-password-input-formtext'),
+                                    html.Br(),
+                                    dbc.Input(placeholder='Confirm password...', id='profile-password-confirm',
+                                              type='password'),
+                                    dbc.FormText('Confirm password', color='secondary',
+                                                 id='profile-password-confirm-formtext'),
+                                    html.Br(),
+
+                                    dbc.Button('Save changes', color='primary', id='profile-submit', disabled=True,
+                                               block=True, size='lg'),
+
+                                    html.Br(),
+                                    html.Hr(),
+
+                                    dbc.Label("Don't use this account anymore?", id='primary'),
+                                    html.Br(),
+                                    dbc.Button('Delete account', color='secondary', id='profile-delete', block=True,
+                                               size='lg'),
+                                ]  # end formgroup
+                            ),
+                        ]
+                    ),
+                    style={"width": "24rem", "margin": "0 auto"},
+                ),
                 html.Br(),
-
-                dbc.FormGroup(
-                    [
-                        # First, first input, and formtext
-                        dbc.Label('First:', id='profile-first'),
-                        dbc.Input(placeholder='Change first name...', id='profile-first-input'),
-                        dbc.FormText(id='profile-first-formtext', color='secondary'),
-                        html.Br(),
-
-                        # last, last input, and formtext
-                        dbc.Label('Last:', id='profile-last'),
-                        dbc.Input(placeholder='Change last name...', id='profile-last-input'),
-                        dbc.FormText(id='profile-last-formtext', color='secondary'),
-                        html.Br(),
-
-                        # email, formtext
-                        dbc.Label('Email:', id='profile-email'),
-                        dbc.FormText('Cannot change email', color='secondary'),
-                        html.Br(),
-
-                        html.Hr(),
-                        html.Br(),
-
-                        # password, input, confirm input
-                        dbc.Label('Change password', id='profile-password'),
-                        dbc.Input(placeholder='Change password...', id='profile-password-input', type='password'),
-                        dbc.FormText('Change password', color='secondary', id='profile-password-input-formtext'),
-                        html.Br(),
-                        dbc.Input(placeholder='Confirm password...', id='profile-password-confirm', type='password'),
-                        dbc.FormText('Confirm password', color='secondary', id='profile-password-confirm-formtext'),
-                        html.Br(),
-
-                        html.Hr(),
-                        html.Br(),
-
-                        dbc.Button('Save changes', color='primary', id='profile-submit', disabled=True),
-                        dbc.Button('Delete account', color='secondary', id='profile-delete')
-                    ]  # end formgroup
-                )
+                html.Br(),
             ],  # end col
-            width=6,
-            align="center"
         ),
-        justify="center"
     )
 
 

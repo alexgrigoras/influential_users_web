@@ -36,8 +36,33 @@ header = dbc.NavbarSimple(
 
 footer = html.Footer(
     children=[
-        html.Hr(),
-        html.Div(html.Span("© 2020 Copyright: Alexandru GRIGORAS", className="text-muted"), className="container")
+        dbc.Container(
+            dbc.Row([
+                html.Div([
+                    html.Ul([
+                        html.Li(html.A("About", href="#"), className="list-inline-item"),
+                        html.Li("·", className="list-inline-item"),
+                        html.Li(html.A("Contact", href="#"), className="list-inline-item"),
+                        html.Li("·", className="list-inline-item"),
+                        html.Li(html.A("Terms of use", href="#"), className="list-inline-item"),
+                    ], className="list-inline mb-2"),
+                    html.P('© Influential users 2020. All Rights Reserved to Alexandru Grigoras.',
+                           className="text-muted small mb-4 mb-lg-0")
+                ], className="col-lg-6 h-100 text-center text-lg-left my-auto"
+                ),
+                html.Div([
+                    html.Ul([
+                        html.Li(html.A(html.I("", className="fab fa-facebook fa-2x fa-fw"), href="#"),
+                                className="list-inline-item mr-3"),
+                        html.Li(html.A(html.I("", className="fab fa-twitter-square fa-2x fa-fw"), href="#"),
+                                className="list-inline-item mr-3"),
+                        html.Li(html.A(html.I("", className="fab fa-instagram fa-2x fa-fw"), href="#"),
+                                className="list-inline-item mr-3"),
+                    ], className="ist-inline mb-0")
+                ], className="col-lg-6 h-100 text-center text-lg-right my-auto"
+                ),
+            ])
+        )
     ],
     className="footer",
 )

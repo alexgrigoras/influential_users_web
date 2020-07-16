@@ -37,15 +37,15 @@ failure_delete = dbc.Alert(
 def layout():
     return dbc.Row(
         dbc.Col(
-            [
-                dbc.Card(
+            children=[
+                dcc.Location(id='profile-url', refresh=True, pathname='/profile'),
+                dbc.Card([
                     dbc.CardBody(
                         [
-                            dcc.Location(id='profile-url', refresh=True, pathname='/profile'),
+                            html.H4("Profile", className="card-title"),
                             html.Div(1, id='profile-trigger', style=dict(display='none')),
                             html.Div(1, id='redirect-trigger', style=dict(display='none')),
 
-                            html.H3('Profile', id='profile-title'),
                             html.Div(id='profile-alert'),
                             html.Div(id='profile-alert-login'),
                             html.Div(id='profile-alert-delete'),
@@ -97,16 +97,18 @@ def layout():
                                     html.Br(),
                                     dbc.Button('Delete account', color='secondary', id='profile-delete', block=True,
                                                size='lg'),
-                                ]  # end formgroup
+                                ]
                             ),
                         ]
-                    ),
-                    style={"width": "20rem", "margin": "0 auto"},
+                    )],
+                    className="mx-auto border-0",
+                    style={"margin": "40px auto 40px auto"},
                 ),
-                html.Br(),
-                html.Br(),
-            ],  # end col
+            ],
+            lg=4,
+            align="center",
         ),
+        justify="center"
     )
 
 

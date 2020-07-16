@@ -39,7 +39,7 @@ ml = MessageLogger('dashboard')
 logger = ml.get_logger()
 
 
-#@layout_auth('require-authentication')
+@layout_auth('require-authentication')
 def layout():
     return dbc.Row(
         dbc.Col(

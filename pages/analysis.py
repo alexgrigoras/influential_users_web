@@ -39,7 +39,7 @@ ml = MessageLogger('analysis')
 logger = ml.get_logger()
 
 
-#@layout_auth('require-authentication')
+@layout_auth('require-authentication')
 def layout():
     # if current_user.is_authenticated:
     text_card = dbc.Card([

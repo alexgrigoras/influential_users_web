@@ -37,49 +37,50 @@ logger = ml.get_logger()
 def layout():
     return dbc.Row(
         dbc.Col(
-            [
-                html.Div(
-                    dbc.Card([
-                        dbc.CardHeader("LOGIN", className="card-title"),
-                        dbc.CardBody(
-                            [
-                                dcc.Location(id='login-url', refresh=True, pathname='/login'),
-                                html.Div(id='login-trigger', style=dict(display='none')),
-                                html.Div(id='login-alert'),
-                                dbc.FormGroup(
-                                    [
-                                        dbc.Alert(
-                                            'You need to authenticate to use the application!',
-                                            color='info',
-                                            dismissable=True
-                                        ),
-                                        dbc.Input(id='login-email', autoFocus=True),
-                                        dbc.FormText('Email'),
+            children=[
+                dbc.Card([
+                    dbc.CardBody(
+                        [
+                            dcc.Location(id='login-url', refresh=True, pathname='/login'),
 
-                                        html.Br(),
-                                        dbc.Input(id='login-password', type='password'),
-                                        dbc.FormText('Password'),
+                            html.H4("LOGIN", className="card-title"),
 
-                                        html.Br(),
-                                        dbc.Button('Log in', color='primary', id='login-button', block=True, size='lg'),
+                            html.Div(id='login-trigger', style=dict(display='none')),
+                            html.Div(id='login-alert'),
 
-                                        html.Br(),
-                                        html.Br(),
-                                        dcc.Link("Don't have an account yet? Sign Up!", href='/register'),
-                                        html.Br(),
-                                        dcc.Link("Having issues logging in? Reset Password!", href='/forgot')
-                                    ]
-                                )
-                            ]
-                        )],
-                        className="mx-auto",
-                        style={"width": "20rem"},
-                    )
-                ),
-                html.Br(),
-                html.Br(),
-            ]
-        )
+                            dbc.FormGroup(
+                                [
+                                    dbc.Alert(
+                                        'You need to authenticate to use the application!',
+                                        color='info',
+                                        dismissable=True
+                                    ),
+                                    dbc.Input(id='login-email', autoFocus=True),
+                                    dbc.FormText('Email'),
+
+                                    html.Br(),
+                                    dbc.Input(id='login-password', type='password'),
+                                    dbc.FormText('Password'),
+
+                                    html.Br(),
+                                    dbc.Button('Log In', color='primary', id='login-button', block=True, size='lg'),
+
+                                    html.Hr(),
+                                    dbc.FormText("Don't have an account yet? "), dbc.FormText(dcc.Link("Sign Up!", href='/register')),
+                                    html.Hr(),
+                                    dbc.FormText("Having issues logging in? "), dbc.FormText(dcc.Link("Reset Password!", href='/forgot'))
+                                ]
+                            )
+                        ]
+                    )],
+                    className="mx-auto border-0",
+                    style={"margin-top": "40px", "margin-bottom": "40px"},
+                )
+            ],
+            lg=3,
+            align="center"
+        ),
+        justify="center"
     )
 
 
@@ -101,7 +102,7 @@ def login_success(n_clicks, email, password):
                 login_user(user)
                 if email:
                     logger.info("User " + email + " logged in")
-                return '/home', success_alert
+                return '/analysis', success_alert
             else:
                 if email:
                     logger.error("User " + email + " failed to log in")

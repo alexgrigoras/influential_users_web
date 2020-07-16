@@ -37,7 +37,7 @@ already_registered_alert = dbc.Alert(
 def layout():
     return dbc.Row(
         dbc.Col(
-            [
+            children=[
                 dbc.Card(
                     dbc.CardBody(
                         [
@@ -72,15 +72,16 @@ def layout():
                                     dbc.FormText('Confirm password'),
                                     html.Br(),
 
-                                    dbc.Button('Submit', color='primary', id='register-button'),
+                                    dbc.Button('Submit', color='primary', id='register-button', disabled=True),
                                 ]
                             )
                         ]
                     ),
-                    style={"width": "20rem", "margin": "0 auto"},
+                    className="mx-auto border-0",
+                    style={"margin": "40px auto 40px auto"},
                 )
             ],
-            width=4,
+            lg=3,
             align="center"
         ),
         justify="center"

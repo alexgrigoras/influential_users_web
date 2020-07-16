@@ -35,12 +35,11 @@ logger = ml.get_logger()
 def layout():
     return dbc.Row(
         dbc.Col(
-            [
+            children=[
                 dbc.Card(
                     dbc.CardBody(
                         [
                             html.H4("Change Password", className="card-title"),
-
                             dcc.Location(id='change-url', refresh=True, pathname='/change'),
                             html.Div(id='change-trigger', style=dict(display='none')),
                             dbc.FormGroup(
@@ -70,7 +69,8 @@ def layout():
                             )
                         ]
                     ),
-                    style={"width": "20rem", "margin": "0 auto"},
+                    className="mx-auto border-0",
+                    style={"width": "20rem", "margin": "40px auto 40px auto"},
                 )
             ],
         ),

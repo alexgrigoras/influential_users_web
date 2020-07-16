@@ -39,13 +39,16 @@ ml = MessageLogger('analysis')
 logger = ml.get_logger()
 
 
-@layout_auth('require-authentication')
+#@layout_auth('require-authentication')
 def layout():
     # if current_user.is_authenticated:
-    text_card = dbc.Card(
+    text_card = dbc.Card([
+        dbc.CardHeader([
+                html.H6("Analyze YouTube Social Media", className="m-0 font-weight-bold text-primary"),
+            ],
+            className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
             [
-                html.H4("Analyze YouTube Social Media", className="card-title"),#location,
                 html.Div(id='home-login-trigger', style=dict(display='none')),
                 html.H5('What the application does: '),
                 html.Ul(
@@ -64,13 +67,17 @@ def layout():
                 html.Br(),
                 html.H5('To use the application, enter the options on the right and click SEARCH'),
             ]
-        ),
+        )],
+        className="shadow mb-4"
     )
 
-    search_card = dbc.Card(
+    search_card = dbc.Card([
+        dbc.CardHeader([
+            html.H6("Search", className="m-0 font-weight-bold text-primary"),
+            ],
+            className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
             [
-                html.H4("Search", className="card-title"),
                 html.Div(id='output-alert'),
                 html.H5("Keyword: "),
                 dcc.Input(id='keyword', value='', type='text', placeholder="keyword"),
@@ -95,14 +102,17 @@ def layout():
                 ),
                 dbc.Button('Search', color='primary', id='submit-button'),
             ]
-        ),
+        )],
+        className="shadow mb-4"
     )
 
-
-    result_card = dbc.Card(
+    result_card = dbc.Card([
+        dbc.CardHeader([
+            html.H6("Results", className="m-0 font-weight-bold text-primary"),
+        ],
+            className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
             [
-                html.H4("Results", className="card-title"),
                 dcc.Loading(
                     id="loading-1",
                     type="circle",
@@ -110,30 +120,41 @@ def layout():
                 ),
                 dbc.Col(html.Div(id='output-div', style={"width": "100%"}))
             ]
-        ),
+        )],
+        className="shadow mb-4"
     )
 
     return dbc.Row(
         dbc.Col(
             children=[
-                location,
-                dbc.Row(
-                    dbc.Col(dbc.CardDeck(
-                        [
-                            text_card,
-                            search_card
-                        ]
-                    ), width=12),
-                    className="mb-4",
-                ),
-                dbc.Row(
-                    dbc.Col(result_card, width=12),
-                    className="mb-20",
-                ),
-                html.Br(),
-                html.Br(),
-            ]
-        )
+                dbc.Container([
+                    location,
+                    # Heading
+                    html.Div(
+                        html.H1("Analysis", className="h3 mb-0 text-gray-800"),
+                        className="d-sm-flex align-items-center justify-content-between mb-4"
+                    ),
+
+                    # Search
+                    dbc.Row(
+                        dbc.Col(dbc.CardDeck(
+                            [
+                                search_card,
+                                text_card
+                            ]
+                        ), width=12),
+                        className="mb-4",
+                    ),
+
+                    # Results
+                    dbc.Row(
+                        dbc.Col(result_card, width=12),
+                        className="mb-20",
+                    ),
+                ]),
+            ],
+            style={"margin-top": "40px"},
+        ),
     )
 
 

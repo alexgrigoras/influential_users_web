@@ -1,6 +1,8 @@
 # [START flask_app]
 runtime: python37
 
+entrypoint: gunicorn main:server --timeout 1000 -b 127.0.0.1:5000
+
 handlers:
 # This handler routes all requests not caught above to your main app. It is
 # required when static routes are defined, but can be omitted (along with

@@ -1,8 +1,9 @@
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-
-from utilities.auth import layout_auth
+from server import app, engine
+from flask_login import current_user
+from dash.dependencies import Input, Output, State
 
 home_login_alert = dbc.Alert(
     'User not logged in. Taking you to login.',
@@ -28,10 +29,14 @@ def layout():
                                     html.H1("SOCIAL MEDIA INFLUENCERS MARKETING PLATFORM", className="mb-10",
                                             style={"margin": "20px"}),
                                     html.Br(),
-                                    html.Form(html.Button("Sign Up", type="submit",
-                                                          className="btn btn-block btn-lg btn-primary col-md-3",
-                                                          style={"margin-left": "auto", "margin-right": "auto"}),
-                                              action="/register")
+                                    dbc.Container(
+                                        html.Form(html.Button("Sign Up", type="submit", id="sign_up_button",
+                                                              className="btn btn-block btn-lg btn-primary col-md-3",
+                                                              style={"margin-left": "auto", "margin-right": "auto",
+                                                                     "visibility": "visible"}),
+                                                  action="/register"),
+                                        className="container-fluid",
+                                    )
                                 ],
                                 className="col-xl-9 mx-auto"
                             ),
@@ -156,3 +161,14 @@ def layout():
             ]
         ),
     )
+
+
+@app.callback(
+    Output('sign_up_button', 'style'),
+    [Input('sign_up_button', 'n_clicks')]
+)
+def register_wait_and_reload(clicks):
+    if current_user.is_authenticated:
+        return {"visibility": "hidden"}
+    else:
+        return {"margin-left": "auto", "margin-right": "auto", "visibility": "visible"}

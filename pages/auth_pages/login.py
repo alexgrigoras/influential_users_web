@@ -73,7 +73,7 @@ def layout():
                             )
                         ]
                     )],
-                    className="mx-auto border-0",
+                    className="mx-auto border-0 bg-light",
                     style={"margin-top": "40px", "margin-bottom": "40px"},
                 )
             ],

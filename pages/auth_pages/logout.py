@@ -48,7 +48,7 @@ def layout():
                             dbc.Button('Confirm Logout', id='logout-button', color='danger', block=True, size='lg')
                         ]
                     )],
-                    className="mx-auto border-0",
+                    className="mx-auto border-0 bg-light",
                     style={"width": "20rem", "margin": "40px auto 40px auto"},
                 ),
             ]

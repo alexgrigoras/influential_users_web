@@ -95,7 +95,7 @@ def layout():
                     id="graph_type",
                     options=[
                         {'label': "3D Spring", 'value': '3'},
-                        {'label': "2D Graph", 'value': '2'}
+                        #{'label': "2D Graph", 'value': '2'}
                     ],
                     value='3',
                     labelStyle={'display': 'inline-block', "margin-right": "15px"}

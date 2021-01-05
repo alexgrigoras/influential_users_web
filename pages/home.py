@@ -26,7 +26,8 @@ def layout():
                         html.Div([
                             html.Div(
                                 [
-                                    html.H1("SOCIAL MEDIA INFLUENCERS MARKETING PLATFORM", className="mb-10",
+                                    html.H1("IDENTIFICATION OF INFLUENTIAL USERS IN MULTIMEDIA SOCIAL NETWORKS",
+                                            className="mb-10",
                                             style={"margin": "20px"}),
                                     html.Br(),
                                     dbc.Container(

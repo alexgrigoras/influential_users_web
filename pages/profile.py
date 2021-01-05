@@ -69,7 +69,6 @@ def layout():
 
                                     # email, formtext
                                     dbc.Label('Email:', id='profile-email'),
-                                    dbc.FormText('Cannot change email', color='secondary'),
 
                                     html.Hr(),
 
@@ -220,20 +219,23 @@ def profile_save_changes(n_clicks, first, last, password):
     if password is blank, pull the current password and submit it
     assumes all inputs are valid and checked by validator callback before submitting (enforced by disabling button otherwise)
     """
-    try:
-        email = current_user.email
-    except AttributeError:
-        return failure_alert, 0
-
-    if change_user(first, last, email, engine):
-        if password not in ['', None]:
-            change_password(email, password, engine)
-        if not send_profile_change(email, first):
+    if n_clicks is not None:
+        try:
+            email = current_user.email
+        except AttributeError:
             return failure_alert, 0
 
-        return success_alert, 1
+        if change_user(first, last, email, engine):
+            if password not in ['', None]:
+                change_password(email, password, engine)
+            if not send_profile_change(email, first):
+                return failure_alert, 0
 
-    return failure_alert, 0
+            return success_alert, 1
+
+        return failure_alert, 0
+    else:
+        return '', ''
 
 
 # function to save changes
@@ -246,7 +248,7 @@ def profile_delete(n_clicks):
     """
     Delete account
     """
-    if n_clicks and n_clicks > 0:
+    if n_clicks is not None and n_clicks > 0:
         email = current_user.email
         first = current_user.first
 
@@ -267,7 +269,7 @@ def profile_delete(n_clicks):
     [Input('profile-delete-trigger', 'children')]
 )
 def register_success(value):
-    if value is 1:
+    if value == 1:
         print("redirect")
         time.sleep(2)
         return dcc.Location(pathname='/home', id="redirect")

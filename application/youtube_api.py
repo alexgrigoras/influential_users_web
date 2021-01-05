@@ -107,11 +107,11 @@ class YoutubeAPI:
         if not search_results:
             self.__logger.info("Requesting data from youtube api")
 
-            if search_type is 'keyword':
+            if search_type == 'keyword':
                 results, etag, total_results = self.__get_search_results(nr_pages, q=keyword, part='id,snippet',
                                                                          maxResults=self.__max_results, order=order,
                                                                          type=content_str, pageToken=page_token)
-            elif search_type is 'location':
+            elif search_type == 'location':
                 results, etag, total_results = self.__get_search_results(nr_pages, location=keyword, part='id,snippet',
                                                                          maxResults=self.__max_results, order=order,
                                                                          type=content_str, pageToken=page_token,

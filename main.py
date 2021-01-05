@@ -90,7 +90,7 @@ app.layout = html.Div(
             className="wrapper bg-light"
         ),
         footer,
-        dcc.Location(id='base-url', refresh=False),
+        dcc.Location(id='base-url', refresh=True),
     ]
 )
 

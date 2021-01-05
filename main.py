@@ -24,7 +24,7 @@ from server import app, server
 
 menu_bar = [
     dbc.NavLink("Home", href="/home", className="ml-auto"),
-    dbc.NavLink("Dash", href="/dashboard", style={"margin": "0"}),
+    dbc.NavLink("Dashboard", href="/dashboard", style={"margin": "0"}),
     dbc.NavLink("Analysis", href="/analysis", style={"margin": "0"}),
     html.Div(id='dropdown-container', style={"margin": "0"}),
     dbc.NavLink('Login', id='user-action', href='/login', style={"margin": "0"}),
@@ -124,7 +124,18 @@ def router(pathname):
     elif pathname == '/analysis':
         return analysis.layout()
 
-    return html.Div(['404 - That page does not exist.', html.Br(), dcc.Link('Login', href='/login')])
+    error_page = dbc.Container([
+            html.Div([
+                html.Div("404", className="error mx-auto"),
+                html.P("Page Not Found", className="lead text-gray-800 mb-5"),
+                html.P("It looks like you found a glitch in the matrix...", className="text-gray-500 mb-0"),
+                html.Br(),
+                dcc.Link("← Back to Home", href='/home')
+            ], className="text-center")
+        ],
+        className="container-fluid")
+
+    return error_page
 
 
 @app.callback(

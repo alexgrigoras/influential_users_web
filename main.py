@@ -172,16 +172,17 @@ def toggle_navbar_collapse(n, is_open):
 
 @app.callback(
     [Output('user-action', 'children'),
-     Output('user-action', 'href')],
+     Output('user-action', 'href'),
+     Output('user-action', 'disabled')],
     [Input('page-content', 'children')])
 def user_logout(user_input):
     """
     returns a navbar link to /logout or /login, respectively, if the user is authenticated or not
     """
     if current_user.is_authenticated:
-        return '', ''
+        return '', '', 'True'
     else:
-        return 'Login', '/login'
+        return 'Login', '/login', None
 
 
 if __name__ == '__main__':

@@ -86,11 +86,11 @@ class NetworkAnalysis:
         self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.file_name + OBJECT_EXTENSION, "rb"))
 
     def store_network(self):
-        print(" - Stored " + NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
+        self.logger.info("Stored network: " + NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
         nx.write_gpickle(self.__graph, NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
 
-    def read_network(self):
-        print(" - Read " + NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
+    def import_network(self):
+        self.logger.info("Imported network " + NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
         self.__graph = nx.read_gpickle(NETWORKS_FOLDER + "/" + self.file_name + ".gpickle")
 
     def compute_page_rank(self):

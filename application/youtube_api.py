@@ -20,6 +20,7 @@ YOUTUBE_API_VERSION = 'v3'
 
 STRING_LENGTH = 10
 NETWORKS_FOLDER = '.networks'
+PATH = NETWORKS_FOLDER + "/"
 TEXT_EXTENSION = '.txt'
 OBJECT_EXTENSION = '.pickle'
 
@@ -44,6 +45,8 @@ class YoutubeAPI:
         self.__db = MongoDB()  # mongodb driver
         self.__max_results = 0  # the maximum number of results
         self.__get_authentication_service()  # get the authentication service for youtube api
+        self.__file_name = ""
+        self.__create_file_name()
 
     """ Search data """
 
@@ -338,6 +341,15 @@ class YoutubeAPI:
 
     """ Users Network """
 
+    def __create_file_name(self):
+        self.__file_name = "network_" + self.__random_string(STRING_LENGTH)
+        while os.path.exists(PATH + self.__file_name + ".*"):
+            self.__file_name = "network_" + self.__random_string(STRING_LENGTH)
+        self.__logger.info("File name: " + self.__file_name)
+
+    def get_file_name(self):
+        return self.__file_name
+
     def create_network(self, search_id):
         """
         Gets data from database and creates a file with the users edge-list
@@ -352,12 +364,8 @@ class YoutubeAPI:
         video_channel = {}
 
         # create file for network and open it for appending data
-        file_name = "network_" + self.__random_string(STRING_LENGTH)
-        path = NETWORKS_FOLDER + "/"
-        while os.path.exists(path + file_name + ".*"):
-            file_name = "network_" + self.__random_string(STRING_LENGTH)
-        self.__logger.info("File name: " + file_name)
-        f = open(path + file_name + TEXT_EXTENSION, "a")
+
+        f = open(PATH + self.__file_name + TEXT_EXTENSION, "a")
 
         # getting videos list from search
         results = self.__db.get_search_results({'_id': search_id}, {'results': 1})
@@ -424,12 +432,12 @@ class YoutubeAPI:
                     self.__logger.warning("Invalid key on channel_names.pop")
 
         # export data to
-        pickle.dump(channel_names, open(path + file_name + OBJECT_EXTENSION, "wb"))
+        pickle.dump(channel_names, open(PATH + self.__file_name + OBJECT_EXTENSION, "wb"))
 
         # close file
         f.close()
 
-        return file_name
+        return True
 
     """ Extract data """
 

@@ -44,8 +44,8 @@ def layout():
     # if current_user.is_authenticated:
     text_card = dbc.Card([
         dbc.CardHeader([
-                html.H6("Analyze YouTube Social Media", className="m-0 font-weight-bold text-primary"),
-            ],
+            html.H6("Analyze YouTube Social Media", className="m-0 font-weight-bold text-primary"),
+        ],
             className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
             [
@@ -74,7 +74,7 @@ def layout():
     search_card = dbc.Card([
         dbc.CardHeader([
             html.H6("Search", className="m-0 font-weight-bold text-primary"),
-            ],
+        ],
             className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
             [
@@ -115,11 +115,11 @@ def layout():
             [
                 dcc.Loading(
                     id="loading-1",
+                    children=html.Div(id="loading-output-1"),
                     type="circle",
-                    children=html.Div(id="loading-output-1")
                 ),
-                dbc.Col(html.Div(id='output-div', style={"width": "100%"}))
-            ]
+                html.Div(id='output-div', style={"width": "100%"}),
+            ],
         )],
         className="shadow mb-4"
     )
@@ -127,8 +127,8 @@ def layout():
     return dbc.Row(
         dbc.Col(
             children=[
+                location,
                 dbc.Container([
-                    location,
                     # Heading
                     html.Div(
                         html.H1("Analysis", className="h3 mb-0 text-gray-800"),
@@ -137,23 +137,25 @@ def layout():
 
                     # Search
                     dbc.Row(
-                        dbc.Col(dbc.CardDeck(
-                            [
-                                search_card,
-                                text_card
-                            ]
-                        ), width=12),
+                        [
+                            dbc.Col(
+                                dbc.CardDeck(
+                                    [
+                                        search_card,
+                                        text_card
+                                    ]
+                                ),
+                                width=12
+                            ),
+                            dbc.Col(result_card, width=12),
+                        ],
                         className="mb-4",
                     ),
 
-                    # Results
-                    dbc.Row(
-                        dbc.Col(result_card, width=12),
-                        className="mb-20",
-                    ),
-                ]),
-            ],
-            style={"margin-top": "40px"},
+                    ],
+                    style={"margin-top": "40px"},
+                ),
+            ]
         ),
     )
 
@@ -199,7 +201,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         crawler.process_search_results(results)
 
         try:
-            network_data = results['_id']
+            network_data = results[0]['_id']
             file_name = crawler.create_network(network_data)
         except TypeError:
             return '', quota_exceeded_alert, ''
@@ -218,7 +220,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         selected_nodes = []
         for u_id in sorted(ranks, key=ranks.get, reverse=True):
             selected_nodes.append(u_id)
-            val = {"Rank": index+1, "Value": check_value(ranks, u_id), 'Name': check_value(labels, u_id)}
+            val = {"Rank": index + 1, "Value": check_value(ranks, u_id), 'Name': check_value(labels, u_id)}
             values.append(val)
             index += 1
             if index >= limit:
@@ -250,7 +252,8 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
             ],
             id='dash-container'
         ), success_alert, ''
-
+    else:
+        return '', '', ''
 
 def create_data_table_network(values, columns):
     """

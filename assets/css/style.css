@@ -1,6 +1,10 @@
+body{
+    background-color: #f8f9fc;
+}
+
 .wrapper{
-  overflow:hidden;
-  width:100%;
+    overflow:hidden;
+    width:100%;
 }
 
 .nav-link {

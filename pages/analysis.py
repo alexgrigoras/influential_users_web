@@ -185,7 +185,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
             return '', failure_alert, ''
 
         if current_user.is_authenticated:
-            logger.info("User " + current_user.first + " " + current_user.last + " authenticated")
+            logger.info("User " + str(current_user.first) + " " + str(current_user.last) + " authenticated")
         else:
             logger.warning("User not authenticated")
 
@@ -199,7 +199,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         crawler.process_search_results(results)
 
         try:
-            network_data = results[0]['_id']
+            network_data = results['_id']
             file_name = crawler.create_network(network_data)
         except TypeError:
             return '', quota_exceeded_alert, ''
@@ -207,6 +207,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         # create users network
         network.set_file_name(file_name)
         network.create_network()
+        network.store_network()
         labels = network.get_labels()
         ranks = network.compute_page_rank()
         # network.compute_betweenness_centrality()
@@ -226,9 +227,9 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         fig = network.display_plotly(selected_nodes, graph_type)
 
         if send_finished_process_confirmation(current_user.email, current_user.first, keyword):
-            logger.info("Confirmation sent to " + current_user.email + " " + current_user.first)
+            logger.info("Confirmation sent to " + str(current_user.email) + " " + str(current_user.first))
         else:
-            logger.warning("Confirmation NOT sent to " + current_user.email + " " + current_user.first)
+            logger.warning("Confirmation NOT sent to " + str(current_user.email) + " " + str(current_user.first))
 
         # Create Layout
         return html.Div(

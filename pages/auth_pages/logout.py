@@ -62,7 +62,7 @@ def layout():
     [Input('logout-button', 'n_clicks')]
 )
 def logout_card(n_clicks):
-    if n_clicks == 0 or n_clicks is None:
+    if n_clicks is None:
         return no_update, no_update
     try:
         logout_user()

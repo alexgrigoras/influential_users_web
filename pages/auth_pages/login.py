@@ -95,7 +95,7 @@ def login_success(n_clicks, email, password):
     """
     logs in the user
     """
-    if n_clicks > 0:
+    if n_clicks is not None:
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):

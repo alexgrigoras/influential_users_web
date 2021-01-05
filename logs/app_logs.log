@@ -14154,3 +14154,963 @@ ValueError:
 2021-01-05 13:49:28,590 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:49:28] "POST /_dash-update-component HTTP/1.1" 200 -
 2021-01-05 13:49:28,603 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:49:28] "POST /_dash-update-component HTTP/1.1" 200 -
 2021-01-05 13:49:28,605 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:49:28] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:23,073 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-01-05 13:55:25,941 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:25] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:26,011 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:26] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:26,023 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:26] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:26,025 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:26] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:26,934 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:26] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:26,988 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:26] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:27,002 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:27] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:27,003 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:27] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:28,042 - auth - INFO - User not authenticated
+2021-01-05 13:55:28,048 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:28] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:28,106 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:28] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:28,108 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:28] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:28,118 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:28] "POST /_dash-update-component HTTP/1.1" 204 -
+2021-01-05 13:55:29,320 - login - INFO - User alex_grigoras_10@yahoo.com logged in
+2021-01-05 13:55:29,322 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:29,359 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:29,398 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 13:55:29,490 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 13:55:29,495 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 13:55:29,496 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 13:55:29,504 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 13:55:29,806 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 13:55:29,806 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 13:55:29,936 - auth - INFO - User authenticated
+2021-01-05 13:55:29,944 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:29,949 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:29,959 - auth - INFO - User authenticated
+2021-01-05 13:55:29,967 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:29] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:30,066 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:30] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:30,070 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:30] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:30,076 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:30] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:30,088 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:30] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 13:55:36,275 - analysis - INFO - User Alex Grigoras authenticated
+2021-01-05 13:55:37,133 - youtube_api - INFO - Searching resources by keyword [dji osmo]
+2021-01-05 13:55:37,176 - youtube_api - INFO - Requesting data from youtube api
+2021-01-05 13:55:37,853 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.tokens index: _id_ dup key: { _id: "CAIQAA" }
+2021-01-05 13:55:37,899 - mongodb - ERROR - Bulk write error: batch op errors occurred
+2021-01-05 13:55:37,900 - youtube_api - INFO - [RESULT] Video: Introducing the DJI Osmo
+2021-01-05 13:55:37,946 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.videos index: _id_ dup key: { _id: "tJZzgNwLoNA" }
+2021-01-05 13:55:38,528 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjY8BvrythVongCoAEC" }
+2021-01-05 13:55:38,700 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj4MjVodclMxHgCoAEC" }
+2021-01-05 13:55:38,743 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh1cu2HZWx-tHgCoAEC" }
+2021-01-05 13:55:38,873 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjx8wkTroxwxXgCoAEC" }
+2021-01-05 13:55:38,916 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgibMTeTWi34gHgCoAEC" }
+2021-01-05 13:55:38,959 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi5j7UqKp-BH3gCoAEC" }
+2021-01-05 13:55:39,003 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggIkIQjX8-0bXgCoAEC" }
+2021-01-05 13:55:39,046 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgixEO8FVvAT9XgCoAEC" }
+2021-01-05 13:55:39,090 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi0LeEmIZFa2HgCoAEC" }
+2021-01-05 13:55:39,133 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg6rlIcLO-K83gCoAEC" }
+2021-01-05 13:55:39,306 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggjDcP6Bui-engCoAEC" }
+2021-01-05 13:55:39,349 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugih6ZKmg5E12ngCoAEC" }
+2021-01-05 13:55:39,394 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghIjfMGYzZ77HgCoAEC" }
+2021-01-05 13:55:39,442 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghvWw0h6KDJ0ngCoAEC" }
+2021-01-05 13:55:39,486 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh02C7E1-iZG3gCoAEC" }
+2021-01-05 13:55:39,530 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGX7KVQgG05HgCoAEC" }
+2021-01-05 13:55:39,573 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6tFaHiTi5D3gCoAEC" }
+2021-01-05 13:55:39,833 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiBI7Wa2WcoWngCoAEC" }
+2021-01-05 13:55:39,876 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi_DzATGDg03ngCoAEC" }
+2021-01-05 13:55:40,146 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh71qm4BR3Ju3gCoAEC" }
+2021-01-05 13:55:40,190 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughneqb8eb8vXngCoAEC" }
+2021-01-05 13:55:40,320 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg1EBo6e2VM_3gCoAEC" }
+2021-01-05 13:55:40,364 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggVSQeBbg4jLHgCoAEC" }
+2021-01-05 13:55:40,407 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiA-Gg2lYdVMngCoAEC" }
+2021-01-05 13:55:40,451 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh3C5mNgBVjBngCoAEC" }
+2021-01-05 13:55:40,494 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIjjW7AN7B2HgCoAEC" }
+2021-01-05 13:55:40,538 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugijs1tux1BMeXgCoAEC" }
+2021-01-05 13:55:40,581 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjG_sHOnYGMkXgCoAEC" }
+2021-01-05 13:55:40,624 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghmOvGfH2nFengCoAEC" }
+2021-01-05 13:55:40,668 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh9A2DFtEtPvXgCoAEC" }
+2021-01-05 13:55:40,711 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdTitCUyIFT3gCoAEC" }
+2021-01-05 13:55:40,754 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghE43WZb3s5_3gCoAEC" }
+2021-01-05 13:55:40,797 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjbaQ3ljBQb93gCoAEC" }
+2021-01-05 13:55:40,841 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjN1j3Dp3WLH3gCoAEC" }
+2021-01-05 13:55:40,887 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6kCi8zZrmP3gCoAEC" }
+2021-01-05 13:55:40,931 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjjyHKU9fXxZXgCoAEC" }
+2021-01-05 13:55:40,975 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh1K_5GGmQDGHgCoAEC" }
+2021-01-05 13:55:41,018 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwJxK0eOE0-Ml7ViPl4AaABAg" }
+2021-01-05 13:55:41,064 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjTdpAzTCD_hXgCoAEC" }
+2021-01-05 13:55:41,107 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh3b6Z-V_uGlngCoAEC" }
+2021-01-05 13:55:41,150 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg2u_2QzDfrIHgCoAEC" }
+2021-01-05 13:55:41,212 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggpfDKs4-4Jr3gCoAEC" }
+2021-01-05 13:55:41,256 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwQ0fhbAvvZeu-nU4R4AaABAg" }
+2021-01-05 13:55:41,299 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjfYpq4vwPfhXgCoAEC" }
+2021-01-05 13:55:41,342 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghNfRLLoKq5lHgCoAEC" }
+2021-01-05 13:55:41,385 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdIONHV-5IOXgCoAEC" }
+2021-01-05 13:55:41,429 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghpQ8-wwot8pHgCoAEC" }
+2021-01-05 13:55:41,472 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_TScJarVwzngCoAEC" }
+2021-01-05 13:55:41,515 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiZymFoVSnyNHgCoAEC" }
+2021-01-05 13:55:41,559 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggn0bc2lYIVDXgCoAEC" }
+2021-01-05 13:55:41,603 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggiiA6GIv7VwHgCoAEC" }
+2021-01-05 13:55:41,733 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggo_8yxpocDHXgCoAEC" }
+2021-01-05 13:55:41,776 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxKaW1sIUWfjsuMiu14AaABAg" }
+2021-01-05 13:55:41,830 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjExUO9gnmZhHgCoAEC" }
+2021-01-05 13:55:41,873 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggvmuCGNcp0v3gCoAEC" }
+2021-01-05 13:55:41,917 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugijm270gjjpGXgCoAEC" }
+2021-01-05 13:55:41,960 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggEzfOuhT5bFHgCoAEC" }
+2021-01-05 13:55:42,004 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjCSrYCs6IA-HgCoAEC" }
+2021-01-05 13:55:42,048 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghKS-ulv-Cd_XgCoAEC" }
+2021-01-05 13:55:42,091 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggUKfJt6UZgUHgCoAEC" }
+2021-01-05 13:55:42,135 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiPyS9KcatF_HgCoAEC" }
+2021-01-05 13:55:42,178 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggO0Tubq_7SwngCoAEC" }
+2021-01-05 13:55:42,221 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxgQOBCjD2xrYyI_gV4AaABAg" }
+2021-01-05 13:55:42,264 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjwC-tPh36caHgCoAEC" }
+2021-01-05 13:55:42,308 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggLHxOWrxWInHgCoAEC" }
+2021-01-05 13:55:42,352 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggmY_0zFiTJB3gCoAEC" }
+2021-01-05 13:55:42,395 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi7i7x7aMnFKHgCoAEC" }
+2021-01-05 13:55:42,441 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj2fKgi7x8ti3gCoAEC" }
+2021-01-05 13:55:42,485 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyKgHA-bGJYTN2GAfB4AaABAg" }
+2021-01-05 13:55:42,529 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg2rDgOaXJ6sHgCoAEC" }
+2021-01-05 13:55:42,572 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggK-4U-KVfOSngCoAEC" }
+2021-01-05 13:55:42,615 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggbj1mgY1U35HgCoAEC" }
+2021-01-05 13:55:42,658 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghMEvBAWvpL8HgCoAEC" }
+2021-01-05 13:55:42,702 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghJazDA_koc4HgCoAEC" }
+2021-01-05 13:55:42,745 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgypWnKMcDokGjZ6ASR4AaABAg" }
+2021-01-05 13:55:42,789 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQWK4xvA92bHgCoAEC" }
+2021-01-05 13:55:42,833 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwZb_NhOo-DnQ8HuoN4AaABAg" }
+2021-01-05 13:55:42,876 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggARtmXDFEueHgCoAEC" }
+2021-01-05 13:55:42,919 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghNMrYW16g5KXgCoAEC" }
+2021-01-05 13:55:42,962 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjONYRUZmOJlHgCoAEC" }
+2021-01-05 13:55:43,006 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjJnFzNib6pZHgCoAEC" }
+2021-01-05 13:55:43,049 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj77zbQpXi58HgCoAEC" }
+2021-01-05 13:55:43,093 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggrsy9_BomTxXgCoAEC" }
+2021-01-05 13:55:43,136 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggHYdgu4i6Bz3gCoAEC" }
+2021-01-05 13:55:43,180 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgghavYwpOSNengCoAEC" }
+2021-01-05 13:55:43,223 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghCXfxGy6B3zXgCoAEC" }
+2021-01-05 13:55:43,266 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghK-KrPfNTtx3gCoAEC" }
+2021-01-05 13:55:43,309 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgggSGhIfGTmoXgCoAEC" }
+2021-01-05 13:55:43,353 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggewzfwkgeC7HgCoAEC" }
+2021-01-05 13:55:43,445 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjs4EsmSzmwWXgCoAEC" }
+2021-01-05 13:55:43,489 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxNpExmLya6N1VrlfN4AaABAg" }
+2021-01-05 13:55:43,532 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGiV2S5-hq33gCoAEC" }
+2021-01-05 13:55:43,575 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghH-tXDpIvLUHgCoAEC" }
+2021-01-05 13:55:43,618 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiaRKsKBXdg5HgCoAEC" }
+2021-01-05 13:55:43,662 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj0soihwwSlFngCoAEC" }
+2021-01-05 13:55:43,705 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggbIYZyCktA_HgCoAEC" }
+2021-01-05 13:55:43,749 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugiu1u1MslMwb3gCoAEC" }
+2021-01-05 13:55:43,792 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiSob0dzXI_-HgCoAEC" }
+2021-01-05 13:55:43,836 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggmeLCUXvrRWXgCoAEC" }
+2021-01-05 13:55:43,879 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjiyRa5SGle_XgCoAEC" }
+2021-01-05 13:55:44,346 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghQWdva5IxDDHgCoAEC" }
+2021-01-05 13:55:44,389 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjp3mnngXoq-XgCoAEC" }
+2021-01-05 13:55:44,432 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugw529kQ2wuDpYqbdF14AaABAg" }
+2021-01-05 13:55:44,476 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugzk5__VPeBqjY0qaFF4AaABAg" }
+2021-01-05 13:55:44,520 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg4ORmoAk2RkngCoAEC" }
+2021-01-05 13:55:44,564 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi-ec1aAAKBDHgCoAEC" }
+2021-01-05 13:55:44,607 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggTaGfRx9Z2jXgCoAEC" }
+2021-01-05 13:55:44,650 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghqwfJtbbR8jHgCoAEC" }
+2021-01-05 13:55:44,693 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggzWLxDDpCa5HgCoAEC" }
+2021-01-05 13:55:44,736 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjl5KRrYS6UZHgCoAEC" }
+2021-01-05 13:55:44,780 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggEiekvGXtwW3gCoAEC" }
+2021-01-05 13:55:44,823 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjmoMhuOWTZngCoAEC" }
+2021-01-05 13:55:44,867 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7nxSyP6pDQHgCoAEC" }
+2021-01-05 13:55:44,910 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggcYMb29X86aXgCoAEC" }
+2021-01-05 13:55:44,953 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiOTrn-AhATpHgCoAEC" }
+2021-01-05 13:55:44,996 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiMR-n5vkPv-3gCoAEC" }
+2021-01-05 13:55:45,254 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghCIM_Vmgbe6XgCoAEC" }
+2021-01-05 13:55:45,297 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggplyS1K-IxBngCoAEC" }
+2021-01-05 13:55:45,340 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiJrH6wlTY6dngCoAEC" }
+2021-01-05 13:55:45,382 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugizy0j1709jg3gCoAEC" }
+2021-01-05 13:55:45,425 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghYwCDTPeMD1HgCoAEC" }
+2021-01-05 13:55:45,469 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugxkn4FJqkJoz6yJCvp4AaABAg" }
+2021-01-05 13:55:45,516 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjLdZl_J6SQSXgCoAEC" }
+2021-01-05 13:55:45,559 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGBfcxuqHnangCoAEC" }
+2021-01-05 13:55:45,602 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjcgCyv2VoztXgCoAEC" }
+2021-01-05 13:55:45,645 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi6r6nZ6BkyeHgCoAEC" }
+2021-01-05 13:55:45,688 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzkxO-Hcz3z_0y8PXF4AaABAg" }
+2021-01-05 13:55:45,730 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggPn8LS_cwNxXgCoAEC" }
+2021-01-05 13:55:45,773 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjkpg_LY43VQ3gCoAEC" }
+2021-01-05 13:55:45,817 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjx8njdN8sDkHgCoAEC" }
+2021-01-05 13:55:45,860 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzgxJHFYQdStRuQfZN4AaABAg" }
+2021-01-05 13:55:45,903 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiXvQOa9Mf9ingCoAEC" }
+2021-01-05 13:55:45,945 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugylb02xZMV-u701u614AaABAg" }
+2021-01-05 13:55:45,988 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjqzXGZ36DJXgCoAEC" }
+2021-01-05 13:55:46,031 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzgJYaQgP6IXgCoAEC" }
+2021-01-05 13:55:46,074 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz-LSMDXBzGAj-L6-l4AaABAg" }
+2021-01-05 13:55:46,117 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMaEMuJB5-YHgCoAEC" }
+2021-01-05 13:55:46,160 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjrP8zGQvf33ngCoAEC" }
+2021-01-05 13:55:46,203 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjGOSUzsWx_xHgCoAEC" }
+2021-01-05 13:55:46,289 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi9Ra8raTcxP3gCoAEC" }
+2021-01-05 13:55:46,332 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6rg5aT-C5oHgCoAEC" }
+2021-01-05 13:55:46,375 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh_OzJdQs4PjXgCoAEC" }
+2021-01-05 13:55:46,418 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz4k2xhEGdWEYumOYV4AaABAg" }
+2021-01-05 13:55:46,475 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggWfu7ZLzU7D3gCoAEC" }
+2021-01-05 13:55:46,518 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughhhx04zomBD3gCoAEC" }
+2021-01-05 13:55:46,561 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzXJpV8V_cFK33sDC14AaABAg" }
+2021-01-05 13:55:46,604 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggwRuCdhdRzqXgCoAEC" }
+2021-01-05 13:55:46,647 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxS4b2JJ9YCupA2Rr94AaABAg" }
+2021-01-05 13:55:46,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzETiQI-79hBYMN1Sh4AaABAg" }
+2021-01-05 13:55:46,733 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugil6Ekmgl8nnHgCoAEC" }
+2021-01-05 13:55:46,777 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwzxRPrUz127_yiqoF4AaABAg" }
+2021-01-05 13:55:46,820 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi4uDcxYgU2I3gCoAEC" }
+2021-01-05 13:55:46,863 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzFkF96hBEDPxjYdSJ4AaABAg" }
+2021-01-05 13:55:46,906 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjUBg93gK9TVHgCoAEC" }
+2021-01-05 13:55:46,949 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwPox8FLiyDQqff4Fx4AaABAg" }
+2021-01-05 13:55:46,992 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzmWEDrkaKGXOT0mR14AaABAg" }
+2021-01-05 13:55:47,035 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggMk_qCBl5BQHgCoAEC" }
+2021-01-05 13:55:47,079 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjmuT5C12ISK3gCoAEC" }
+2021-01-05 13:55:47,123 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiNxgHj2fRk5ngCoAEC" }
+2021-01-05 13:55:47,166 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjUXdeFhPfGv3gCoAEC" }
+2021-01-05 13:55:47,209 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghN-Ye1gabByHgCoAEC" }
+2021-01-05 13:55:47,253 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi78wkwYiPDqXgCoAEC" }
+2021-01-05 13:55:47,296 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiVcyo4aSY8hngCoAEC" }
+2021-01-05 13:55:47,339 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzBy2yrk9rZlixRoRd4AaABAg" }
+2021-01-05 13:55:47,382 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgivkMfhhGQ41HgCoAEC" }
+2021-01-05 13:55:47,511 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjHgxakN80pangCoAEC" }
+2021-01-05 13:55:47,598 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzPMkaHHTatXgCoAEC" }
+2021-01-05 13:55:47,642 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwchpvGpFm7k7QkIMx4AaABAg" }
+2021-01-05 13:55:47,685 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggxP35ezmcdS3gCoAEC" }
+2021-01-05 13:55:47,728 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggMuXRjMbjMG3gCoAEC" }
+2021-01-05 13:55:47,773 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQ1pamuKfIoXgCoAEC" }
+2021-01-05 13:55:47,816 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggYjE7bANqx1HgCoAEC" }
+2021-01-05 13:55:47,860 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwBZ0wkYwi72Assw-14AaABAg" }
+2021-01-05 13:55:47,903 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjl1Cj3dP7cPHgCoAEC" }
+2021-01-05 13:55:47,946 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbF-UG6hwMi3gCoAEC" }
+2021-01-05 13:55:47,989 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggOEKuhnD52JHgCoAEC" }
+2021-01-05 13:55:48,033 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghL2xAFIIpuZHgCoAEC" }
+2021-01-05 13:55:48,076 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyMQ_D0LaeX_dY7srN4AaABAg" }
+2021-01-05 13:55:48,119 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughw15w55ap3pHgCoAEC" }
+2021-01-05 13:55:48,163 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggbNXVXg61O8HgCoAEC" }
+2021-01-05 13:55:48,207 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghHMOTK9ximn3gCoAEC" }
+2021-01-05 13:55:48,250 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjxIAKM1MWW53gCoAEC" }
+2021-01-05 13:55:48,294 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiijUPP6cbBwHgCoAEC" }
+2021-01-05 13:55:48,337 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg76KF0xpYIvngCoAEC" }
+2021-01-05 13:55:48,380 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiS3CTASR_7E3gCoAEC" }
+2021-01-05 13:55:48,423 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKzUwkKlALr3gCoAEC" }
+2021-01-05 13:55:48,466 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7TFq8LBwvjngCoAEC" }
+2021-01-05 13:55:48,510 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyKrLpRLDChq2f9B1l4AaABAg" }
+2021-01-05 13:55:48,553 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx6ninjqKffTbdfW0J4AaABAg" }
+2021-01-05 13:55:48,596 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj8vjKAzF-5PHgCoAEC" }
+2021-01-05 13:55:48,640 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz48XZK-tsrnQPBGBd4AaABAg" }
+2021-01-05 13:55:48,683 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi5nrOF_eGj_XgCoAEC" }
+2021-01-05 13:55:48,726 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugy1CQcsvg8c84FmdQ54AaABAg" }
+2021-01-05 13:55:48,770 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjRZW5es3Ww7ngCoAEC" }
+2021-01-05 13:55:48,813 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjLiHhJP6qu7ngCoAEC" }
+2021-01-05 13:55:48,856 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggNM3nQPWWPs3gCoAEC" }
+2021-01-05 13:55:48,899 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6fdlWrPcJkXgCoAEC" }
+2021-01-05 13:55:48,942 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMsuIIWFOt5XgCoAEC" }
+2021-01-05 13:55:48,985 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbOXG1dCInRXgCoAEC" }
+2021-01-05 13:55:49,028 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughltw7Q8Dt8JngCoAEC" }
+2021-01-05 13:55:49,460 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKOqsKBFXMVHgCoAEC" }
+2021-01-05 13:55:49,508 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyCl1Ck5yoY01i1RVF4AaABAg" }
+2021-01-05 13:55:49,551 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugietol6SiqLcngCoAEC" }
+2021-01-05 13:55:49,723 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiAFLH48O7uyngCoAEC" }
+2021-01-05 13:55:49,767 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjIVUFwrAgK3gCoAEC" }
+2021-01-05 13:55:49,810 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggjAtBnpUTMn3gCoAEC" }
+2021-01-05 13:55:49,853 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghI75mPur9d1HgCoAEC" }
+2021-01-05 13:55:49,896 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz1M6M27JZ3r4NN8Wx4AaABAg" }
+2021-01-05 13:55:49,940 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjT0AglnHDjJXgCoAEC" }
+2021-01-05 13:55:49,983 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzpI-5aMG6RTbC6IWd4AaABAg" }
+2021-01-05 13:55:50,026 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiDQyEAR_ovUXgCoAEC" }
+2021-01-05 13:55:50,069 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh_lu7v38L4n3gCoAEC" }
+2021-01-05 13:55:50,112 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyxBBW6wNVLBQmtXyV4AaABAg" }
+2021-01-05 13:55:50,156 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbY3e9slaNUXgCoAEC" }
+2021-01-05 13:55:50,199 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyVFJiH5PbWMCMqWpB4AaABAg" }
+2021-01-05 13:55:50,243 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggaCkZYJzRxxHgCoAEC" }
+2021-01-05 13:55:50,373 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh82Ice2s4m1ngCoAEC" }
+2021-01-05 13:55:50,417 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiQ0W7hEUpZOXgCoAEC" }
+2021-01-05 13:55:50,459 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjWx6z2TtUd-3gCoAEC" }
+2021-01-05 13:55:50,502 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjJXIOHIVIC0ngCoAEC" }
+2021-01-05 13:55:50,545 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughpt5rB-TgNlngCoAEC" }
+2021-01-05 13:55:50,588 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwBIUaBBre6ALGoSER4AaABAg" }
+2021-01-05 13:55:50,632 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjpnTyWdiaw83gCoAEC" }
+2021-01-05 13:55:50,675 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgglJV8ruhZrgngCoAEC" }
+2021-01-05 13:55:50,718 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiiEzCSx2qnq3gCoAEC" }
+2021-01-05 13:55:50,761 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj35nwgsqiIoXgCoAEC" }
+2021-01-05 13:55:50,804 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggYUwnolKyRMXgCoAEC" }
+2021-01-05 13:55:50,847 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6st-Iuu_4N3gCoAEC" }
+2021-01-05 13:55:50,890 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggABRIJGUPfT3gCoAEC" }
+2021-01-05 13:55:50,933 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxZvnWr7betZHgpv2N4AaABAg" }
+2021-01-05 13:55:50,976 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghpTIQB8aQe7XgCoAEC" }
+2021-01-05 13:55:51,019 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghDrsY9GPw2FXgCoAEC" }
+2021-01-05 13:55:51,062 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgieDAOeL-ygcXgCoAEC" }
+2021-01-05 13:55:51,105 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugw9V2MvH6t7Oo8t6eB4AaABAg" }
+2021-01-05 13:55:51,148 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjhka7Bncqb93gCoAEC" }
+2021-01-05 13:55:51,191 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjZntbxyncScXgCoAEC" }
+2021-01-05 13:55:51,234 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiSt2_Th75bz3gCoAEC" }
+2021-01-05 13:55:51,277 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggzh2SJa2o_5HgCoAEC" }
+2021-01-05 13:55:51,363 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiEw41jMlBd4HgCoAEC" }
+2021-01-05 13:55:51,406 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi71ydP0Gh0dXgCoAEC" }
+2021-01-05 13:55:51,449 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwYZ8AhhwWrS3oH6U94AaABAg" }
+2021-01-05 13:55:51,492 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxWl8GsSKRklrUpogt4AaABAg" }
+2021-01-05 13:55:51,535 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi3dRYgkwXZ-3gCoAEC" }
+2021-01-05 13:55:51,578 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKEON2g2x8_ngCoAEC" }
+2021-01-05 13:55:51,621 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgibH9kHM6LE3ngCoAEC" }
+2021-01-05 13:55:51,665 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMU-oiaQ4XtngCoAEC" }
+2021-01-05 13:55:51,707 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_Tr-foAAij3gCoAEC" }
+2021-01-05 13:55:51,750 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg3HpSnF4ZWcXgCoAEC" }
+2021-01-05 13:55:51,795 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughn2xVanGTblXgCoAEC" }
+2021-01-05 13:55:51,839 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj3OGFDO0U15XgCoAEC" }
+2021-01-05 13:55:51,882 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugie77dLqKtptngCoAEC" }
+2021-01-05 13:55:51,925 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggAMOepmdyoq3gCoAEC" }
+2021-01-05 13:55:51,969 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzQvMi1jfoMHgCoAEC" }
+2021-01-05 13:55:52,012 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx3zPKiHcI-KAy2Mup4AaABAg" }
+2021-01-05 13:55:52,056 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7wAwxqR4TkXgCoAEC" }
+2021-01-05 13:55:52,142 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbzmjYOG7wu3gCoAEC" }
+2021-01-05 13:55:52,185 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwaH9nAy7-WzIWuoJV4AaABAg" }
+2021-01-05 13:55:52,228 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzAlqW45NVsEcs5r4l4AaABAg" }
+2021-01-05 13:55:52,272 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi6ujA1vSfbX3gCoAEC" }
+2021-01-05 13:55:52,315 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgifcW05j5eR5ngCoAEC" }
+2021-01-05 13:55:52,358 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghtW9bGdpW_9XgCoAEC" }
+2021-01-05 13:55:52,401 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwTA_A8ZDzKF21lWIp4AaABAg" }
+2021-01-05 13:55:52,444 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiBOn3LqE9y83gCoAEC" }
+2021-01-05 13:55:52,487 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx_W72d3DDaeeQXH094AaABAg" }
+2021-01-05 13:55:52,530 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggqueHDvwgrP3gCoAEC" }
+2021-01-05 13:55:52,574 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7zuPyfRC1-ngCoAEC" }
+2021-01-05 13:55:52,660 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjNo1fL4ssv3ngCoAEC" }
+2021-01-05 13:55:52,703 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwvMV12gzdeRg_79KV4AaABAg" }
+2021-01-05 13:55:52,746 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_iZJca0BOBHgCoAEC" }
+2021-01-05 13:55:52,833 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiMOhy_AuYCVHgCoAEC" }
+2021-01-05 13:55:52,875 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggHe-19XWQa5ngCoAEC" }
+2021-01-05 13:55:52,920 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughder1XirRdYXgCoAEC" }
+2021-01-05 13:55:52,963 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwlVk_JvqAPlNdd9kl4AaABAg" }
+2021-01-05 13:55:53,006 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxqzPTGjUlXJG4UIk54AaABAg" }
+2021-01-05 13:55:53,048 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugju-ooq2KPwF3gCoAEC" }
+2021-01-05 13:55:53,091 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQi8oTF34E5XgCoAEC" }
+2021-01-05 13:55:53,177 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiiJM4ZhSC073gCoAEC" }
+2021-01-05 13:55:53,349 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggd_WUNJ10_eXgCoAEC" }
+2021-01-05 13:55:53,392 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdqGWX0KFpHngCoAEC" }
+2021-01-05 13:55:53,436 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMsbyshtVP9ngCoAEC" }
+2021-01-05 13:55:53,522 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyqgXZDbktx9ut_iDN4AaABAg" }
+2021-01-05 13:55:53,608 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyY-Z22tjqxyle09oZ4AaABAg" }
+2021-01-05 13:55:53,651 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyTlCpB4_pcFoNaBnR4AaABAg" }
+2021-01-05 13:55:53,694 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugzpz_VmJ9hIGZy4Ned4AaABAg" }
+2021-01-05 13:55:53,781 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggqlKj2TNqTXXgCoAEC" }
+2021-01-05 13:55:53,824 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjSFKVF3bTs7HgCoAEC" }
+2021-01-05 13:55:53,868 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi8liS5lVHGxngCoAEC" }
+2021-01-05 13:55:53,911 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggI98aOT59-6ngCoAEC" }
+2021-01-05 13:55:53,954 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIh1r40S0wdngCoAEC" }
+2021-01-05 13:55:54,183 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggsHAR9oKmdHngCoAEC" }
+2021-01-05 13:55:54,226 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIOVArb1hd7HgCoAEC" }
+2021-01-05 13:55:54,314 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghZlvqfKnqFwngCoAEC" }
+2021-01-05 13:55:54,357 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxvrICuUmycYMnvdFR4AaABAg" }
+2021-01-05 13:55:54,401 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjpAhs8v4RlRXgCoAEC" }
+2021-01-05 13:55:54,660 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxZT2NdWeFuwJxoYHh4AaABAg" }
+2021-01-05 13:55:54,703 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghS0_F-Lxdp8XgCoAEC" }
+2021-01-05 13:55:54,747 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghlLYJzRWmlLXgCoAEC" }
+2021-01-05 13:55:54,790 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg-uuQjscuekngCoAEC" }
+2021-01-05 13:55:54,833 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzAGTJHRwrYIYPUCi14AaABAg" }
+2021-01-05 13:55:54,876 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggdZSwSpXCjH3gCoAEC" }
+2021-01-05 13:55:55,529 - youtube_api - INFO - File name: network_CFMcwKgUbD
+2021-01-05 13:55:55,940 - network_analysis - INFO - Stored network: .networks/network_CFMcwKgUbD.gpickle
+2021-01-05 13:55:55,989 - server - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/networkx/drawing/nx_agraph.py", line 255, in pygraphviz_layout
+    import pygraphviz
+ModuleNotFoundError: No module named 'pygraphviz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/dash/dash.py", line 1459, in dispatch
+    response.set_data(self.callback_map[output]["callback"](*args))
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/dash/dash.py", line 1339, in add_context
+    output_value = func(*args, **kwargs)  # %% callback invoked %%
+  File "/home/alexgrigoras/Projects/influential_users_web/pages/analysis.py", line 229, in update_output
+    fig = network.display_plotly(selected_nodes, graph_type)
+  File "/home/alexgrigoras/Projects/influential_users_web/application/network_analysis.py", line 174, in display_plotly
+    fig = visualize_graph(tree, node_labels, node_sizes, edge_weights, "graphviz", "2D visualization")
+  File "/home/alexgrigoras/Projects/influential_users_web/application/plotly_display.py", line 44, in visualize_graph
+    positions = reformat_graph_layout(graph, layout)
+  File "/home/alexgrigoras/Projects/influential_users_web/application/plotly_display.py", line 14, in reformat_graph_layout
+    positions = graphviz_layout(graph)
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/networkx/drawing/nx_agraph.py", line 228, in graphviz_layout
+    return pygraphviz_layout(G,prog=prog,root=root,args=args)
+  File "/home/alexgrigoras/Projects/influential_users_web/env/lib/python3.8/site-packages/networkx/drawing/nx_agraph.py", line 257, in pygraphviz_layout
+    raise ImportError('requires pygraphviz ',
+ImportError: ('requires pygraphviz ', 'http://pygraphviz.github.io/')
+2021-01-05 13:55:55,991 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 13:55:55] "POST /_dash-update-component HTTP/1.1" 500 -
+2021-01-05 14:03:49,122 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-01-05 14:03:55,455 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:03:55,499 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:55,502 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:03:55,502 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/all.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,504 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/all.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,505 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:55,506 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:55,507 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/brands.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,515 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/brands.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,516 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/regular.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,519 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/regular.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,520 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/fontawesome.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,521 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/solid.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,524 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/fontawesome.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,529 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/solid.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,535 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/svg-with-js.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,547 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/svg-with-js.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,548 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/v4-shims.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,551 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/simple-line-icons/css/simple-line-icons.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,552 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/css/landing-page.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,552 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/fontawesome-free/css/v4-shims.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,555 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/css/landing-page.min.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,559 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/css/style.css?m=1609835608.1952748 HTTP/1.1" 200 -
+2021-01-05 14:03:55,564 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_renderer/react@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,565 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/css/sb-admin-2.min.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,566 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/css/sb-admin-2.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,571 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_renderer/polyfill@7.v1_2_3m1579025636.7.0.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,578 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_renderer/prop-types@15.v1_2_3m1579025636.7.2.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,579 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_renderer/react-dom@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,579 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_table/bundle.v4_6_0m1579023583.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,582 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_core_components/dash_core_components-shared.v1_7_0m1579024541.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,590 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_core_components/dash_core_components.v1_7_0m1579024541.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,604 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_html_components/dash_html_components.v1_0_2m1573762545.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,606 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/jquery/jquery.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,608 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_bootstrap_components/_components/dash_bootstrap_components.v0_8_1m1609846361.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,610 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/jquery/jquery.slim.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,613 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/jquery/jquery.slim.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:55,617 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /_dash-component-suites/dash_renderer/dash_renderer.v1_2_3m1579025647.min.js HTTP/1.1" 200 -
+2021-01-05 14:03:55,619 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:55] "GET /assets/vendor/jquery/jquery.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:03:56,057 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:03:56,058 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:03:56,070 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /_favicon.ico?v=1.8.0 HTTP/1.1" 200 -
+2021-01-05 14:03:56,146 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /static/images/logo.png HTTP/1.1" 200 -
+2021-01-05 14:03:56,192 - auth - INFO - User authenticated
+2021-01-05 14:03:56,193 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,207 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,214 - auth - INFO - User authenticated
+2021-01-05 14:03:56,216 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,249 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /login HTTP/1.1" 200 -
+2021-01-05 14:03:56,262 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /login HTTP/1.1" 200 -
+2021-01-05 14:03:56,264 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,266 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,339 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:56,340 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:03:56,340 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:56,341 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:56,631 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:03:56,633 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:03:56,748 - auth - INFO - User not authenticated
+2021-01-05 14:03:56,754 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,761 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,773 - auth - INFO - User not authenticated
+2021-01-05 14:03:56,778 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,863 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,865 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:56,884 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:56] "POST /_dash-update-component HTTP/1.1" 204 -
+2021-01-05 14:03:58,530 - login - INFO - User alex_grigoras_10@yahoo.com logged in
+2021-01-05 14:03:58,531 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:58,569 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:58,608 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:03:58,649 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:58,651 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:03:58,652 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:58,652 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:03:58,949 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:03:58,950 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:58] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:03:59,074 - auth - INFO - User authenticated
+2021-01-05 14:03:59,082 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,092 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,101 - auth - INFO - User authenticated
+2021-01-05 14:03:59,110 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,197 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,199 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,211 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:03:59,225 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:03:59] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:04:03,136 - analysis - INFO - User Alex Grigoras authenticated
+2021-01-05 14:04:03,969 - youtube_api - INFO - Searching resources by keyword [dji osmo]
+2021-01-05 14:04:04,009 - youtube_api - INFO - Requesting data from youtube api
+2021-01-05 14:04:04,729 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.tokens index: _id_ dup key: { _id: "CAIQAA" }
+2021-01-05 14:04:04,771 - mongodb - ERROR - Bulk write error: batch op errors occurred
+2021-01-05 14:04:04,771 - youtube_api - INFO - [RESULT] Video: Introducing the DJI Osmo
+2021-01-05 14:04:04,814 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.videos index: _id_ dup key: { _id: "tJZzgNwLoNA" }
+2021-01-05 14:04:05,125 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjY8BvrythVongCoAEC" }
+2021-01-05 14:04:05,285 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj4MjVodclMxHgCoAEC" }
+2021-01-05 14:04:05,324 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh1cu2HZWx-tHgCoAEC" }
+2021-01-05 14:04:05,448 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjx8wkTroxwxXgCoAEC" }
+2021-01-05 14:04:05,488 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgibMTeTWi34gHgCoAEC" }
+2021-01-05 14:04:05,527 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi5j7UqKp-BH3gCoAEC" }
+2021-01-05 14:04:05,566 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggIkIQjX8-0bXgCoAEC" }
+2021-01-05 14:04:05,610 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgixEO8FVvAT9XgCoAEC" }
+2021-01-05 14:04:05,650 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi0LeEmIZFa2HgCoAEC" }
+2021-01-05 14:04:05,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg6rlIcLO-K83gCoAEC" }
+2021-01-05 14:04:05,851 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggjDcP6Bui-engCoAEC" }
+2021-01-05 14:04:05,891 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugih6ZKmg5E12ngCoAEC" }
+2021-01-05 14:04:05,930 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghIjfMGYzZ77HgCoAEC" }
+2021-01-05 14:04:05,969 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghvWw0h6KDJ0ngCoAEC" }
+2021-01-05 14:04:06,009 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh02C7E1-iZG3gCoAEC" }
+2021-01-05 14:04:06,049 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGX7KVQgG05HgCoAEC" }
+2021-01-05 14:04:06,088 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6tFaHiTi5D3gCoAEC" }
+2021-01-05 14:04:06,354 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiBI7Wa2WcoWngCoAEC" }
+2021-01-05 14:04:06,398 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi_DzATGDg03ngCoAEC" }
+2021-01-05 14:04:06,651 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh71qm4BR3Ju3gCoAEC" }
+2021-01-05 14:04:06,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughneqb8eb8vXngCoAEC" }
+2021-01-05 14:04:06,809 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg1EBo6e2VM_3gCoAEC" }
+2021-01-05 14:04:06,849 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggVSQeBbg4jLHgCoAEC" }
+2021-01-05 14:04:06,888 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiA-Gg2lYdVMngCoAEC" }
+2021-01-05 14:04:06,928 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh3C5mNgBVjBngCoAEC" }
+2021-01-05 14:04:06,968 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIjjW7AN7B2HgCoAEC" }
+2021-01-05 14:04:07,008 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugijs1tux1BMeXgCoAEC" }
+2021-01-05 14:04:07,047 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjG_sHOnYGMkXgCoAEC" }
+2021-01-05 14:04:07,087 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghmOvGfH2nFengCoAEC" }
+2021-01-05 14:04:07,126 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh9A2DFtEtPvXgCoAEC" }
+2021-01-05 14:04:07,166 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdTitCUyIFT3gCoAEC" }
+2021-01-05 14:04:07,206 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghE43WZb3s5_3gCoAEC" }
+2021-01-05 14:04:07,245 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjbaQ3ljBQb93gCoAEC" }
+2021-01-05 14:04:07,285 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjN1j3Dp3WLH3gCoAEC" }
+2021-01-05 14:04:07,324 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6kCi8zZrmP3gCoAEC" }
+2021-01-05 14:04:07,363 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjjyHKU9fXxZXgCoAEC" }
+2021-01-05 14:04:07,402 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh1K_5GGmQDGHgCoAEC" }
+2021-01-05 14:04:07,443 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwJxK0eOE0-Ml7ViPl4AaABAg" }
+2021-01-05 14:04:07,483 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjTdpAzTCD_hXgCoAEC" }
+2021-01-05 14:04:07,524 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh3b6Z-V_uGlngCoAEC" }
+2021-01-05 14:04:07,564 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg2u_2QzDfrIHgCoAEC" }
+2021-01-05 14:04:07,603 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggpfDKs4-4Jr3gCoAEC" }
+2021-01-05 14:04:07,642 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwQ0fhbAvvZeu-nU4R4AaABAg" }
+2021-01-05 14:04:07,681 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjfYpq4vwPfhXgCoAEC" }
+2021-01-05 14:04:07,724 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghNfRLLoKq5lHgCoAEC" }
+2021-01-05 14:04:07,763 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdIONHV-5IOXgCoAEC" }
+2021-01-05 14:04:07,802 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghpQ8-wwot8pHgCoAEC" }
+2021-01-05 14:04:07,842 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_TScJarVwzngCoAEC" }
+2021-01-05 14:04:07,880 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiZymFoVSnyNHgCoAEC" }
+2021-01-05 14:04:07,919 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggn0bc2lYIVDXgCoAEC" }
+2021-01-05 14:04:07,959 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggiiA6GIv7VwHgCoAEC" }
+2021-01-05 14:04:08,078 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggo_8yxpocDHXgCoAEC" }
+2021-01-05 14:04:08,117 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxKaW1sIUWfjsuMiu14AaABAg" }
+2021-01-05 14:04:08,157 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjExUO9gnmZhHgCoAEC" }
+2021-01-05 14:04:08,197 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggvmuCGNcp0v3gCoAEC" }
+2021-01-05 14:04:08,236 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugijm270gjjpGXgCoAEC" }
+2021-01-05 14:04:08,276 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggEzfOuhT5bFHgCoAEC" }
+2021-01-05 14:04:08,315 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjCSrYCs6IA-HgCoAEC" }
+2021-01-05 14:04:08,355 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghKS-ulv-Cd_XgCoAEC" }
+2021-01-05 14:04:08,394 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggUKfJt6UZgUHgCoAEC" }
+2021-01-05 14:04:08,434 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiPyS9KcatF_HgCoAEC" }
+2021-01-05 14:04:08,474 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggO0Tubq_7SwngCoAEC" }
+2021-01-05 14:04:08,513 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxgQOBCjD2xrYyI_gV4AaABAg" }
+2021-01-05 14:04:08,553 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjwC-tPh36caHgCoAEC" }
+2021-01-05 14:04:08,592 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggLHxOWrxWInHgCoAEC" }
+2021-01-05 14:04:08,631 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggmY_0zFiTJB3gCoAEC" }
+2021-01-05 14:04:08,671 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi7i7x7aMnFKHgCoAEC" }
+2021-01-05 14:04:08,710 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj2fKgi7x8ti3gCoAEC" }
+2021-01-05 14:04:08,752 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyKgHA-bGJYTN2GAfB4AaABAg" }
+2021-01-05 14:04:08,792 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg2rDgOaXJ6sHgCoAEC" }
+2021-01-05 14:04:08,831 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggK-4U-KVfOSngCoAEC" }
+2021-01-05 14:04:08,870 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggbj1mgY1U35HgCoAEC" }
+2021-01-05 14:04:08,910 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghMEvBAWvpL8HgCoAEC" }
+2021-01-05 14:04:08,949 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghJazDA_koc4HgCoAEC" }
+2021-01-05 14:04:08,989 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgypWnKMcDokGjZ6ASR4AaABAg" }
+2021-01-05 14:04:09,029 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQWK4xvA92bHgCoAEC" }
+2021-01-05 14:04:09,069 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwZb_NhOo-DnQ8HuoN4AaABAg" }
+2021-01-05 14:04:09,108 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggARtmXDFEueHgCoAEC" }
+2021-01-05 14:04:09,148 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghNMrYW16g5KXgCoAEC" }
+2021-01-05 14:04:09,188 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjONYRUZmOJlHgCoAEC" }
+2021-01-05 14:04:09,227 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjJnFzNib6pZHgCoAEC" }
+2021-01-05 14:04:09,267 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj77zbQpXi58HgCoAEC" }
+2021-01-05 14:04:09,306 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggrsy9_BomTxXgCoAEC" }
+2021-01-05 14:04:09,345 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggHYdgu4i6Bz3gCoAEC" }
+2021-01-05 14:04:09,385 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgghavYwpOSNengCoAEC" }
+2021-01-05 14:04:09,424 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghCXfxGy6B3zXgCoAEC" }
+2021-01-05 14:04:09,464 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghK-KrPfNTtx3gCoAEC" }
+2021-01-05 14:04:09,503 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgggSGhIfGTmoXgCoAEC" }
+2021-01-05 14:04:09,543 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggewzfwkgeC7HgCoAEC" }
+2021-01-05 14:04:09,621 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjs4EsmSzmwWXgCoAEC" }
+2021-01-05 14:04:09,661 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxNpExmLya6N1VrlfN4AaABAg" }
+2021-01-05 14:04:09,700 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGiV2S5-hq33gCoAEC" }
+2021-01-05 14:04:09,739 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghH-tXDpIvLUHgCoAEC" }
+2021-01-05 14:04:09,778 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiaRKsKBXdg5HgCoAEC" }
+2021-01-05 14:04:09,818 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj0soihwwSlFngCoAEC" }
+2021-01-05 14:04:09,858 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggbIYZyCktA_HgCoAEC" }
+2021-01-05 14:04:09,897 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugiu1u1MslMwb3gCoAEC" }
+2021-01-05 14:04:09,936 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiSob0dzXI_-HgCoAEC" }
+2021-01-05 14:04:09,976 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggmeLCUXvrRWXgCoAEC" }
+2021-01-05 14:04:10,015 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjiyRa5SGle_XgCoAEC" }
+2021-01-05 14:04:10,469 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghQWdva5IxDDHgCoAEC" }
+2021-01-05 14:04:10,509 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjp3mnngXoq-XgCoAEC" }
+2021-01-05 14:04:10,548 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugw529kQ2wuDpYqbdF14AaABAg" }
+2021-01-05 14:04:10,588 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugzk5__VPeBqjY0qaFF4AaABAg" }
+2021-01-05 14:04:10,627 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg4ORmoAk2RkngCoAEC" }
+2021-01-05 14:04:10,673 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi-ec1aAAKBDHgCoAEC" }
+2021-01-05 14:04:10,712 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggTaGfRx9Z2jXgCoAEC" }
+2021-01-05 14:04:10,752 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghqwfJtbbR8jHgCoAEC" }
+2021-01-05 14:04:10,791 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggzWLxDDpCa5HgCoAEC" }
+2021-01-05 14:04:10,830 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjl5KRrYS6UZHgCoAEC" }
+2021-01-05 14:04:10,870 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggEiekvGXtwW3gCoAEC" }
+2021-01-05 14:04:10,910 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjmoMhuOWTZngCoAEC" }
+2021-01-05 14:04:10,949 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7nxSyP6pDQHgCoAEC" }
+2021-01-05 14:04:10,990 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggcYMb29X86aXgCoAEC" }
+2021-01-05 14:04:11,030 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiOTrn-AhATpHgCoAEC" }
+2021-01-05 14:04:11,070 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiMR-n5vkPv-3gCoAEC" }
+2021-01-05 14:04:11,305 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghCIM_Vmgbe6XgCoAEC" }
+2021-01-05 14:04:11,345 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggplyS1K-IxBngCoAEC" }
+2021-01-05 14:04:11,385 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiJrH6wlTY6dngCoAEC" }
+2021-01-05 14:04:11,425 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugizy0j1709jg3gCoAEC" }
+2021-01-05 14:04:11,464 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghYwCDTPeMD1HgCoAEC" }
+2021-01-05 14:04:11,503 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugxkn4FJqkJoz6yJCvp4AaABAg" }
+2021-01-05 14:04:11,543 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjLdZl_J6SQSXgCoAEC" }
+2021-01-05 14:04:11,582 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggGBfcxuqHnangCoAEC" }
+2021-01-05 14:04:11,621 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjcgCyv2VoztXgCoAEC" }
+2021-01-05 14:04:11,660 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi6r6nZ6BkyeHgCoAEC" }
+2021-01-05 14:04:11,700 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzkxO-Hcz3z_0y8PXF4AaABAg" }
+2021-01-05 14:04:11,739 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggPn8LS_cwNxXgCoAEC" }
+2021-01-05 14:04:11,779 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjkpg_LY43VQ3gCoAEC" }
+2021-01-05 14:04:11,818 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjx8njdN8sDkHgCoAEC" }
+2021-01-05 14:04:11,857 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzgxJHFYQdStRuQfZN4AaABAg" }
+2021-01-05 14:04:11,896 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiXvQOa9Mf9ingCoAEC" }
+2021-01-05 14:04:11,935 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugylb02xZMV-u701u614AaABAg" }
+2021-01-05 14:04:11,975 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjqzXGZ36DJXgCoAEC" }
+2021-01-05 14:04:12,014 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzgJYaQgP6IXgCoAEC" }
+2021-01-05 14:04:12,054 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz-LSMDXBzGAj-L6-l4AaABAg" }
+2021-01-05 14:04:12,098 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMaEMuJB5-YHgCoAEC" }
+2021-01-05 14:04:12,138 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjrP8zGQvf33ngCoAEC" }
+2021-01-05 14:04:12,177 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjGOSUzsWx_xHgCoAEC" }
+2021-01-05 14:04:12,257 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi9Ra8raTcxP3gCoAEC" }
+2021-01-05 14:04:12,296 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6rg5aT-C5oHgCoAEC" }
+2021-01-05 14:04:12,336 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh_OzJdQs4PjXgCoAEC" }
+2021-01-05 14:04:12,375 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz4k2xhEGdWEYumOYV4AaABAg" }
+2021-01-05 14:04:12,414 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggWfu7ZLzU7D3gCoAEC" }
+2021-01-05 14:04:12,454 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughhhx04zomBD3gCoAEC" }
+2021-01-05 14:04:12,493 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzXJpV8V_cFK33sDC14AaABAg" }
+2021-01-05 14:04:12,532 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggwRuCdhdRzqXgCoAEC" }
+2021-01-05 14:04:12,572 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxS4b2JJ9YCupA2Rr94AaABAg" }
+2021-01-05 14:04:12,611 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzETiQI-79hBYMN1Sh4AaABAg" }
+2021-01-05 14:04:12,650 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugil6Ekmgl8nnHgCoAEC" }
+2021-01-05 14:04:12,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwzxRPrUz127_yiqoF4AaABAg" }
+2021-01-05 14:04:12,730 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi4uDcxYgU2I3gCoAEC" }
+2021-01-05 14:04:12,770 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzFkF96hBEDPxjYdSJ4AaABAg" }
+2021-01-05 14:04:12,810 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjUBg93gK9TVHgCoAEC" }
+2021-01-05 14:04:12,849 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwPox8FLiyDQqff4Fx4AaABAg" }
+2021-01-05 14:04:12,888 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzmWEDrkaKGXOT0mR14AaABAg" }
+2021-01-05 14:04:12,928 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggMk_qCBl5BQHgCoAEC" }
+2021-01-05 14:04:12,968 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjmuT5C12ISK3gCoAEC" }
+2021-01-05 14:04:13,007 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiNxgHj2fRk5ngCoAEC" }
+2021-01-05 14:04:13,047 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjUXdeFhPfGv3gCoAEC" }
+2021-01-05 14:04:13,088 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghN-Ye1gabByHgCoAEC" }
+2021-01-05 14:04:13,128 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi78wkwYiPDqXgCoAEC" }
+2021-01-05 14:04:13,167 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiVcyo4aSY8hngCoAEC" }
+2021-01-05 14:04:13,207 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzBy2yrk9rZlixRoRd4AaABAg" }
+2021-01-05 14:04:13,246 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgivkMfhhGQ41HgCoAEC" }
+2021-01-05 14:04:13,365 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjHgxakN80pangCoAEC" }
+2021-01-05 14:04:13,444 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzPMkaHHTatXgCoAEC" }
+2021-01-05 14:04:13,483 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwchpvGpFm7k7QkIMx4AaABAg" }
+2021-01-05 14:04:13,523 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggxP35ezmcdS3gCoAEC" }
+2021-01-05 14:04:13,562 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggMuXRjMbjMG3gCoAEC" }
+2021-01-05 14:04:13,602 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQ1pamuKfIoXgCoAEC" }
+2021-01-05 14:04:13,641 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggYjE7bANqx1HgCoAEC" }
+2021-01-05 14:04:13,680 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwBZ0wkYwi72Assw-14AaABAg" }
+2021-01-05 14:04:13,720 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjl1Cj3dP7cPHgCoAEC" }
+2021-01-05 14:04:13,759 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbF-UG6hwMi3gCoAEC" }
+2021-01-05 14:04:13,799 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggOEKuhnD52JHgCoAEC" }
+2021-01-05 14:04:13,837 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghL2xAFIIpuZHgCoAEC" }
+2021-01-05 14:04:13,877 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyMQ_D0LaeX_dY7srN4AaABAg" }
+2021-01-05 14:04:13,916 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughw15w55ap3pHgCoAEC" }
+2021-01-05 14:04:13,956 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggbNXVXg61O8HgCoAEC" }
+2021-01-05 14:04:13,995 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghHMOTK9ximn3gCoAEC" }
+2021-01-05 14:04:14,035 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjxIAKM1MWW53gCoAEC" }
+2021-01-05 14:04:14,075 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiijUPP6cbBwHgCoAEC" }
+2021-01-05 14:04:14,115 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg76KF0xpYIvngCoAEC" }
+2021-01-05 14:04:14,156 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiS3CTASR_7E3gCoAEC" }
+2021-01-05 14:04:14,196 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKzUwkKlALr3gCoAEC" }
+2021-01-05 14:04:14,235 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7TFq8LBwvjngCoAEC" }
+2021-01-05 14:04:14,275 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyKrLpRLDChq2f9B1l4AaABAg" }
+2021-01-05 14:04:14,315 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx6ninjqKffTbdfW0J4AaABAg" }
+2021-01-05 14:04:14,354 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj8vjKAzF-5PHgCoAEC" }
+2021-01-05 14:04:14,397 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz48XZK-tsrnQPBGBd4AaABAg" }
+2021-01-05 14:04:14,447 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi5nrOF_eGj_XgCoAEC" }
+2021-01-05 14:04:14,487 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugy1CQcsvg8c84FmdQ54AaABAg" }
+2021-01-05 14:04:14,526 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjRZW5es3Ww7ngCoAEC" }
+2021-01-05 14:04:14,565 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjLiHhJP6qu7ngCoAEC" }
+2021-01-05 14:04:14,605 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggNM3nQPWWPs3gCoAEC" }
+2021-01-05 14:04:14,644 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6fdlWrPcJkXgCoAEC" }
+2021-01-05 14:04:14,684 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMsuIIWFOt5XgCoAEC" }
+2021-01-05 14:04:14,723 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbOXG1dCInRXgCoAEC" }
+2021-01-05 14:04:14,763 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughltw7Q8Dt8JngCoAEC" }
+2021-01-05 14:04:15,292 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKOqsKBFXMVHgCoAEC" }
+2021-01-05 14:04:15,332 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyCl1Ck5yoY01i1RVF4AaABAg" }
+2021-01-05 14:04:15,371 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugietol6SiqLcngCoAEC" }
+2021-01-05 14:04:15,531 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiAFLH48O7uyngCoAEC" }
+2021-01-05 14:04:15,571 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghjIVUFwrAgK3gCoAEC" }
+2021-01-05 14:04:15,610 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggjAtBnpUTMn3gCoAEC" }
+2021-01-05 14:04:15,650 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghI75mPur9d1HgCoAEC" }
+2021-01-05 14:04:15,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugz1M6M27JZ3r4NN8Wx4AaABAg" }
+2021-01-05 14:04:15,729 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjT0AglnHDjJXgCoAEC" }
+2021-01-05 14:04:15,769 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzpI-5aMG6RTbC6IWd4AaABAg" }
+2021-01-05 14:04:15,808 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiDQyEAR_ovUXgCoAEC" }
+2021-01-05 14:04:15,848 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh_lu7v38L4n3gCoAEC" }
+2021-01-05 14:04:15,888 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyxBBW6wNVLBQmtXyV4AaABAg" }
+2021-01-05 14:04:15,929 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbY3e9slaNUXgCoAEC" }
+2021-01-05 14:04:15,969 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyVFJiH5PbWMCMqWpB4AaABAg" }
+2021-01-05 14:04:16,016 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggaCkZYJzRxxHgCoAEC" }
+2021-01-05 14:04:16,134 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh82Ice2s4m1ngCoAEC" }
+2021-01-05 14:04:16,174 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiQ0W7hEUpZOXgCoAEC" }
+2021-01-05 14:04:16,213 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjWx6z2TtUd-3gCoAEC" }
+2021-01-05 14:04:16,254 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjJXIOHIVIC0ngCoAEC" }
+2021-01-05 14:04:16,294 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughpt5rB-TgNlngCoAEC" }
+2021-01-05 14:04:16,333 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwBIUaBBre6ALGoSER4AaABAg" }
+2021-01-05 14:04:16,373 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjpnTyWdiaw83gCoAEC" }
+2021-01-05 14:04:16,412 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgglJV8ruhZrgngCoAEC" }
+2021-01-05 14:04:16,452 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiiEzCSx2qnq3gCoAEC" }
+2021-01-05 14:04:16,491 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj35nwgsqiIoXgCoAEC" }
+2021-01-05 14:04:16,531 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggYUwnolKyRMXgCoAEC" }
+2021-01-05 14:04:16,571 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj6st-Iuu_4N3gCoAEC" }
+2021-01-05 14:04:16,610 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggABRIJGUPfT3gCoAEC" }
+2021-01-05 14:04:16,650 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxZvnWr7betZHgpv2N4AaABAg" }
+2021-01-05 14:04:16,690 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghpTIQB8aQe7XgCoAEC" }
+2021-01-05 14:04:16,729 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghDrsY9GPw2FXgCoAEC" }
+2021-01-05 14:04:16,769 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgieDAOeL-ygcXgCoAEC" }
+2021-01-05 14:04:16,809 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugw9V2MvH6t7Oo8t6eB4AaABAg" }
+2021-01-05 14:04:16,850 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugjhka7Bncqb93gCoAEC" }
+2021-01-05 14:04:16,890 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjZntbxyncScXgCoAEC" }
+2021-01-05 14:04:16,929 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiSt2_Th75bz3gCoAEC" }
+2021-01-05 14:04:16,969 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggzh2SJa2o_5HgCoAEC" }
+2021-01-05 14:04:17,048 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiEw41jMlBd4HgCoAEC" }
+2021-01-05 14:04:17,087 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi71ydP0Gh0dXgCoAEC" }
+2021-01-05 14:04:17,127 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwYZ8AhhwWrS3oH6U94AaABAg" }
+2021-01-05 14:04:17,174 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxWl8GsSKRklrUpogt4AaABAg" }
+2021-01-05 14:04:17,213 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi3dRYgkwXZ-3gCoAEC" }
+2021-01-05 14:04:17,258 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggKEON2g2x8_ngCoAEC" }
+2021-01-05 14:04:17,298 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgibH9kHM6LE3ngCoAEC" }
+2021-01-05 14:04:17,337 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMU-oiaQ4XtngCoAEC" }
+2021-01-05 14:04:17,379 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_Tr-foAAij3gCoAEC" }
+2021-01-05 14:04:17,419 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg3HpSnF4ZWcXgCoAEC" }
+2021-01-05 14:04:17,458 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughn2xVanGTblXgCoAEC" }
+2021-01-05 14:04:17,498 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugj3OGFDO0U15XgCoAEC" }
+2021-01-05 14:04:17,537 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugie77dLqKtptngCoAEC" }
+2021-01-05 14:04:17,577 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggAMOepmdyoq3gCoAEC" }
+2021-01-05 14:04:17,617 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghzQvMi1jfoMHgCoAEC" }
+2021-01-05 14:04:17,656 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx3zPKiHcI-KAy2Mup4AaABAg" }
+2021-01-05 14:04:17,696 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7wAwxqR4TkXgCoAEC" }
+2021-01-05 14:04:17,776 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghbzmjYOG7wu3gCoAEC" }
+2021-01-05 14:04:17,815 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwaH9nAy7-WzIWuoJV4AaABAg" }
+2021-01-05 14:04:17,855 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzAlqW45NVsEcs5r4l4AaABAg" }
+2021-01-05 14:04:17,894 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi6ujA1vSfbX3gCoAEC" }
+2021-01-05 14:04:17,933 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgifcW05j5eR5ngCoAEC" }
+2021-01-05 14:04:17,985 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghtW9bGdpW_9XgCoAEC" }
+2021-01-05 14:04:18,027 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwTA_A8ZDzKF21lWIp4AaABAg" }
+2021-01-05 14:04:18,067 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiBOn3LqE9y83gCoAEC" }
+2021-01-05 14:04:18,119 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugx_W72d3DDaeeQXH094AaABAg" }
+2021-01-05 14:04:18,159 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggqueHDvwgrP3gCoAEC" }
+2021-01-05 14:04:18,198 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugh7zuPyfRC1-ngCoAEC" }
+2021-01-05 14:04:18,277 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjNo1fL4ssv3ngCoAEC" }
+2021-01-05 14:04:18,317 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwvMV12gzdeRg_79KV4AaABAg" }
+2021-01-05 14:04:18,356 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg_iZJca0BOBHgCoAEC" }
+2021-01-05 14:04:18,436 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiMOhy_AuYCVHgCoAEC" }
+2021-01-05 14:04:18,478 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggHe-19XWQa5ngCoAEC" }
+2021-01-05 14:04:18,518 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ughder1XirRdYXgCoAEC" }
+2021-01-05 14:04:18,557 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgwlVk_JvqAPlNdd9kl4AaABAg" }
+2021-01-05 14:04:18,597 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxqzPTGjUlXJG4UIk54AaABAg" }
+2021-01-05 14:04:18,637 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugju-ooq2KPwF3gCoAEC" }
+2021-01-05 14:04:18,677 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjQi8oTF34E5XgCoAEC" }
+2021-01-05 14:04:18,755 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiiJM4ZhSC073gCoAEC" }
+2021-01-05 14:04:18,918 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Uggd_WUNJ10_eXgCoAEC" }
+2021-01-05 14:04:18,958 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghdqGWX0KFpHngCoAEC" }
+2021-01-05 14:04:18,998 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjMsbyshtVP9ngCoAEC" }
+2021-01-05 14:04:19,078 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyqgXZDbktx9ut_iDN4AaABAg" }
+2021-01-05 14:04:19,157 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyY-Z22tjqxyle09oZ4AaABAg" }
+2021-01-05 14:04:19,196 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgyTlCpB4_pcFoNaBnR4AaABAg" }
+2021-01-05 14:04:19,236 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugzpz_VmJ9hIGZy4Ned4AaABAg" }
+2021-01-05 14:04:19,325 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggqlKj2TNqTXXgCoAEC" }
+2021-01-05 14:04:19,365 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjSFKVF3bTs7HgCoAEC" }
+2021-01-05 14:04:19,405 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugi8liS5lVHGxngCoAEC" }
+2021-01-05 14:04:19,444 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggI98aOT59-6ngCoAEC" }
+2021-01-05 14:04:19,484 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIh1r40S0wdngCoAEC" }
+2021-01-05 14:04:19,682 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggsHAR9oKmdHngCoAEC" }
+2021-01-05 14:04:19,721 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgiIOVArb1hd7HgCoAEC" }
+2021-01-05 14:04:19,800 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghZlvqfKnqFwngCoAEC" }
+2021-01-05 14:04:19,839 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxvrICuUmycYMnvdFR4AaABAg" }
+2021-01-05 14:04:19,884 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgjpAhs8v4RlRXgCoAEC" }
+2021-01-05 14:04:20,121 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgxZT2NdWeFuwJxoYHh4AaABAg" }
+2021-01-05 14:04:20,161 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghS0_F-Lxdp8XgCoAEC" }
+2021-01-05 14:04:20,201 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UghlLYJzRWmlLXgCoAEC" }
+2021-01-05 14:04:20,240 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "Ugg-uuQjscuekngCoAEC" }
+2021-01-05 14:04:20,280 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UgzAGTJHRwrYIYPUCi14AaABAg" }
+2021-01-05 14:04:20,321 - mongodb - INFO - Duplicate key: E11000 duplicate key error collection: influential_users.comments index: _id_ dup key: { _id: "UggdZSwSpXCjH3gCoAEC" }
+2021-01-05 14:04:21,050 - youtube_api - INFO - File name: network_rWGoMKloaA
+2021-01-05 14:04:21,433 - network_analysis - INFO - Stored network: .networks/network_rWGoMKloaA.gpickle
+2021-01-05 14:04:21,901 - analysis - INFO - Confirmation sent to alex_grigoras_10@yahoo.com Alex
+2021-01-05 14:04:21,908 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:04:21] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:42,376 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-01-05 14:08:45,899 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:08:45,945 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:08:45,947 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/all.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,948 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:45,949 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:45,949 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:45,950 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/all.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,952 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/brands.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,959 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/brands.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,960 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/regular.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,962 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/solid.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,963 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/regular.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,963 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/fontawesome.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,965 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/fontawesome.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,967 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/solid.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,973 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/svg-with-js.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,975 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/svg-with-js.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,977 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/v4-shims.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,980 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/simple-line-icons/css/simple-line-icons.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,981 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/vendor/fontawesome-free/css/v4-shims.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,982 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/css/landing-page.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,983 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/css/landing-page.min.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,988 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/css/style.css?m=1609835608.1952748 HTTP/1.1" 200 -
+2021-01-05 14:08:45,992 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /_dash-component-suites/dash_renderer/react@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:45,994 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /_dash-component-suites/dash_renderer/prop-types@15.v1_2_3m1579025636.7.2.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:45,994 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /_dash-component-suites/dash_renderer/polyfill@7.v1_2_3m1579025636.7.0.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:45,996 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/css/sb-admin-2.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:08:45,998 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /_dash-component-suites/dash_renderer/react-dom@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:45,999 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:45] "GET /assets/css/sb-admin-2.min.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,011 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_table/bundle.v4_6_0m1579023583.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,014 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_html_components/dash_html_components.v1_0_2m1573762545.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,014 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_core_components/dash_core_components-shared.v1_7_0m1579024541.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,017 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_bootstrap_components/_components/dash_bootstrap_components.v0_8_1m1609846361.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,029 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /assets/vendor/jquery/jquery.slim.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,037 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /assets/vendor/jquery/jquery.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,043 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_renderer/dash_renderer.v1_2_3m1579025647.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,043 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /assets/vendor/jquery/jquery.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,045 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-component-suites/dash_core_components/dash_core_components.v1_7_0m1579024541.min.js HTTP/1.1" 200 -
+2021-01-05 14:08:46,046 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /assets/vendor/jquery/jquery.slim.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,515 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:08:46,515 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:08:46,530 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /_favicon.ico?v=1.8.0 HTTP/1.1" 200 -
+2021-01-05 14:08:46,608 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /static/images/logo.png HTTP/1.1" 200 -
+2021-01-05 14:08:46,664 - auth - INFO - User authenticated
+2021-01-05 14:08:46,665 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:46,678 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:46,683 - auth - INFO - User authenticated
+2021-01-05 14:08:46,685 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:46,718 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /login HTTP/1.1" 200 -
+2021-01-05 14:08:46,731 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /login HTTP/1.1" 200 -
+2021-01-05 14:08:46,736 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:46,738 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:46,789 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:46,790 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:08:46,797 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:46,797 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:46] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:47,098 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:08:47,099 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:08:47,215 - auth - INFO - User not authenticated
+2021-01-05 14:08:47,220 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:47,227 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:47,269 - auth - INFO - User not authenticated
+2021-01-05 14:08:47,276 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:47,343 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:47,346 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:47,352 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:47] "POST /_dash-update-component HTTP/1.1" 204 -
+2021-01-05 14:08:50,038 - login - INFO - User alex_grigoras_10@yahoo.com logged in
+2021-01-05 14:08:50,039 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,078 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,110 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:08:50,155 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:50,157 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:50,157 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:08:50,158 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:08:50,437 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:08:50,438 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:08:50,565 - auth - INFO - User authenticated
+2021-01-05 14:08:50,573 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,578 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,590 - auth - INFO - User authenticated
+2021-01-05 14:08:50,597 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,681 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,684 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,693 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:08:50,705 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:08:50] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:32,677 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-01-05 14:09:33,823 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:09:33,872 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:33,874 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:09:33,876 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:33,876 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:33,881 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/brands.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,882 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/brands.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,882 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/all.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,884 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/all.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,887 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/fontawesome.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,888 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/regular.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,892 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/regular.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,894 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/fontawesome.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,897 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/solid.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,901 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/solid.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,903 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/svg-with-js.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,910 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/v4-shims.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,913 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/svg-with-js.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,915 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/css/landing-page.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,916 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/fontawesome-free/css/v4-shims.min.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,919 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/simple-line-icons/css/simple-line-icons.css?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,926 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/css/style.css?m=1609835608.1952748 HTTP/1.1" 200 -
+2021-01-05 14:09:33,926 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/css/landing-page.min.css?m=1594899876.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,933 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_renderer/polyfill@7.v1_2_3m1579025636.7.0.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,933 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_renderer/prop-types@15.v1_2_3m1579025636.7.2.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,933 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_renderer/react@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,936 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/css/sb-admin-2.min.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,940 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/css/sb-admin-2.css?m=1579044268.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,942 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_renderer/react-dom@16.v1_2_3m1579025636.8.6.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,947 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_core_components/dash_core_components-shared.v1_7_0m1579024541.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,951 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_table/bundle.v4_6_0m1579023583.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,954 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_bootstrap_components/_components/dash_bootstrap_components.v0_8_1m1609846361.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,961 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_core_components/dash_core_components.v1_7_0m1579024541.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,964 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_html_components/dash_html_components.v1_0_2m1573762545.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,980 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/jquery/jquery.slim.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,981 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/jquery/jquery.min.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,984 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /_dash-component-suites/dash_renderer/dash_renderer.v1_2_3m1579025647.min.js HTTP/1.1" 200 -
+2021-01-05 14:09:33,985 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/jquery/jquery.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:33,990 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:33] "GET /assets/vendor/jquery/jquery.slim.js?m=1592515018.0 HTTP/1.1" 200 -
+2021-01-05 14:09:34,368 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:09:34,370 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:09:34,414 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /_favicon.ico?v=1.8.0 HTTP/1.1" 200 -
+2021-01-05 14:09:34,566 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /static/images/logo.png HTTP/1.1" 200 -
+2021-01-05 14:09:34,673 - auth - INFO - User authenticated
+2021-01-05 14:09:34,674 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:34,734 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:34,753 - auth - INFO - User authenticated
+2021-01-05 14:09:34,754 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:34,890 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /login HTTP/1.1" 200 -
+2021-01-05 14:09:34,896 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:34,898 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:34,915 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:34] "GET /assets/vendor/fontawesome-free/webfonts/fa-brands-400.woff HTTP/1.1" 200 -
+2021-01-05 14:09:35,163 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:35,168 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:09:35,173 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:35,173 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:35,563 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:09:35,563 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:09:35,686 - auth - INFO - User not authenticated
+2021-01-05 14:09:35,692 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:35,699 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:35,711 - auth - INFO - User not authenticated
+2021-01-05 14:09:35,718 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:35,796 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:35,798 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:35,808 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:35] "POST /_dash-update-component HTTP/1.1" 204 -
+2021-01-05 14:09:36,968 - login - INFO - User alex_grigoras_10@yahoo.com logged in
+2021-01-05 14:09:36,970 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:36] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,006 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,037 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /analysis HTTP/1.1" 200 -
+2021-01-05 14:09:37,073 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:37,075 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 -
+2021-01-05 14:09:37,075 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /css/sb-admin-2.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:37,076 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /css/landing-page.min.css HTTP/1.1" 200 -
+2021-01-05 14:09:37,357 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /_dash-layout HTTP/1.1" 200 -
+2021-01-05 14:09:37,358 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "GET /_dash-dependencies HTTP/1.1" 200 -
+2021-01-05 14:09:37,474 - auth - INFO - User authenticated
+2021-01-05 14:09:37,482 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,487 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,496 - auth - INFO - User authenticated
+2021-01-05 14:09:37,504 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,597 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,600 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,608 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:37,619 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:37] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:45,243 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:45,329 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:45,347 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:45,349 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "GET /assets/img/bg-showcase-2.jpg HTTP/1.1" 200 -
+2021-01-05 14:09:45,352 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:45,359 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:45] "GET /assets/vendor/simple-line-icons/fonts/Simple-Line-Icons.woff2?v=2.4.0 HTTP/1.1" 200 -
+2021-01-05 14:09:48,174 - auth - INFO - User authenticated
+2021-01-05 14:09:48,179 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:48] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:48,237 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:48] "POST /_dash-update-component HTTP/1.1" 200 -
+2021-01-05 14:09:48,243 - werkzeug - INFO - 127.0.0.1 - - [05/Jan/2021 14:09:48] "POST /_dash-update-component HTTP/1.1" 200 -

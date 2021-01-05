@@ -3,12 +3,6 @@
 ## Description
 Web framework using Flask with Plotly Dash for Influential Users Application (Determining the most influential users from the multimedia social network YouTube by creating a graph with the most important users / channels)
 
-![Influential users image](https://www.researchgate.net/profile/Yujie_Fan5/publication/320885176/figure/fig10/AS:557869974392832@1510017974405/Identification-of-the-influential-users_W640.jpg)
-
-Image taken from: <i>Fan, Yujie & Zhang, Yiming & Ye, Yanfang & Zheng, Wanhong. (2017). Social Media for
-Opioid Addiction Epidemiology: Automatic Detection of Opioid Addicts from Twitter and
-Case Studies, 1259-1267</i>
-
 ## Architecture
 The main components of the application are
 
@@ -65,10 +59,12 @@ influential_users_web
 
 ## Resources
 
-1. <b>Academic papers</b>
+1. **Academic papers**
 
-1. <b>Web content</b>
-- https://github.com/russellromney/dash-auth-flow
-- https://plotly.com/python/network-graphs/
-- https://plotly.com/python/v3/3d-network-graph/
+
+1. **Web content**
+- [russellromney](https://github.com/russellromney) / [dash-auth-flow](https://github.com/russellromney/dash-auth-flow)
+- [startbootstrap-sb-admin-2](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
+- [network-graphs](https://plotly.com/python/network-graphs)
+- [3d-network-graph](https://plotly.com/python/v3/3d-network-graph)
 

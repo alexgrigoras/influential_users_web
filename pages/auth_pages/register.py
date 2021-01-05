@@ -166,7 +166,7 @@ def register_validate_inputs(first, last, email, password, confirm):
     [State('register-' + x, 'value') for x in ['first', 'last', 'email', 'password', 'confirm']],
 )
 def register_success(n_clicks, first, last, email, password, confirm):
-    if n_clicks == 0:
+    if n_clicks is not None:
         time.sleep(.25)
         if current_user.is_authenticated:
             return '/home', already_registered_alert

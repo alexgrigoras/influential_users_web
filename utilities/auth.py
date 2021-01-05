@@ -8,7 +8,7 @@ import shortuuid
 from flask_login import current_user
 from flask_sqlalchemy import SQLAlchemy
 from mailjet_rest import Client
-from sqlalchemy import Table
+from sqlalchemy import Table, update
 from sqlalchemy.sql import select, and_
 from werkzeug.security import generate_password_hash
 
@@ -382,3 +382,88 @@ def layout_auth(mode):
         return decorated_function
 
     return this_decorator
+
+
+class UserSearches(db.Model):
+    __tablename__ = 'user_searches'
+    network_name = Column(String(200), primary_key=True)
+    user_id = Column(Integer)
+    search_keyword = Column(String(200))
+    search_state = Column(String(100))
+    nr_videos = Column(Integer)
+    nr_influencers = Column(Integer)
+    algorithm = Column(String(100))
+    timestamp = Column(DateTime())
+
+
+def user_searches_table():
+    return Table('user_searches', User.metadata)
+
+
+def add_user_search(user_id, search_keyword, network_name, nr_videos, nr_influencers, algorithm, engine):
+    table = user_searches_table()
+
+    values = dict(
+        user_id=user_id,
+        search_keyword=search_keyword,
+        network_name=network_name,
+        search_state="Retrieving Data",
+        nr_videos=nr_videos,
+        nr_influencers=nr_influencers,
+        algorithm=algorithm,
+        timestamp=datetime.now()
+    )
+    statement = table.insert().values(**values)
+
+    try:
+        conn = engine.connect()
+        conn.execute(statement)
+        conn.close()
+        logger.info("Added user " + str(user_id) + " search: " + str(search_keyword))
+        return True
+
+    except:
+        logger.error("Cannot add user " + str(user_id) + " search: " + str(search_keyword))
+        return False
+
+
+def update_user_search(user_id, network_name, state, engine):
+    table = user_searches_table()
+
+    statement = (
+        update(table).
+            where(table.c.network_name == network_name).
+            values(search_state=state)
+    )
+
+    try:
+        conn = engine.connect()
+        conn.execute(statement)
+        conn.close()
+        logger.info("Updated user " + str(user_id) + " search: " + str(state))
+        return True
+
+    except:
+        logger.error("Cannot add user " + str(user_id) + " search: " + str(state))
+        return False
+
+
+def get_user_searches(user_id_nr, engine):
+    table = user_searches_table()
+
+    statement = select([table.c.search_state, table.c.nr_videos, table.c.nr_influencers]). \
+        where(table.c.user_id == user_id_nr)
+    with engine.connect() as conn:
+        resp = list(conn.execute(statement))
+        return resp
+
+
+def get_user_networks(user_id_nr, engine):
+    table = user_searches_table()
+
+    statement = select([table.c.network_name, table.c.search_keyword, table.c.nr_influencers,
+                        table.c.search_state, table.c.algorithm, table.c.timestamp]). \
+        where(table.c.user_id == user_id_nr)
+    with engine.connect() as conn:
+        resp = list(conn.execute(statement))
+        return resp

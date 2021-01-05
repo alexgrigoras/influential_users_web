@@ -1,16 +1,15 @@
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_table
 from dash.dependencies import Output, Input, State
 from flask_login import current_user
 
 from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
 from application.youtube_api import YoutubeAPI
-from server import app
-from utilities.auth import layout_auth, send_finished_process_confirmation
-from utilities.utils import create_data_table_network, check_value
+from server import app, engine
+from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_user_search
+from utilities.utils import create_data_table_network
 
 success_alert = dbc.Alert(
     'Finished searching',
@@ -60,11 +59,10 @@ def layout():
                         html.Li(
                             "Creates a graph by representing the connections between users that commented on "
                             "selected videos"),
-                        html.Li("Computes PageRank to determine the most important users"),
-                        html.Li("Displays the created graph and the results from PageRank")
+                        html.Li("Using the selected algorithm, it determines the most influential users"),
+                        html.Li("Displays the created graph and the results from processing algorithm")
                     ]
                 ),
-                html.H6('[DISCLAIMER] The application loses its state if the page is reloaded or closed!'),
                 html.Br(),
                 html.H5('To use the application, enter the options on the right and click SEARCH'),
             ]
@@ -96,11 +94,22 @@ def layout():
                     id="graph_type",
                     options=[
                         {'label': "3D Spring", 'value': '3'},
-                        #{'label': "2D Graph", 'value': '2'}
+                        {'label': "2D Graph", 'value': '2', "disabled": "disabled"}
                     ],
                     value='3',
                     labelStyle={'display': 'inline-block', "margin-right": "15px"}
                 ),
+                html.H5("Processing Algorithm: "),
+                dcc.Dropdown(
+                    id='algorithm_type',
+                    options=[
+                        {"label": "PageRank", "value": "page-rank"},
+                        {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
+                    ],
+
+                    placeholder="Select algorithm"
+                ),
+                html.Br(),
                 dbc.Button('Search', color='primary', id='submit-button'),
             ]
         )],
@@ -180,10 +189,11 @@ def input_triggers_spinner(value):
               [State('keyword', 'value'),
                State('nr_videos', 'value'),
                State('nr_users', 'value'),
-               State('graph_type', 'value')])
-def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
+               State('graph_type', 'value'),
+               State('algorithm_type', 'value')])
+def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_type):
     if clicks is not None:
-        if not keyword or not nr_videos or not nr_users or not graph_type:
+        if not keyword or not nr_videos or not nr_users or not graph_type or not algorithm_type:
             logger.error("Invalid user input data")
             return '', failure_alert, ''
 
@@ -198,41 +208,45 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type):
         crawler = YoutubeAPI()
         network = NetworkAnalysis()
 
+        file_name = crawler.get_file_name()
+
+        if not add_user_search(current_user.id, keyword, file_name, nr_videos, limit, algorithm_type, engine):
+            if not update_user_search(current_user.id, file_name, "Retrieving Data", engine):
+                return '', failure_alert, ''
+
         results = crawler.search(keyword, int(nr_videos))
         crawler.process_search_results(results)
 
         try:
             network_data = results[0]['_id']
-            file_name = crawler.create_network(network_data)
+            if not crawler.create_network(network_data):
+                logger.error("Cannot create network: " + file_name)
         except TypeError:
             return '', quota_exceeded_alert, ''
+
+        if not update_user_search(current_user.id, file_name, "Processing Data", engine):
+            return '', failure_alert, ''
 
         # create users network
         network.set_file_name(file_name)
         network.create_network()
+
+        if algorithm_type == "page-rank":
+            network.compute_page_rank()
+        elif algorithm_type == "betweenness-centrality":
+            network.compute_betweenness_centrality()
+
         network.store_network()
-        labels = network.get_labels()
-        ranks = network.compute_page_rank()
-        # network.compute_betweenness_centrality()
 
-        columns = ['Rank', 'Value', 'Name']
-        values = []
-        index = 0
-        selected_nodes = []
-        for u_id in sorted(ranks, key=ranks.get, reverse=True):
-            selected_nodes.append(u_id)
-            val = {"Rank": index + 1, "Value": check_value(ranks, u_id), 'Name': check_value(labels, u_id)}
-            values.append(val)
-            index += 1
-            if index >= limit:
-                break
-
-        fig = network.display_plotly(selected_nodes, graph_type)
+        fig, values, columns = network.create_figure(limit, graph_type)
 
         if send_finished_process_confirmation(current_user.email, current_user.first, keyword):
             logger.info("Confirmation sent to " + str(current_user.email) + " " + str(current_user.first))
         else:
             logger.warning("Confirmation NOT sent to " + str(current_user.email) + " " + str(current_user.first))
+
+        if not update_user_search(current_user.id, file_name, "Finished", engine):
+            return '', failure_alert, ''
 
         # Create Layout
         return html.Div(

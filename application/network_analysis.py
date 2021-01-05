@@ -6,6 +6,7 @@ from networkx.drawing.nx_agraph import graphviz_layout
 
 from application.message_logger import MessageLogger
 from application.plotly_display import visualize_graph_3d, visualize_graph
+from utilities.utils import check_value
 
 NETWORKS_FOLDER = '.networks'
 IMAGES_FOLDER = '.images'
@@ -178,6 +179,23 @@ class NetworkAnalysis:
             return None
 
         return fig
+
+    def create_figure(self, limit, graph_type):
+        columns = ['Rank', 'Value', 'Name']
+        values = []
+        index = 0
+        selected_nodes = []
+        for u_id in sorted(self.__rank, key=self.__rank.get, reverse=True):
+            selected_nodes.append(u_id)
+            val = {"Rank": index + 1, "Value": check_value(self.__rank, u_id), 'Name': check_value(self.__labels, u_id)}
+            values.append(val)
+            index += 1
+            if index >= limit:
+                break
+
+        fig = self.display_plotly(selected_nodes, graph_type)
+
+        return fig, values, columns
 
     def get_labels(self):
         return self.__labels

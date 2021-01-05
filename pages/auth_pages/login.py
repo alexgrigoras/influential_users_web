@@ -102,7 +102,7 @@ def login_success(n_clicks, email, password):
                 login_user(user)
                 if email:
                     logger.info("User " + email + " logged in")
-                return '/analysis', success_alert
+                return '/dashboard', success_alert
             else:
                 if email:
                     logger.error("User " + email + " failed to log in")

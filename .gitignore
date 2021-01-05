@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 /.networks/
 /.cache/
+/application/influential-users-cf8ed18e36a7.json

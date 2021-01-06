@@ -90,7 +90,13 @@ class NetworkAnalysis:
     def store_network(self):
         self.logger.info("Stored network: " + NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
         nx.write_gpickle(self.__graph, NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
+        self.store_ranks()
+
+    def store_ranks(self):
         pickle.dump(self.__rank, open(NETWORKS_FOLDER + "/ranks-" + self.__file_name + OBJECT_EXTENSION, "wb"))
+
+    def store_labels(self):
+        pickle.dump(self.__labels, open(NETWORKS_FOLDER + "/" + self.__file_name + OBJECT_EXTENSION, "wb"))
 
     def import_network(self):
         self.logger.info("Imported network " + NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)

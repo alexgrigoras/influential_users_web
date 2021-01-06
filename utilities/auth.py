@@ -431,9 +431,7 @@ def update_user_search(user_id, network_name, state, engine):
     table = user_searches_table()
 
     statement = (
-        update(table).
-            where(table.c.network_name == network_name).
-            values(search_state=state)
+        update(table).where(table.c.network_name == network_name).values(search_state=state)
     )
 
     try:
@@ -467,3 +465,30 @@ def get_user_networks(user_id_nr, engine):
     with engine.connect() as conn:
         resp = list(conn.execute(statement))
         return resp
+
+
+def get_user_networks_names(user_id_nr, engine):
+    table = user_searches_table()
+    networks_list = []
+    statement = select([table.c.network_name]).where(table.c.user_id == user_id_nr)
+
+    with engine.connect() as conn:
+        resp = list(conn.execute(statement))
+        for elem in reversed(resp):
+            networks_list.append(elem[0])
+        return networks_list
+
+
+def delete_user_network(network_name, engine):
+    table = user_searches_table()
+
+    try:
+        delete = table.delete().where(table.c.network_name == network_name)
+    except:
+        return False
+
+    conn = engine.connect()
+    conn.execute(delete)
+    conn.close()
+
+    return True

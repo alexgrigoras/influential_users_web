@@ -210,7 +210,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
 
         file_name = crawler.get_file_name()
 
-        if not add_user_search(current_user.id, keyword, file_name, nr_videos, limit, algorithm_type, engine):
+        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm_type, engine):
             if not update_user_search(current_user.id, file_name, "Retrieving Data", engine):
                 return '', failure_alert, ''
 

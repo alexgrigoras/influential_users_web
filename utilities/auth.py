@@ -400,14 +400,14 @@ def user_searches_table():
     return Table('user_searches', User.metadata)
 
 
-def add_user_search(user_id, search_keyword, network_name, nr_videos, nr_influencers, algorithm, engine):
+def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_influencers, algorithm, engine):
     table = user_searches_table()
 
     values = dict(
         user_id=user_id,
         search_keyword=search_keyword,
         network_name=network_name,
-        search_state="Retrieving Data",
+        search_state=state,
         nr_videos=nr_videos,
         nr_influencers=nr_influencers,
         algorithm=algorithm,
@@ -467,16 +467,29 @@ def get_user_networks(user_id_nr, engine):
         return resp
 
 
+def get_network(network, engine):
+    table = user_searches_table()
+
+    statement = select([ table.c.search_keyword, table.c.network_name, table.c.search_state, table.c.timestamp,
+                         table.c.nr_videos, table.c.nr_influencers, table.c.algorithm ]). \
+        where(table.c.network_name == network)
+    with engine.connect() as conn:
+        resp = list(conn.execute(statement))
+        return resp
+
+
 def get_user_networks_names(user_id_nr, engine):
     table = user_searches_table()
     networks_list = []
-    statement = select([table.c.network_name]).where(table.c.user_id == user_id_nr)
+    keywords_list = []
+    statement = select([table.c.network_name, table.c.search_keyword]).where(table.c.user_id == user_id_nr)
 
     with engine.connect() as conn:
         resp = list(conn.execute(statement))
         for elem in reversed(resp):
             networks_list.append(elem[0])
-        return networks_list
+            keywords_list.append(elem[1])
+        return networks_list, keywords_list
 
 
 def delete_user_network(network_name, engine):

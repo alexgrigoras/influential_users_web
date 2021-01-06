@@ -15,7 +15,7 @@ def create_data_table_network(values, columns):
         data=values,
         sort_action="native",
         sort_mode='single',
-        page_size=20,
+        page_size=10,
         style_cell={
             'overflow': 'hidden',
             'textOverflow': 'ellipsis',

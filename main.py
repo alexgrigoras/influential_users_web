@@ -34,7 +34,7 @@ header = dbc.Navbar(
     dbc.Container([
         html.A(
             children=[
-                html.Img(src="static/images/logo.png", height="40px"),
+                html.Img(src="assets/img/logo.png", height="40px"),
                 dbc.NavbarBrand("socialinfluencers", className="ml-2"),
             ],
             href="/home",

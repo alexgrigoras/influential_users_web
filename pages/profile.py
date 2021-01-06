@@ -104,7 +104,7 @@ def layout():
                     style={"margin": "40px auto 40px auto"},
                 ),
             ],
-            lg=4,
+            lg=3,
             align="center",
         ),
         justify="center"

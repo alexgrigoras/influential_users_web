@@ -64,7 +64,10 @@ influential_users_web
 
 1. **Web content**
 - [russellromney](https://github.com/russellromney) / [dash-auth-flow](https://github.com/russellromney/dash-auth-flow)
-- [startbootstrap-sb-admin-2](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
+- [startbootstrap](https://github.com/startbootstrap) / [startbootstrap-sb-admin-2](https://github.com/startbootstrap/startbootstrap-sb-admin-2)
+- [startbootstrap](https://github.com/startbootstrap) / [startbootstrap-landing-page](https://github.com/startbootstrap/startbootstrap-landing-page)
+- [UIdeck](https://uideck.com/) (images)
+- [Social media mess image](https://www.pinterest.com/pin/75716837455100871/)
 - [network-graphs](https://plotly.com/python/network-graphs)
 - [3d-network-graph](https://plotly.com/python/v3/3d-network-graph)
 

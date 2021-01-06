@@ -60,17 +60,17 @@ footer = html.Footer(
                         html.Li("·", className="list-inline-item"),
                         html.Li(html.A("Terms of use", href="#"), className="list-inline-item"),
                     ], className="list-inline mb-2"),
-                    html.P('socialinfluencers © 2020. All Rights Reserved.', className="text-muted small mb-4 mb-lg-0")
+                    html.P('socialinfluencers © 2021. All Rights Reserved.', className="text-muted small mb-4 mb-lg-0")
                 ], className="col-lg-6 h-100 text-center text-lg-left my-auto"
                 ),
                 html.Div([
                     html.Ul([
-                        html.Li(html.A(html.I("", className="fab fa-facebook fa-2x fa-fw"), href="#"),
-                                className="list-inline-item mr-3"),
-                        html.Li(html.A(html.I("", className="fab fa-twitter-square fa-2x fa-fw"), href="#"),
-                                className="list-inline-item mr-3"),
-                        html.Li(html.A(html.I("", className="fab fa-instagram fa-2x fa-fw"), href="#"),
-                                className="list-inline-item mr-3"),
+                        html.Li(html.A(html.I("", className="fab fa-facebook fa-2x fa-fw"),
+                                       href="https://www.facebook.com"), className="list-inline-item mr-3"),
+                        html.Li(html.A(html.I("", className="fab fa-twitter-square fa-2x fa-fw"),
+                                       href="https://www.twitter.com"), className="list-inline-item mr-3"),
+                        html.Li(html.A(html.I("", className="fab fa-instagram fa-2x fa-fw"),
+                                       href="https://www.instagram.com"), className="list-inline-item mr-3"),
                     ], className="ist-inline mb-0")
                 ], className="col-lg-6 h-100 text-center text-lg-right my-auto"
                 ),

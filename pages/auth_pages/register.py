@@ -53,11 +53,11 @@ def layout():
                             dbc.FormGroup(
                                 [
                                     dbc.Input(id='register-first', autoFocus=True),
-                                    dbc.FormText('First'),
+                                    dbc.FormText('First Name'),
                                     html.Br(),
 
                                     dbc.Input(id='register-last'),
-                                    dbc.FormText('Last'),
+                                    dbc.FormText('Last Name'),
                                     html.Br(),
 
                                     dbc.Input(id='register-email'),

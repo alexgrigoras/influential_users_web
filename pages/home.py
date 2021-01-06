@@ -26,9 +26,12 @@ def layout():
                         html.Div([
                             html.Div(
                                 [
-                                    html.H1("IDENTIFICATION OF INFLUENTIAL USERS IN MULTIMEDIA SOCIAL NETWORKS",
+                                    html.H1("INFLUENTIAL USERS",
+                                            className="mb-10", style={"margin-top": "20px", "font-weight": "bold",
+                                                                      "text-shadow": "2px 2px grey"}),
+                                    html.H1("Marketing Platform",
                                             className="mb-10",
-                                            style={"margin": "20px"}),
+                                            style={"margin-bottom": "20px", "text-shadow": "2px 2px grey"}),
                                     html.Br(),
                                     dbc.Container(
                                         html.Form(html.Button("Sign Up", type="submit", id="sign_up_button",
@@ -52,10 +55,10 @@ def layout():
                         dbc.Row([
                             html.Div(
                                 html.Div([
-                                    html.Div(html.I("", className="icon-screen-desktop m-auto text-primary"),
+                                    html.Div(html.I("", className="icon-magic-wand m-auto text-primary"),
                                              className="features-icons-icon d-flex"),
-                                    html.H3("Fully Responsive"),
-                                    html.P("This theme will look great on any device, no matter the size!",
+                                    html.H3("Easy Influencers Discovery"),
+                                    html.P("Find the best-suited influencers for the specified domain",
                                            className="lead mb-0")
                                 ],
                                     className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
@@ -64,10 +67,10 @@ def layout():
                             ),
                             html.Div(
                                 html.Div([
-                                    html.Div(html.I("", className="icon-layers m-auto text-primary"),
+                                    html.Div(html.I("", className="icon-social-youtube m-auto text-primary"),
                                              className="features-icons-icon d-flex"),
-                                    html.H3("Fully Responsive"),
-                                    html.P("This theme will look great on any device, no matter the size!",
+                                    html.H3("YouTube multimedia platform"),
+                                    html.P("Uses data from the well-known multimedia platform",
                                            className="lead mb-0")
                                 ],
                                     className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
@@ -76,10 +79,10 @@ def layout():
                             ),
                             html.Div(
                                 html.Div([
-                                    html.Div(html.I("", className="icon-check m-auto text-primary"),
+                                    html.Div(html.I("", className="icon-graph m-auto text-primary"),
                                              className="features-icons-icon d-flex"),
-                                    html.H3("Fully Responsive"),
-                                    html.P("This theme will look great on any device, no matter the size!",
+                                    html.H3("Multiple analysis algorithms"),
+                                    html.P("Using multiple analysis algorithms for getting the best results",
                                            className="lead mb-0")
                                 ],
                                     className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
@@ -95,43 +98,47 @@ def layout():
                 html.Section([
                     html.Div([
                         html.Div([
-                            html.Div("", className="col-lg-6 order-lg-2 text-white showcase-img",
-                                     style={"background-image": "url('assets/img/bg-showcase-1.jpg')"}),
+                            html.Div("", className="col-lg-4 order-lg-2 text-white showcase-img",
+                                     style={"background-image": "url('assets/img/interface.png')"}),
                             html.Div([
                                 dbc.Container([
-                                    html.H3("Fully Responsive Design"),
+                                    html.H3("Easy application utilization"),
                                     html.P(
-                                        "When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!",
+                                        "The web platform is divided between the dashboard (where all the analyzed "
+                                        "data can be seen and interpreted) and the analysis (where the influencers can "
+                                        "be searched using specified information)",
                                         className="lead mb-0")
                                 ])
-                            ], className="col-lg-6 order-lg-1 my-auto showcase-text")
-                        ], className="row no-gutters"),
+                            ], className="col-lg-4 order-lg-1 showcase-text")
+                        ], className="row no-gutters justify-content-center align-items-center"),
 
                         html.Div([
-                            html.Div("", className="col-lg-6 text-white showcase-img",
-                                     style={"background-image": "url('assets/img/bg-showcase-2.jpg')"}),
+                            html.Div("", className="col-lg-4 text-white showcase-img",
+                                     style={"background-image": "url('assets/img/intro.png')"}),
                             html.Div([
                                 dbc.Container([
-                                    html.H3("Updated For Bootstrap 4"),
+                                    html.H3("Discover data from YouTube"),
                                     html.P(
-                                        "Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!",
+                                        "The application retrieves data from the YouTube platform and creates a graph "
+                                        "network with user connections",
                                         className="lead mb-0")
                                 ])
-                            ], className="col-lg-6 my-auto showcase-text")
-                        ], className="row no-gutters"),
+                            ], className="col-lg-4 my-auto showcase-text")
+                        ], className="row no-gutters  justify-content-center align-items-center"),
 
                         html.Div([
-                            html.Div("", className="col-lg-6 order-lg-2 text-white showcase-img",
-                                     style={"background-image": "url('assets/img/bg-showcase-3.jpg')"}),
+                            html.Div("", className="col-lg-4 order-lg-2 text-white showcase-img",
+                                     style={"background-image": "url('assets/img/business-img.png')"}),
                             html.Div([
                                 dbc.Container([
-                                    html.H3("Easy to Use & Customize"),
+                                    html.H3("Select the right Influencer"),
                                     html.P(
-                                        "Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!",
+                                        "Select the best-suited influencer by analyzing the graph and the list of the most "
+                                        "influential users for the specified domain",
                                         className="lead mb-0")
                                 ])
-                            ], className="col-lg-6 order-lg-1 my-auto showcase-text")
-                        ], className="row no-gutters"),
+                            ], className="col-lg-4 order-lg-1 my-auto showcase-text")
+                        ], className="row no-gutters justify-content-center align-items-center"),
 
                     ], className="container-fluid p-0"),
                 ],

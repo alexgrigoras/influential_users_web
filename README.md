@@ -23,11 +23,15 @@ The main components of the application are
 influential_users_web
 ├── application
 |   ├── __init__.py
-|   ├── message_loader.py
+|   ├── message_logger.py
 |   ├── mongodb.py
 |   ├── network_analysis.py
 |   ├── plotly_display.py
 |   └── youtube_api.py
+├── assets
+|   ├── css
+|   ├── image
+|   └── vendor
 ├── pages
 |   ├── auth_pages
 |   |   ├── __init__.py
@@ -38,12 +42,9 @@ influential_users_web
 |   |   └── register.py
 |   ├── __init__.py
 |   ├── analysis.py
+|   ├── dashboard.py
 |   ├── home.py
 |   └── profile.py
-├── static
-|   ├── images
-|   |   ├── influential_users.png
-|   |   └── logo.png
 ├── utilities
 |   ├── __init__.py
 |   ├── auth.py

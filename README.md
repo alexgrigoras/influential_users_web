@@ -6,13 +6,17 @@ Web framework using Flask with Plotly Dash for Influential Users Application (De
 ## Architecture
 The main components of the application are
 
-1. <b>Information Gathering</b> - YouTube
+1. **Information Gathering** - Data:
+    - YouTube API.
 
-1. <b>Data Storage</b> - MongoDB
+1. **Data Storage** - Database:
+    - MongoDB;
+    - SQLite.
 
-1. <b>Analysis</b>
-    1. ranking algorithms
-    1. sentiment detection
+1. **Analysis** - Ranking algorithms:
+    - pagerank;
+    - betweenness centrality;
+    - voterank.
 
 ## Application structure
 ```

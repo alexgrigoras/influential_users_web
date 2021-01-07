@@ -109,17 +109,43 @@ def display_networks(networks, keywords, actions):
             dbc.CardBody([
                 dbc.Row([
                     dbc.Col([
-                        html.Div("Edit graph", className="text-xs font-weight-bold text-primary text-uppercase mb-1"),
+                        html.Div("Edit graph", className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
                         dcc.Dropdown(
                             id="edit-dropdown",
                             options=[{'label': str(networks.index(j) + 1) + ". " + str(i), 'value': j}
                                      for (i, j) in zip(keywords, networks)],
                             placeholder="Select graph"
                         ),
-                    ], className="mr-2"),
+                    ], className="mr-4", xl=5),
+                    dbc.Col([
+                        html.Div("Action", className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
+                        dcc.Dropdown(
+                            id="action-dropdown",
+                            options=[{'label': i, 'value': i} for i in actions],
+                            placeholder="Select action"
+                        ),
+                    ], className="mr-4", xl=5),
+                ],
+                    no_gutters=True,
+                    align="center"
+                ),
+                dbc.Row([
+                    dbc.Col([
+                        html.Div("Processing Algorithm",
+                                 className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
+                        dcc.Dropdown(
+                            id='algorithm-type',
+                            options=[
+                                {"label": "PageRank", "value": "page-rank"},
+                                {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
+                                {"label": "VoteRank", "value": "vote-rank"},
+                            ],
+                            placeholder="Select algorithm"
+                        ),
+                    ], className="mr-4", xl=5),
                     dbc.Col([
                         html.Div("Number of users",
-                                 className="text-xs font-weight-bold text-primary text-uppercase mb-2"),
+                                 className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
                         dbc.Row([
                             dbc.Col(
                                 dcc.Input(id='nr-users', value='30', type='range', placeholder="Valid from 1 to 100",
@@ -137,33 +163,7 @@ def display_networks(networks, keywords, actions):
                                 ),
                             )
                         ])
-                    ], className="mr-2"),
-                ],
-                    no_gutters=True,
-                    align="center"
-                ),
-                dbc.Row([
-                    dbc.Col([
-                        html.Div("Action", className="text-xs font-weight-bold text-primary text-uppercase mb-1"),
-                        dcc.Dropdown(
-                            id="action-dropdown",
-                            options=[{'label': i, 'value': i} for i in actions],
-                            placeholder="Select action"
-                        ),
-                    ], className="mr-2"),
-                    dbc.Col([
-                        html.Div("Processing Algorithm",
-                                 className="text-xs font-weight-bold text-primary text-uppercase mb-1"),
-                        dcc.Dropdown(
-                            id='algorithm-type',
-                            options=[
-                                {"label": "PageRank", "value": "page-rank"},
-                                {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
-                                {"label": "VoteRank", "value": "vote-rank"},
-                            ],
-                            placeholder="Select algorithm"
-                        ),
-                    ], className="mr-2"),
+                    ], className="mr-4", xl=6),
                 ],
                     no_gutters=True,
                     align="center"

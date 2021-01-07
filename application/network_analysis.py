@@ -110,6 +110,12 @@ class NetworkAnalysis:
         """
         self.__rank = nx.pagerank(self.__graph, alpha=0.9)
 
+    def compute_vote_rank(self):
+        """
+        Calculates the values of the nodes using vote rank algorithm and prints them
+        """
+        self.__rank = self.vote_rank(self.__graph)
+
     def compute_betweenness_centrality(self):
         """
         Calculates the values of the nodes using  algorithm and prints them
@@ -191,6 +197,7 @@ class NetworkAnalysis:
         values = []
         index = 0
         selected_nodes = []
+
         for u_id in sorted(self.__rank, key=self.__rank.get, reverse=True):
             selected_nodes.append(u_id)
             val = {"Rank": index + 1, "Value": check_value(self.__rank, u_id), 'Name': check_value(self.__labels, u_id)}
@@ -222,3 +229,85 @@ class NetworkAnalysis:
     @staticmethod
     def get_node_labels(graph):
         return graph.nodes()
+
+    @staticmethod
+    def vote_rank(graph, number_of_nodes=None):
+        """
+        Updated function from networkx to return the number of votes for each node
+
+        Select a list of influential nodes in a graph using VoteRank algorithm
+
+        VoteRank [1]_ computes a ranking of the nodes in a graph G based on a
+        voting scheme. With VoteRank, all nodes vote for each of its in-neighbours
+        and the node with the highest votes is elected iteratively. The voting
+        ability of out-neighbors of elected nodes is decreased in subsequent turns.
+
+        Note: We treat each edge independently in case of multigraphs.
+
+        Parameters
+        ----------
+        graph : graph
+            A NetworkX graph.
+
+        number_of_nodes : integer, optional
+            Number of ranked nodes to extract (default all nodes).
+
+        Returns
+        -------
+        voterank : list
+            Ordered list of computed seeds.
+            Only nodes with positive number of votes are returned.
+
+        References
+        ----------
+        .. [1] Zhang, J.-X. et al. (2016).
+            Identifying a set of influential spreaders in complex networks.
+            Sci. Rep. 6, 27823; doi: 10.1038/srep27823.
+        """
+        influential_nodes = []
+        results = {}
+        voterank = {}
+
+        if len(graph) == 0:
+            return influential_nodes
+        if number_of_nodes is None or number_of_nodes > len(graph):
+            number_of_nodes = len(graph)
+        if graph.is_directed():
+            # For directed graphs compute average out-degree
+            avgDegree = sum(deg for _, deg in graph.out_degree()) / len(graph)
+        else:
+            # For undirected graphs compute average degree
+            avgDegree = sum(deg for _, deg in graph.degree()) / len(graph)
+        # step 1 - initiate all nodes to (0,1) (score, voting ability)
+        for n in graph.nodes():
+            voterank[n] = [0, 1]
+            results[n] = voterank[n][0]
+        # Repeat steps 1b to 4 until num_seeds are elected.
+        for _ in range(number_of_nodes):
+            # step 1b - reset rank
+            for n in graph.nodes():
+                voterank[n][0] = 0
+            # step 2 - vote
+            for n, nbr in graph.edges():
+                # In directed graphs nodes only vote for their in-neighbors
+                voterank[n][0] += voterank[nbr][1]
+                if not graph.is_directed():
+                    voterank[nbr][0] += voterank[n][1]
+            for n in influential_nodes:
+                voterank[n][0] = 0
+            # step 3 - select top node
+            n = max(graph.nodes, key=lambda x: voterank[x][0])
+            if voterank[n][0] == 0:
+                return results
+
+            influential_nodes.append(n)
+            results[n] = voterank[n][0]
+
+            # weaken the selected node
+            voterank[n] = [0, 0]
+            # step 4 - update voterank properties
+            for _, nbr in graph.edges(n):
+                voterank[nbr][1] -= 1 / avgDegree
+                voterank[nbr][1] = max(voterank[nbr][1], 0)
+
+        return results

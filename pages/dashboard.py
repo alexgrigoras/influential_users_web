@@ -168,6 +168,7 @@ def display_networks(networks, keywords, actions):
                             options=[
                                 {"label": "PageRank", "value": "page-rank"},
                                 {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
+                                {"label": "VoteRank", "value": "vote-rank"},
                             ],
                             placeholder="Select algorithm"
                         ),
@@ -412,6 +413,8 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
                 network.compute_page_rank()
             elif algorithm == "betweenness-centrality":
                 network.compute_betweenness_centrality()
+            elif algorithm == "vote-rank":
+                network.compute_vote_rank()
 
             network.set_file_name(file_name)
             network.store_network()

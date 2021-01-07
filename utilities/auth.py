@@ -50,8 +50,10 @@ def add_user(first, last, password, email, engine):
         conn = engine.connect()
         conn.execute(statement)
         conn.close()
+        logger.info("Added user " + first + " " + password + " [" + email + "]")
         return True
     except:
+        logger.warning("Cannot add user " + first + " " + password + " [" + email + "]")
         return False
 
 

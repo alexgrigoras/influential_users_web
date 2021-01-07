@@ -1,3 +1,5 @@
+import time
+
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
@@ -15,7 +17,7 @@ from utilities.utils import create_data_table_network
 
 def success_alert(message, action):
     return dbc.Alert(
-        message + " " + action + ' successfully',
+        message + " " + action + ' is successful. Reload page to see changes!',
         color='success',
         dismissable=True
     )
@@ -25,17 +27,6 @@ failure_alert = dbc.Alert(
     'Cannot add graph network',
     color='danger',
     dismissable=True
-)
-
-quota_exceeded_alert = dbc.Alert(
-    'Data retrieval from YouTube is limited! Try the next day.',
-    color='danger',
-    dismissable=True
-)
-
-login_alert = dbc.Alert(
-    'User not logged in. Taking you to login.',
-    color='danger'
 )
 
 
@@ -203,6 +194,8 @@ def layout():
                     # Statistics
                     html.Div(1, id='statistics-trigger', style=dict(display='none')),
                     html.Div(id='output-statistics-div', style={"width": "100%"}),
+                    html.Div(0, id='dash-update-trigger', style=dict(display='none')),
+                    html.Div(0, id='redirect-dash-trigger', style=dict(display='none')),
 
                     html.Div(id='delete-trigger'),
 
@@ -376,7 +369,8 @@ def profile_values(trigger):
 
 
 @app.callback(
-    Output('delete-trigger', 'children'),
+    [Output('delete-trigger', 'children'),
+     Output('dash-update-trigger', 'children')],
     [Input('action-button', 'n_clicks')],
     [State('edit-dropdown', 'value'),
      State('action-dropdown', 'value'),
@@ -386,16 +380,16 @@ def profile_values(trigger):
 def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
     if n_clicks is not None and n_clicks > 0:
         if edit_network is None:
-            return parameters_alert("network")
+            return parameters_alert("network"), 0
         if action is None:
-            return parameters_alert("action")
+            return parameters_alert("action"), 0
         elif action == 'delete':
             delete_user_network(edit_network, engine)
         elif action == 'update':
             if nr_users is None:
-                return parameters_alert("nr users")
+                return parameters_alert("nr users"), 0
             if algorithm is None:
-                return parameters_alert("algorithm")
+                return parameters_alert("algorithm"), 0
 
             crawler = YoutubeAPI()
             network = NetworkAnalysis()
@@ -407,7 +401,7 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
 
             if not add_user_search(current_user.id, old_user_network[0][0], file_name, "Processing Data",
                                    old_user_network[0][4], nr_users, algorithm, engine):
-                return failure_alert
+                return failure_alert, 0
 
             if algorithm == "page-rank":
                 network.compute_page_rank()
@@ -421,12 +415,22 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
             network.store_labels()
 
             if not update_user_search(current_user.id, file_name, "Finished", engine):
-                return failure_alert
+                return failure_alert, 0
 
-        return success_alert(edit_network, action)
+        return success_alert(edit_network, action), 1
 
 
 @app.callback(Output("range-val", "children"),
               [Input('nr-users', 'value')])
 def input_triggers_spinner(value):
     return value
+
+
+@app.callback(
+    Output('redirect-dash-trigger', 'children'),
+    [Input('dash-update-trigger', 'children')]
+)
+def register_success(value):
+    if value is not None and value == 1:
+        time.sleep(2)
+        return dcc.Location(pathname='/dashboard', id="redirect", refresh=True)

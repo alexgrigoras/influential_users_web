@@ -124,7 +124,7 @@ def layout():
                                         className="lead mb-0")
                                 ])
                             ], className="col-lg-4 my-auto showcase-text")
-                        ], className="row no-gutters  justify-content-center align-items-center"),
+                        ], className="row no-gutters justify-content-center align-items-center"),
 
                         html.Div([
                             html.Div("", className="col-lg-4 order-lg-2 text-white showcase-img",
@@ -133,7 +133,8 @@ def layout():
                                 dbc.Container([
                                     html.H3("Select the right Influencer"),
                                     html.P(
-                                        "Select the best-suited influencer by analyzing the graph and the list of the most "
+                                        "Select the best-suited influencer by analyzing the graph and the list of the "
+                                        "most "
                                         "influential users for the specified domain",
                                         className="lead mb-0")
                                 ])

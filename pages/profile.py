@@ -7,6 +7,7 @@ from dash import no_update
 from dash.dependencies import Input, Output, State
 from flask_login import current_user
 
+from application.message_logger import MessageLogger
 from server import app, engine
 from utilities.auth import change_user, change_password, layout_auth, del_user, send_delete_confirmation, \
     send_profile_change
@@ -31,6 +32,9 @@ failure_delete = dbc.Alert(
     'Account cannot be deleted',
     color='danger',
 )
+
+ml = MessageLogger('analysis')
+logger = ml.get_logger()
 
 
 @layout_auth('require-authentication')
@@ -86,7 +90,9 @@ def layout():
                                                  id='profile-password-confirm-formtext'),
                                     html.Br(),
 
-                                    dbc.Button('Save changes', color='primary', id='profile-submit', disabled=True,
+                                    dbc.Button('Save changes', color='pri'
+                                                                     ''
+                                                                     'mary', id='profile-submit', disabled=True,
                                                block=True, size='lg'),
 
                                     html.Br(),
@@ -254,9 +260,9 @@ def profile_delete(n_clicks):
 
         if del_user(email, engine):
             if send_delete_confirmation(email, first):
-                print("Confirmation sent to " + email + " " + first)
+                logger.info("Confirmation sent to " + email + " " + first)
             else:
-                print("Confirmation NOT sent to " + email + " " + first)
+                logger.warning("Confirmation NOT sent to " + email + " " + first)
             return success_delete, 1
 
         return failure_delete, 0
@@ -270,6 +276,5 @@ def profile_delete(n_clicks):
 )
 def register_success(value):
     if value == 1:
-        print("redirect")
         time.sleep(2)
         return dcc.Location(pathname='/home', id="redirect")

@@ -170,14 +170,13 @@ def register_success(n_clicks, first, last, email, password, confirm):
         time.sleep(.25)
         if current_user.is_authenticated:
             return '/home', already_registered_alert
+        if add_user(first, last, password, email, engine):
+            send_registration_confirmation(email, engine)
+            return '/login', success_alert
         else:
-            return no_update, no_update
-
-    if add_user(first, last, password, email, engine):
-        send_registration_confirmation(email, engine)
-        return '/login', success_alert
+            return '', failure_alert
     else:
-        return '', failure_alert
+        return no_update, no_update
 
 
 @app.callback(

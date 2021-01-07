@@ -105,6 +105,7 @@ def layout():
                     options=[
                         {"label": "PageRank", "value": "page-rank"},
                         {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
+                        {"label": "VoteRank", "value": "vote-rank"},
                     ],
 
                     placeholder="Select algorithm"
@@ -235,6 +236,8 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
             network.compute_page_rank()
         elif algorithm_type == "betweenness-centrality":
             network.compute_betweenness_centrality()
+        elif algorithm_type == "vote-rank":
+            network.compute_vote_rank()
 
         network.store_network()
 

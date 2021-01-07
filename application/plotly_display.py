@@ -1,6 +1,7 @@
 import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 from plotly.graph_objs import *
+from networkx.readwrite.adjlist import generate_adjlist
 
 
 def reformat_graph_layout(graph, layout):
@@ -177,7 +178,7 @@ def visualize_graph_3d(graph, node_labels, node_sizes, layout="spring", title="3
         node_trace['y'].append(y)
         node_trace['z'].append(z)
 
-    for adjacencies in graph.adjacency_list():
+    for adjacencies in generate_adjlist(graph):
         node_trace['marker']['color'].append(len(adjacencies))
 
     for size in node_sizes:

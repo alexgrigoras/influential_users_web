@@ -104,19 +104,30 @@ class NetworkAnalysis:
         self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.__file_name + OBJECT_EXTENSION, "rb"))
         self.__rank = pickle.load(open(NETWORKS_FOLDER + "/ranks-" + self.__file_name + OBJECT_EXTENSION, "rb"))
 
-    def compute_page_rank(self):
+    def compute_ranking(self, algorithm):
+        if algorithm == "page-rank":
+            self.__compute_page_rank()
+        elif algorithm == "betweenness-centrality":
+            self.__compute_betweenness_centrality()
+        elif algorithm == "vote-rank":
+            self.__compute_vote_rank()
+        else:
+            return False
+        return True
+
+    def __compute_page_rank(self):
         """
         Calculates the values of the nodes using page rank algorithm and prints them
         """
         self.__rank = nx.pagerank(self.__graph, alpha=0.9)
 
-    def compute_vote_rank(self):
+    def __compute_vote_rank(self):
         """
         Calculates the values of the nodes using vote rank algorithm and prints them
         """
         self.__rank = self.vote_rank(self.__graph)
 
-    def compute_betweenness_centrality(self):
+    def __compute_betweenness_centrality(self):
         """
         Calculates the values of the nodes using  algorithm and prints them
         """
@@ -182,13 +193,11 @@ class NetworkAnalysis:
         node_labels = [self.__check_value(self.__labels, n_id) for n_id in node_ids]
         edge_weights = None
 
-        if graph_type == "3":
-            fig = visualize_graph_3d(subgraph, node_labels, node_sizes, "spring", "3D visualization")
-        elif graph_type == "2":
+        if graph_type == "2d":
             tree = nx.minimum_spanning_tree(subgraph)
             fig = visualize_graph(tree, node_labels, node_sizes, edge_weights, "graphviz", "2D visualization")
         else:
-            return None
+            fig = visualize_graph_3d(subgraph, node_labels, node_sizes, graph_type, "3D visualization")
 
         return fig
 

@@ -9,7 +9,7 @@ from pages import (
     home,
     dashboard,
     profile,
-    analysis
+    discover
 )
 # app authentication
 from pages.auth_pages import (
@@ -25,7 +25,7 @@ from server import app, server
 menu_bar = [
     dbc.NavLink("Home", href="/home", className="ml-auto"),
     dbc.NavLink("Dashboard", href="/dashboard", style={"margin": "0"}),
-    dbc.NavLink("Analysis", href="/analysis", style={"margin": "0"}),
+    dbc.NavLink("Discover", href="/discover", style={"margin": "0"}),
     html.Div(id='dropdown-container', style={"margin": "0"}),
     dbc.NavLink('Login', id='user-action', href='/login', style={"margin": "0"}),
 ]
@@ -121,8 +121,8 @@ def router(pathname):
         return dashboard.layout()
     elif pathname == '/profile':
         return profile.layout()
-    elif pathname == '/analysis':
-        return analysis.layout()
+    elif pathname == '/discover':
+        return discover.layout()
 
     error_page = dbc.Container([
             html.Div([

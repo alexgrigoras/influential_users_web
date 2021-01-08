@@ -8,7 +8,7 @@ from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
 from application.web_crawler import YoutubeAPI
 from server import app, engine
-from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_user_search, \
+from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_search_status, \
     delete_user_network
 from utilities.utils import create_data_table_network, processing_algorithms, graph_types
 
@@ -44,8 +44,8 @@ def graph_alert(graph):
     )
 
 
-location = dcc.Location(id='analysis-url', refresh=True, pathname='/analysis')
-ml = MessageLogger('analysis')
+location = dcc.Location(id='discover-url', refresh=True, pathname='/discover')
+ml = MessageLogger('discover')
 logger = ml.get_logger()
 
 
@@ -54,7 +54,7 @@ def layout():
     # if current_user.is_authenticated:
     text_card = dbc.Card([
         dbc.CardHeader([
-            html.H6("Analyze YouTube Social Media", className="m-0 font-weight-bold text-primary"),
+            html.H6("Discover Influencers on YouTube", className="m-0 font-weight-bold text-primary"),
         ],
             className="py-3 d-flex flex-row align-items-center justify-content-between"),
         dbc.CardBody(
@@ -148,7 +148,7 @@ def layout():
                 dbc.Container([
                     # Heading
                     html.Div(
-                        html.H1("Analysis", className="h3 mb-0 text-gray-800"),
+                        html.H1("Discover", className="h3 mb-0 text-gray-800"),
                         className="d-sm-flex align-items-center justify-content-between mb-4"
                     ),
 
@@ -217,8 +217,9 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
 
         file_name = crawler.get_file_name()
 
-        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm, engine):
-            if not update_user_search(current_user.id, file_name, "Retrieving Data", engine):
+        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm,
+                               graph_type, engine):
+            if not update_search_status(current_user.id, file_name, "Retrieving Data", engine):
                 return '', failure_alert, ''
 
         results = crawler.search(keyword, int(nr_videos))
@@ -231,7 +232,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
         except TypeError:
             return '', quota_exceeded_alert, ''
 
-        if not update_user_search(current_user.id, file_name, "Processing Data", engine):
+        if not update_search_status(current_user.id, file_name, "Processing Data", engine):
             return '', failure_alert, ''
 
         # create users network
@@ -251,7 +252,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
         else:
             logger.warning("Confirmation NOT sent to " + str(current_user.email) + " " + str(current_user.first))
 
-        if not update_user_search(current_user.id, file_name, "Finished", engine):
+        if not update_search_status(current_user.id, file_name, "Finished", engine):
             return '', failure_alert, ''
 
         # Create Layout

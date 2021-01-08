@@ -389,6 +389,7 @@ def layout_auth(mode):
 class UserSearches(db.Model):
     __tablename__ = 'user_searches'
     network_name = Column(String(200), primary_key=True)
+    network_data = Column(String(200))
     user_id = Column(Integer)
     search_keyword = Column(String(200))
     search_state = Column(String(100))
@@ -403,13 +404,15 @@ def user_searches_table():
     return Table('user_searches', User.metadata)
 
 
-def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_influencers, algorithm, graph, engine):
+def add_user_search(user_id, search_keyword, network_name, network_data, state, nr_videos, nr_influencers, algorithm,
+                    graph, engine):
     table = user_searches_table()
 
     values = dict(
+        network_name=network_name,
+        network_data=network_data,
         user_id=user_id,
         search_keyword=search_keyword,
-        network_name=network_name,
         search_state=state,
         nr_videos=nr_videos,
         nr_influencers=nr_influencers,
@@ -423,11 +426,10 @@ def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_
         conn = engine.connect()
         conn.execute(statement)
         conn.close()
-        logger.info("Added user " + str(user_id) + " search: " + str(search_keyword))
+        logger.info("Added network: " + str(search_keyword) + " for user with id " + str(user_id))
         return True
-
     except:
-        logger.error("Cannot add user " + str(user_id) + " search: " + str(search_keyword))
+        logger.error("Cannot add network: " + str(search_keyword) + " for user with id " + str(user_id))
         return False
 
 
@@ -482,7 +484,7 @@ def get_user_searches(user_id_nr, engine):
 def get_user_networks(user_id_nr, engine):
     table = user_searches_table()
 
-    statement = select([table.c.network_name, table.c.search_keyword, table.c.nr_influencers,
+    statement = select([table.c.network_name, table.c.network_data, table.c.search_keyword, table.c.nr_influencers,
                         table.c.search_state, table.c.algorithm, table.c.graph, table.c.timestamp]). \
         where(table.c.user_id == user_id_nr)
     with engine.connect() as conn:
@@ -493,8 +495,9 @@ def get_user_networks(user_id_nr, engine):
 def get_network(network, engine):
     table = user_searches_table()
 
-    statement = select([ table.c.search_keyword, table.c.network_name, table.c.search_state, table.c.timestamp,
-                         table.c.nr_videos, table.c.nr_influencers, table.c.algorithm ]). \
+    statement = select([ table.c.search_keyword, table.c.network_name, table.c.network_data, table.c.search_state,
+                         table.c.timestamp, table.c.nr_videos, table.c.nr_influencers, table.c.algorithm,
+                         table.c.graph]).\
         where(table.c.network_name == network)
     with engine.connect() as conn:
         resp = list(conn.execute(statement))

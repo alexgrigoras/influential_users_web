@@ -10,7 +10,8 @@ from application.web_crawler import YoutubeAPI
 from server import app, engine
 from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_search_status, \
     delete_user_network
-from utilities.utils import create_data_table_network, processing_algorithms, graph_types
+from utilities.utils import create_data_table_network, processing_algorithms, graph_types, create_file_name, \
+    NETWORKS_FOLDER, COMMENT_PAGES_LIMIT
 
 success_alert = dbc.Alert(
     'Finished searching',
@@ -212,13 +213,12 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
         limit = int(nr_users)
 
         # create crawler and network object
-        crawler = YoutubeAPI()
-        network = NetworkAnalysis()
+        file_name = create_file_name()
+        crawler = YoutubeAPI(file_name, NETWORKS_FOLDER, COMMENT_PAGES_LIMIT)
+        network = NetworkAnalysis(NETWORKS_FOLDER)
 
-        file_name = crawler.get_file_name()
-
-        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm,
-                               graph_type, engine):
+        if not add_user_search(current_user.id, keyword, file_name, file_name, "Retrieving Data", nr_videos, limit,
+                               algorithm, graph_type, engine):
             if not update_search_status(current_user.id, file_name, "Retrieving Data", engine):
                 return '', failure_alert, ''
 
@@ -236,7 +236,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
             return '', failure_alert, ''
 
         # create users network
-        network.set_file_name(file_name)
+        network.set_files(file_name, file_name)
         network.create_network()
 
         if not network.compute_ranking(algorithm):

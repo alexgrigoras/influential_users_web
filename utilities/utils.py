@@ -1,4 +1,12 @@
+import os
+import random
+import string
+
 import dash_table
+
+STRING_LENGTH = 10
+COMMENT_PAGES_LIMIT = 3
+NETWORKS_FOLDER = ".networks/"
 
 graph_actions = {
     "Delete": "delete",
@@ -54,3 +62,22 @@ def check_value(array, value):
         return array[value]
     else:
         return "x"
+
+
+def create_file_name():
+    file_name = "network_" + __random_string(STRING_LENGTH)
+    while os.path.exists(NETWORKS_FOLDER + file_name + ".*"):
+        file_name = "network_" + __random_string(STRING_LENGTH)
+
+    return file_name
+
+
+def __random_string(string_length):
+    """
+    Generate a random string with the combination of lowercase and uppercase letters
+    :param string_length: the length of the string that is generated
+    :return: the generated string
+    """
+
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for i in range(string_length))

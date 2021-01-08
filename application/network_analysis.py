@@ -8,7 +8,6 @@ from application.message_logger import MessageLogger
 from application.network_display import visualize_graph_3d, visualize_graph
 from utilities.utils import check_value
 
-NETWORKS_FOLDER = '.networks'
 IMAGES_FOLDER = '.images'
 TEXT_EXTENSION = '.txt'
 OBJECT_EXTENSION = '.pickle'
@@ -23,7 +22,7 @@ class NetworkAnalysis:
 
     """
 
-    def __init__(self, file_name=None):
+    def __init__(self, networks_folder, network_file=None, data_file=None):
         """
         Class constructor
         """
@@ -35,14 +34,18 @@ class NetworkAnalysis:
         self.__graph = nx.empty_graph
         self.__labels = {}
         self.__rank = []
-        self.__file_name = file_name
+        self.__data_file = data_file
+        self.__network_file = network_file
+        self.__networks_folder = networks_folder
 
-    def set_file_name(self, file_name):
+    def set_files(self, data_file, network_file):
         """
         Sets the name of the file to read for input and also for exporting data to a specific format
-        :param file_name: name of the file without extension
+        :param data_file: name of the file without extension for the network data
+        :param network_file: name of the file without extension for the network ranks
         """
-        self.__file_name = file_name
+        self.__data_file = data_file
+        self.__network_file = network_file
 
     def get_graph_info(self):
         """
@@ -55,54 +58,53 @@ class NetworkAnalysis:
         """
         Export network to gexf format. A file name needs to be set before performing this operation
         """
-        if not self.__file_name:
+        if not self.__data_file:
             self.logger.critical("No file name was set")
             exit(0)
 
-        nx.write_gexf(self.__graph, NETWORKS_FOLDER + "/" + self.__file_name + GRAPH_EXTENSION)
+        nx.write_gexf(self.__graph, self.__networks_folder + self.__data_file + GRAPH_EXTENSION)
 
     def export_to_dot(self):
         """
         Export network to gexf format. A file name needs to be set before performing this operation
         """
-        if not self.__file_name:
+        if not self.__data_file:
             self.logger.critical("No file name was set")
             exit(0)
 
         # write dot file to use with graphviz - run "dot -Tpng file_name.svg > file_name.svg"
-        nx.nx_agraph.write_dot(self.__graph, NETWORKS_FOLDER + "/" + self.__file_name + DOT_EXTENSION)
+        nx.nx_agraph.write_dot(self.__graph, self.__networks_folder + self.__data_file + DOT_EXTENSION)
 
     def create_network(self):
         """
         Creates a network from the file with the edge-list.
         A file name needs to be set before performing this operation
         """
-        if not self.__file_name:
+        if not self.__data_file:
             self.logger.critical("No file name was set")
             exit(0)
 
-        self.__graph = nx.read_edgelist(NETWORKS_FOLDER + "/" + self.__file_name + TEXT_EXTENSION,
+        self.__graph = nx.read_edgelist(self.__networks_folder + self.__data_file + TEXT_EXTENSION,
                                         create_using=nx.Graph(),
                                         edgetype=str, delimiter=" ")
 
-        self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.__file_name + OBJECT_EXTENSION, "rb"))
+        self.__labels = pickle.load(open(self.__networks_folder + self.__data_file + OBJECT_EXTENSION, "rb"))
 
     def store_network(self):
-        self.logger.info("Stored network: " + NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
-        nx.write_gpickle(self.__graph, NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
+        self.logger.info("Stored network: " + self.__networks_folder + self.__data_file + NETWORK_OBJECT_EXTENSION)
+        nx.write_gpickle(self.__graph, self.__networks_folder + self.__data_file + NETWORK_OBJECT_EXTENSION)
         self.store_ranks()
 
     def store_ranks(self):
-        pickle.dump(self.__rank, open(NETWORKS_FOLDER + "/ranks-" + self.__file_name + OBJECT_EXTENSION, "wb"))
-
-    def store_labels(self):
-        pickle.dump(self.__labels, open(NETWORKS_FOLDER + "/" + self.__file_name + OBJECT_EXTENSION, "wb"))
+        pickle.dump(self.__rank, open(self.__networks_folder + "ranks_" + self.__network_file + OBJECT_EXTENSION, "wb"))
 
     def import_network(self):
-        self.logger.info("Imported network " + NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
-        self.__graph = nx.read_gpickle(NETWORKS_FOLDER + "/" + self.__file_name + NETWORK_OBJECT_EXTENSION)
-        self.__labels = pickle.load(open(NETWORKS_FOLDER + "/" + self.__file_name + OBJECT_EXTENSION, "rb"))
-        self.__rank = pickle.load(open(NETWORKS_FOLDER + "/ranks-" + self.__file_name + OBJECT_EXTENSION, "rb"))
+        self.logger.info("Imported network " + self.__networks_folder + self.__data_file + NETWORK_OBJECT_EXTENSION)
+        self.__graph = nx.read_gpickle(self.__networks_folder + self.__data_file + NETWORK_OBJECT_EXTENSION)
+        self.__labels = pickle.load(open(self.__networks_folder + self.__data_file + OBJECT_EXTENSION, "rb"))
+
+    def import_ranks(self):
+        self.__rank = pickle.load(open(self.__networks_folder + "ranks_" + self.__network_file + OBJECT_EXTENSION, "rb"))
 
     def compute_ranking(self, algorithm):
         if algorithm == "betweenness-centrality":
@@ -203,7 +205,7 @@ class NetworkAnalysis:
         """
         Display the graph and
         """
-        plt.savefig(IMAGES_FOLDER + "/" + self.__file_name + IMAGE_EXTENSION)
+        plt.savefig(IMAGES_FOLDER + "/" + self.__data_file + IMAGE_EXTENSION)
         plt.show()
 
     def display_tree(self):

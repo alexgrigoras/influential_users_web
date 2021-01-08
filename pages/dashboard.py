@@ -8,11 +8,11 @@ from flask_login import current_user
 
 from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
-from application.web_crawler import YoutubeAPI
 from server import app, engine
 from utilities.auth import layout_auth, get_user_searches, get_user_networks, get_user_networks_names, \
     delete_user_network, add_user_search, get_network, update_search_status, update_search_graph
-from utilities.utils import create_data_table_network, graph_actions, processing_algorithms, graph_types
+from utilities.utils import create_data_table_network, graph_actions, processing_algorithms, graph_types, \
+    create_file_name, NETWORKS_FOLDER
 
 
 def success_alert(message, action):
@@ -45,9 +45,9 @@ def parameters_alert(message):
     )
 
 
-def graph_alert(graph):
+def algorithm_alert(algorithm):
     return dbc.Alert(
-        'Graph ' + graph + ' is not implemented',
+        'Algorithm ' + algorithm + ' is not implemented',
         color='danger',
         dismissable=True
     )
@@ -328,13 +328,14 @@ def profile_values(set_trigger, update_trigger):
     result_index = 1
 
     for row in reversed(db_results):
-        file_name = row[0]
-        keyword = row[1]
-        limit = row[2]
-        search_state = row[3]
-        algorithm = row[4]
-        graph_type= row[5]
-        timestamp = row[6]
+        network_file = row[0]
+        data_file = row[1]
+        keyword = row[2]
+        limit = row[3]
+        search_state = row[4]
+        algorithm = row[5]
+        graph_type= row[6]
+        timestamp = row[7]
 
         if search_state != "Finished":
             # Create Layout
@@ -369,9 +370,10 @@ def profile_values(set_trigger, update_trigger):
 
             continue
 
-        network = NetworkAnalysis()
-        network.set_file_name(file_name)
+        network = NetworkAnalysis(NETWORKS_FOLDER)
+        network.set_files(data_file, network_file)
         network.import_network()
+        network.import_ranks()
         nr_nodes = network.get_nr_nodes()
 
         fig, values, columns = network.create_figure(limit, graph_type)
@@ -462,27 +464,24 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm, graph):
             if algorithm is None:
                 return parameters_alert("algorithm"), 0
 
-            crawler = YoutubeAPI()
-            network = NetworkAnalysis()
-            network.set_file_name(edit_network)
+            new_network_name = create_file_name()
+            old_user_network = get_network(edit_network, engine)
+            network = NetworkAnalysis(NETWORKS_FOLDER,)
+
+            network.set_files(edit_network, new_network_name)
             network.import_network()
 
-            file_name = crawler.get_file_name()
-            old_user_network = get_network(edit_network, engine)
-
-            if not add_user_search(current_user.id, old_user_network[0][0], file_name, "Processing Data",
-                                   old_user_network[0][4], nr_users, algorithm, graph, engine):
+            if not add_user_search(current_user.id, old_user_network[0][0], new_network_name, edit_network, "Processing Data",
+                                   old_user_network[0][5], nr_users, algorithm, old_user_network[0][8], engine):
                 return failure_alert, 0
 
             if network.compute_ranking(algorithm) is False:
-                delete_user_network(file_name, engine)
-                return graph_alert(algorithm), 0
+                delete_user_network(new_network_name, engine)
+                return algorithm_alert(algorithm), 0
 
-            network.set_file_name(file_name)
-            network.store_network()
-            network.store_labels()
+            network.store_ranks()
 
-            if not update_search_status(current_user.id, file_name, "Finished", engine):
+            if not update_search_status(current_user.id, new_network_name, "Finished", engine):
                 return failure_alert, 0
 
         elif action == 'change-graph':

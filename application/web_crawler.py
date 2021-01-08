@@ -1,8 +1,6 @@
 import math
 import os
 import pickle
-import random
-import string
 from datetime import datetime
 
 import httplib2
@@ -18,13 +16,8 @@ DEVELOPER_KEY = os.getenv('GOOGLE_DEV_KEY')
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
-STRING_LENGTH = 10
-NETWORKS_FOLDER = '.networks'
-PATH = NETWORKS_FOLDER + "/"
 TEXT_EXTENSION = '.txt'
 OBJECT_EXTENSION = '.pickle'
-
-COMMENT_PAGES_LIMIT = 3
 
 
 class YoutubeAPI:
@@ -34,19 +27,21 @@ class YoutubeAPI:
 
     """ Init """
 
-    def __init__(self):
+    def __init__(self, file_name, path, comment_pages_limit):
         """
 
+        :param file_name:
+        :param path:
+        :param comment_pages_limit:
         """
-
-        # logging module
         ml = MessageLogger('youtube_api')
         self.__logger = ml.get_logger()
-        self.__db = MongoDB()  # mongodb driver
-        self.__max_results = 0  # the maximum number of results
-        self.__get_authentication_service()  # get the authentication service for youtube api
-        self.__file_name = ""
-        self.__create_file_name()
+        self.__db = MongoDB()                               # mongodb driver
+        self.__max_results = 0                              # the maximum number of results
+        self.__get_authentication_service()                 # get the authentication service for youtube api
+        self.__file_name = file_name
+        self.__path = path
+        self.__comment_pages_limit = comment_pages_limit
 
     """ Search data """
 
@@ -341,15 +336,6 @@ class YoutubeAPI:
 
     """ Users Network """
 
-    def __create_file_name(self):
-        self.__file_name = "network_" + self.__random_string(STRING_LENGTH)
-        while os.path.exists(PATH + self.__file_name + ".*"):
-            self.__file_name = "network_" + self.__random_string(STRING_LENGTH)
-        self.__logger.info("File name: " + self.__file_name)
-
-    def get_file_name(self):
-        return self.__file_name
-
     def create_network(self, search_id):
         """
         Gets data from database and creates a file with the users edge-list
@@ -365,7 +351,7 @@ class YoutubeAPI:
 
         # create file for network and open it for appending data
 
-        f = open(PATH + self.__file_name + TEXT_EXTENSION, "a")
+        f = open(self.__path + self.__file_name + TEXT_EXTENSION, "a")
 
         # getting videos list from search
         results = self.__db.get_search_results({'_id': search_id}, {'results': 1})
@@ -432,7 +418,7 @@ class YoutubeAPI:
                     self.__logger.warning("Invalid key on channel_names.pop")
 
         # export data to
-        pickle.dump(channel_names, open(PATH + self.__file_name + OBJECT_EXTENSION, "wb"))
+        pickle.dump(channel_names, open(self.__path + self.__file_name + OBJECT_EXTENSION, "wb"))
 
         # close file
         f.close()
@@ -755,7 +741,7 @@ class YoutubeAPI:
 
         final_results = []
         temp_token = {}
-        nr_pages = COMMENT_PAGES_LIMIT
+        nr_pages = self.__comment_pages_limit
         index = 0
 
         try:
@@ -847,16 +833,3 @@ class YoutubeAPI:
         :return:
         """
         self.__db.insert_search_results(search_results)
-
-    """ Other methods """
-
-    @staticmethod
-    def __random_string(string_length):
-        """
-        Generate a random string with the combination of lowercase and uppercase letters
-        :param string_length: the length of the string that is generated
-        :return: the generated string
-        """
-
-        letters = string.ascii_letters
-        return ''.join(random.choice(letters) for i in range(string_length))

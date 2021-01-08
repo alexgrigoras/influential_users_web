@@ -6,10 +6,11 @@ from flask_login import current_user
 
 from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
-from application.youtube_api import YoutubeAPI
+from application.web_crawler import YoutubeAPI
 from server import app, engine
-from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_user_search
-from utilities.utils import create_data_table_network
+from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_user_search, \
+    delete_user_network
+from utilities.utils import create_data_table_network, processing_algorithms, graph_types
 
 success_alert = dbc.Alert(
     'Finished searching',
@@ -33,6 +34,15 @@ login_alert = dbc.Alert(
     'User not logged in. Taking you to login.',
     color='danger'
 )
+
+
+def graph_alert(graph):
+    return dbc.Alert(
+        'Graph ' + graph + ' is not implemented',
+        color='danger',
+        dismissable=True
+    )
+
 
 location = dcc.Location(id='analysis-url', refresh=True, pathname='/analysis')
 ml = MessageLogger('analysis')
@@ -92,22 +102,16 @@ def layout():
                 html.H5("Graph type: "),
                 dcc.RadioItems(
                     id="graph_type",
-                    options=[
-                        {'label': "3D Spring", 'value': '3'},
-                        {'label': "2D Graph", 'value': '2', "disabled": "disabled"}
-                    ],
+                    options=[{"label": graph, "value": graph_types[graph]}
+                             for graph in graph_types],
                     value='3',
                     labelStyle={'display': 'inline-block', "margin-right": "15px"}
                 ),
                 html.H5("Processing Algorithm: "),
                 dcc.Dropdown(
                     id='algorithm_type',
-                    options=[
-                        {"label": "PageRank", "value": "page-rank"},
-                        {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
-                        {"label": "VoteRank", "value": "vote-rank"},
-                    ],
-
+                    options=[{"label": algo, "value": processing_algorithms[algo]}
+                             for algo in processing_algorithms],
                     placeholder="Select algorithm"
                 ),
                 html.Br(),
@@ -238,6 +242,9 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
             network.compute_betweenness_centrality()
         elif algorithm_type == "vote-rank":
             network.compute_vote_rank()
+        else:
+            delete_user_network(file_name, engine)
+            return '', graph_alert(algorithm_type), ''
 
         network.store_network()
 

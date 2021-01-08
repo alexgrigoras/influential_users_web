@@ -1,5 +1,5 @@
 # [START flask_app]
-runtime: python37
+runtime: python38
 
 entrypoint: gunicorn main:server --timeout 1000 -b 127.0.0.1:5000
 

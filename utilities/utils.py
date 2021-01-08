@@ -6,8 +6,11 @@ graph_actions = {
     "Change graph type": "change-graph"
 }
 graph_types = {
-    "3D Spring": '3',
-    "2D Graph": '2'
+    "3D Spring": 'spring',
+    "3D Graphviz": 'graphviz',
+    "3D Spectral": 'spectral',
+    "3D Random": 'random',
+    "2D Graph": '2d',
 }
 processing_algorithms = {
     "Betweenness centrality": "betweenness-centrality",

@@ -95,7 +95,7 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
         node_trace['x'].append(x)
         node_trace['y'].append(y)
 
-    for adjacencies in graph.adjacency_list():
+    for adjacencies in generate_adjlist(graph):
         node_trace['marker']['color'].append(len(adjacencies))
 
     if not node_labels:
@@ -133,10 +133,10 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
 def visualize_graph_3d(graph, node_labels, node_sizes, layout="spring", title="3D Visualization"):
     """
 
+    :param layout:
     :param graph:
     :param node_labels:
     :param node_sizes:
-    :param filename:
     :param title:
     :return:
     """

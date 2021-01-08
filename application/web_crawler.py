@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 from application.message_logger import MessageLogger
-from application.mongodb import MongoDB
+from application.database import MongoDB
 
 load_dotenv()
 DEVELOPER_KEY = os.getenv('GOOGLE_DEV_KEY')

@@ -105,15 +105,61 @@ class NetworkAnalysis:
         self.__rank = pickle.load(open(NETWORKS_FOLDER + "/ranks-" + self.__file_name + OBJECT_EXTENSION, "rb"))
 
     def compute_ranking(self, algorithm):
-        if algorithm == "page-rank":
-            self.__compute_page_rank()
-        elif algorithm == "betweenness-centrality":
+        if algorithm == "betweenness-centrality":
             self.__compute_betweenness_centrality()
+        elif algorithm == "degree-centrality":
+            self.__compute_degree_centrality()
+        elif algorithm == "closeness-centrality":
+            self.__compute_closeness_centrality()
+        elif algorithm == "eigenvector-centrality":
+            self.__compute_eigenvector_centrality()
+        elif algorithm == "load-centrality":
+            self.__compute_load_centrality()
+        elif algorithm == "harmonic-centrality":
+            self.__compute_harmonic_centrality()
+        elif algorithm == "page-rank":
+            self.__compute_page_rank()
         elif algorithm == "vote-rank":
             self.__compute_vote_rank()
         else:
             return False
         return True
+
+    def __compute_betweenness_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.betweenness_centrality(self.__graph, normalized=True, endpoints=True)
+
+    def __compute_degree_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.degree_centrality(self.__graph)
+
+    def __compute_closeness_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.closeness_centrality(self.__graph)
+
+    def __compute_eigenvector_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.eigenvector_centrality(self.__graph)
+
+    def __compute_load_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.load_centrality(self.__graph)
+
+    def __compute_harmonic_centrality(self):
+        """
+        Calculates the values of the nodes using  algorithm and prints them
+        """
+        self.__rank = nx.harmonic_centrality(self.__graph)
 
     def __compute_page_rank(self):
         """
@@ -126,12 +172,6 @@ class NetworkAnalysis:
         Calculates the values of the nodes using vote rank algorithm and prints them
         """
         self.__rank = self.vote_rank(self.__graph)
-
-    def __compute_betweenness_centrality(self):
-        """
-        Calculates the values of the nodes using  algorithm and prints them
-        """
-        self.__rank = nx.betweenness_centrality(self.__graph, normalized=True, endpoints=True)
 
     def get_ranks(self):
         return self.__rank

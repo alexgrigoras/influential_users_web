@@ -11,8 +11,8 @@ from application.network_analysis import NetworkAnalysis
 from application.web_crawler import YoutubeAPI
 from server import app, engine
 from utilities.auth import layout_auth, get_user_searches, get_user_networks, get_user_networks_names, \
-    delete_user_network, add_user_search, get_network, update_user_search
-from utilities.utils import create_data_table_network, graph_actions, processing_algorithms
+    delete_user_network, add_user_search, get_network, update_search_status, update_search_graph
+from utilities.utils import create_data_table_network, graph_actions, processing_algorithms, graph_types
 
 
 def success_alert(message, action):
@@ -25,6 +25,12 @@ def success_alert(message, action):
 
 failure_alert = dbc.Alert(
     'Cannot add graph network',
+    color='danger',
+    dismissable=True
+)
+
+failure_graph_alert = dbc.Alert(
+    'Cannot change graph type',
     color='danger',
     dismissable=True
 )
@@ -157,7 +163,8 @@ def display_networks(networks, keywords):
                     id="action-dropdown",
                     options=[{"label": graph, "value": graph_actions[graph]}
                              for graph in graph_actions],
-                    placeholder="Select action"
+                    placeholder="Select action",
+                    style={"display": "none"}
                 ),
             ], className="mr-4", xl=5, style={"margin-top": "20px"}),
         ],
@@ -189,6 +196,24 @@ def display_networks(networks, keywords):
             no_gutters=True,
             align="center",
             className="align-items-center",
+            id="algo-row-update",
+            style={"display": "none"},
+        ),
+
+        dbc.Row([
+            dbc.Col([
+                dcc.Dropdown(
+                    id='graph-type',
+                    options=[{"label": graph, "value": graph_types[graph]} for graph in graph_types],
+                    placeholder="Select graph type"
+                ),
+            ], className="mr-4", xl=5, style={"margin-top": "20px"}),
+        ],
+            no_gutters=True,
+            align="center",
+            className="align-items-center",
+            id="graph-row-update",
+            style={"display": "none"},
         ),
 
         dbc.Row([
@@ -294,7 +319,6 @@ def statistics(set_trigger, update_trigger):
 )
 def profile_values(set_trigger, update_trigger):
     results = []
-    graph_type = "3"
 
     db_results = get_user_networks(current_user.id, engine)
 
@@ -309,14 +333,21 @@ def profile_values(set_trigger, update_trigger):
         limit = row[2]
         search_state = row[3]
         algorithm = row[4]
-        timestamp = row[5]
+        graph_type= row[5]
+        timestamp = row[6]
 
         if search_state != "Finished":
             # Create Layout
             result_card = dbc.Card([
                 dbc.CardHeader([
-                    html.H6("Results for search:  " + keyword, className="m-0 font-weight-bold text-primary"),
-                    html.Div("Algorithm: " + algorithm),
+                    dbc.Row([
+                        dbc.Col(
+                            html.H6("Results for search:  " + keyword, className="m-0 font-weight-bold text-primary"),
+                            lg=4
+                        ),
+                        dbc.Col(html.Div("Algorithm: " + algorithm), lg=4),
+                        dbc.Col(html.Div("Graph: " + graph_type), lg=4)
+                    ], style={"width": "100%"})
                 ],
                     className="py-3 d-flex flex-row align-items-center justify-content-between"),
                 dbc.CardBody(
@@ -349,10 +380,13 @@ def profile_values(set_trigger, update_trigger):
         if nr_nodes > 0:
             result_card = dbc.Card([
                 dbc.CardHeader([
-                    html.H6(str(result_index) + ". Result for search:  " + keyword,
-                            className="m-0 font-weight-bold text-primary", id="value_div"),
-                    html.Div("Algorithm: " + algorithm),
-                    html.Div(timestamp)
+                    dbc.Row([
+                        dbc.Col(html.H6(str(result_index) + ". Result for search:  " + keyword,
+                            className="m-0 font-weight-bold text-primary", id="value_div"), lg=3),
+                        dbc.Col(html.Div("Algorithm: " + algorithm), lg=3),
+                        dbc.Col(html.Div("Graph: " + graph_type), lg=3),
+                        dbc.Col(html.Div("Time: " + str(timestamp)), lg=3)
+                    ], style={"width": "100%"})
                     ],
                     className="py-3 d-flex flex-row align-items-center justify-content-between"
                 ),
@@ -383,11 +417,13 @@ def profile_values(set_trigger, update_trigger):
         else:
             result_card = dbc.Card([
                 dbc.CardHeader([
-                    html.H6(str(result_index) + ". Result for search:  " + keyword,
-                            className="m-0 font-weight-bold text-primary", id="value_div"),
-                    html.Div("Algorithm: " + algorithm),
-                    html.Div("Nodes: " + str(nr_nodes)),
-                    html.Div(timestamp)
+                    dbc.Row([
+                        dbc.Col(html.H6(str(result_index) + ". Result for search:  " + keyword,
+                            className="m-0 font-weight-bold text-primary", id="value_div"), lg=4),
+                        dbc.Col(html.Div("Algorithm: " + algorithm), lg=4),
+                        dbc.Col(html.Div("Nodes: " + str(nr_nodes)), lg=4),
+                        dbc.Col(html.Div("Time: " + str(timestamp)), lg=4)
+                    ], style={"width": "100%"}),
                 ],
                     className="py-3 d-flex flex-row align-items-center justify-content-between"),
                 dbc.CardBody(
@@ -409,9 +445,10 @@ def profile_values(set_trigger, update_trigger):
     [State('edit-dropdown', 'value'),
      State('action-dropdown', 'value'),
      State('nr-users', 'value'),
-     State('algorithm-type', 'value')]
+     State('algorithm-type', 'value'),
+     State('graph-type', 'value')]
 )
-def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
+def profile_values(n_clicks, edit_network, action, nr_users, algorithm, graph):
     if n_clicks is not None and n_clicks > 0:
         if edit_network is None:
             return parameters_alert("network"), 0
@@ -434,16 +471,10 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
             old_user_network = get_network(edit_network, engine)
 
             if not add_user_search(current_user.id, old_user_network[0][0], file_name, "Processing Data",
-                                   old_user_network[0][4], nr_users, algorithm, engine):
+                                   old_user_network[0][4], nr_users, algorithm, graph, engine):
                 return failure_alert, 0
 
-            if algorithm == "page-rank":
-                network.compute_page_rank()
-            elif algorithm == "betweenness-centrality":
-                network.compute_betweenness_centrality()
-            elif algorithm == "vote-rank":
-                network.compute_vote_rank()
-            else:
+            if network.compute_ranking(algorithm) is False:
                 delete_user_network(file_name, engine)
                 return graph_alert(algorithm), 0
 
@@ -451,8 +482,15 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
             network.store_network()
             network.store_labels()
 
-            if not update_user_search(current_user.id, file_name, "Finished", engine):
+            if not update_search_status(current_user.id, file_name, "Finished", engine):
                 return failure_alert, 0
+
+        elif action == 'change-graph':
+            if graph is None:
+                return parameters_alert("graph"), 0
+
+            if not update_search_graph(current_user.id, edit_network, graph, engine):
+                return failure_graph_alert, 0
 
         return success_alert(edit_network, action), 1
 
@@ -482,3 +520,20 @@ def toggle_collapse(n, is_open):
     if n:
         return not is_open
     return is_open
+
+
+@app.callback([Output('action-dropdown', 'style'),
+               Output('algo-row-update', 'style'),
+               Output('graph-row-update', 'style')],
+              [Input('edit-dropdown', 'value'),
+               Input('action-dropdown', 'value')])
+def update_output(edit, action):
+    if edit is not None:
+        if action == 'change-algorithm':
+            return {}, {}, {"display": "none"}
+        elif action == 'change-graph':
+            return {}, {"display": "none"}, {}
+        else:
+            return {}, {"display": "none"}, {"display": "none"}
+    else:
+        return {"display": "none"}, {"display": "none"}, {"display": "none"}

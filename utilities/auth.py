@@ -395,6 +395,7 @@ class UserSearches(db.Model):
     nr_videos = Column(Integer)
     nr_influencers = Column(Integer)
     algorithm = Column(String(100))
+    graph = Column(String(100))
     timestamp = Column(DateTime())
 
 
@@ -402,7 +403,7 @@ def user_searches_table():
     return Table('user_searches', User.metadata)
 
 
-def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_influencers, algorithm, engine):
+def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_influencers, algorithm, graph, engine):
     table = user_searches_table()
 
     values = dict(
@@ -413,6 +414,7 @@ def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_
         nr_videos=nr_videos,
         nr_influencers=nr_influencers,
         algorithm=algorithm,
+        graph=graph,
         timestamp=datetime.now()
     )
     statement = table.insert().values(**values)
@@ -429,7 +431,7 @@ def add_user_search(user_id, search_keyword, network_name, state, nr_videos, nr_
         return False
 
 
-def update_user_search(user_id, network_name, state, engine):
+def update_search_status(user_id, network_name, state, engine):
     table = user_searches_table()
 
     statement = (
@@ -440,11 +442,30 @@ def update_user_search(user_id, network_name, state, engine):
         conn = engine.connect()
         conn.execute(statement)
         conn.close()
-        logger.info("Updated user " + str(user_id) + " search: " + str(state))
+        logger.info("Updated user " + str(user_id) + " status: " + str(state))
         return True
 
     except:
-        logger.error("Cannot add user " + str(user_id) + " search: " + str(state))
+        logger.error("Cannot add user " + str(user_id) + " status: " + str(state))
+        return False
+
+
+def update_search_graph(user_id, network_name, graph, engine):
+    table = user_searches_table()
+
+    statement = (
+        update(table).where(table.c.network_name == network_name).values(graph=graph)
+    )
+
+    try:
+        conn = engine.connect()
+        conn.execute(statement)
+        conn.close()
+        logger.info("Updated user " + str(user_id) + " graph: " + str(graph))
+        return True
+
+    except:
+        logger.error("Cannot add user " + str(user_id) + " graph: " + str(graph))
         return False
 
 
@@ -462,7 +483,7 @@ def get_user_networks(user_id_nr, engine):
     table = user_searches_table()
 
     statement = select([table.c.network_name, table.c.search_keyword, table.c.nr_influencers,
-                        table.c.search_state, table.c.algorithm, table.c.timestamp]). \
+                        table.c.search_state, table.c.algorithm, table.c.graph, table.c.timestamp]). \
         where(table.c.user_id == user_id_nr)
     with engine.connect() as conn:
         resp = list(conn.execute(statement))

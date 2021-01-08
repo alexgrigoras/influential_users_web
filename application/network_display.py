@@ -1,7 +1,7 @@
 import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
-from plotly.graph_objs import *
 from networkx.readwrite.adjlist import generate_adjlist
+from plotly.graph_objs import *
 
 
 def reformat_graph_layout(graph, layout):
@@ -47,7 +47,7 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
     edge_trace = Scatter(
         x=[],
         y=[],
-        line=dict(width=0.5, color='#888'), #Line(width=[], color='rgba(136, 136, 136, .8)'),
+        line=dict(width=0.5, color='#888'),  # Line(width=[], color='rgba(136, 136, 136, .8)'),
         hoverinfo='none',
         mode='lines')
 
@@ -68,8 +68,8 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
         y=[],
         text=[],
         mode='markers',
-        #textfont=dict(family='Calibri (Body)', size=25, color='black'),
-        #opacity=100,
+        # textfont=dict(family='Calibri (Body)', size=25, color='black'),
+        # opacity=100,
         hoverinfo='text',
         marker=Marker(
             showscale=True,
@@ -117,7 +117,7 @@ def visualize_graph(graph, node_labels, node_sizes=None, edge_weights=None, layo
                      showlegend=False,
                      height=800,
                      hovermode='closest',
-                     margin=dict(b=20,l=5,r=5,t=40),
+                     margin=dict(b=20, l=5, r=5, t=40),
                      # family='Courier New, monospace', size=18, color='#7f7f7f',
                      annotations=[dict(
                          text="",

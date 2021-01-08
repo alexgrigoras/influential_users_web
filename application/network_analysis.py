@@ -5,7 +5,7 @@ import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 
 from application.message_logger import MessageLogger
-from application.plotly_display import visualize_graph_3d, visualize_graph
+from application.network_display import visualize_graph_3d, visualize_graph
 from utilities.utils import check_value
 
 NETWORKS_FOLDER = '.networks'

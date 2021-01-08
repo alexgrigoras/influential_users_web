@@ -64,17 +64,15 @@ def layout():
                 html.Ul(
                     [
                         html.Li("Searches the YouTube platform for videos regarding the search keyword"),
-                        html.Li(
-                            "Downloads the necessary data from videos (title, description, comments and others)"),
-                        html.Li(
-                            "Creates a graph by representing the connections between users that commented on "
-                            "selected videos"),
-                        html.Li("Using the selected algorithm, it determines the most influential users"),
-                        html.Li("Displays the created graph and the results from processing algorithm")
+                        html.Li("Downloads the necessary data from videos (title, description, comments and others)"),
+                        html.Li("Creates a graph by using the user connections that commented on the videos"),
+                        html.Li("Determines the most influential users using the selected algorithm"),
+                        html.Li("Displays the created graph and the results from processing algorithm"),
+                        html.Li("All the results can all be seen in the DASHBOARD page")
                     ]
                 ),
                 html.Br(),
-                html.H5('To use the application, enter the options on the right and click SEARCH'),
+                html.H5('To use the application, enter the options and click Search!'),
             ]
         )],
         className="shadow mb-4"
@@ -88,25 +86,27 @@ def layout():
         dbc.CardBody(
             [
                 html.Div(id='output-alert'),
-                html.H5("Keyword: "),
-                dcc.Input(id='keyword', value='', type='text', placeholder="keyword"),
+                html.H5("Keywords: "),
+                dcc.Input(id='keyword', value='', type='text', placeholder="type the keywords"),
                 html.Br(), html.Br(),
-                html.H5("Number of videos: "), html.Div(id="range-val-videos"),
+                html.H5("Number of videos analyzed:"), html.Div(id="range-val-videos"),
                 dcc.Input(id='nr_videos', value='1', type='range', placeholder="Valid from 1 to 10", min=1,
                           max=10,
                           step=1),
-                html.H5("Number of users: "), html.Div(id="range-val-users"),
+                html.Br(),
+                html.H5("Number of influencers found:"), html.Div(id="range-val-users"),
                 dcc.Input(id='nr_users', value='30', type='range', placeholder="Valid from 1 to 100", min=1,
                           max=100,
                           step=1),
+                html.Br(),
                 html.H5("Graph type: "),
-                dcc.RadioItems(
-                    id="graph_type",
+                dcc.Dropdown(
+                    id='graph_type',
                     options=[{"label": graph, "value": graph_types[graph]}
                              for graph in graph_types],
-                    value='3',
-                    labelStyle={'display': 'inline-block', "margin-right": "15px"}
+                    placeholder="Select graph type"
                 ),
+                html.Br(),
                 html.H5("Processing Algorithm: "),
                 dcc.Dropdown(
                     id='algorithm_type',
@@ -136,7 +136,9 @@ def layout():
                 html.Div(id='output-div', style={"width": "100%"}),
             ],
         )],
-        className="shadow mb-4"
+        className="shadow mb-4",
+        id="result-card-id",
+        style={"visibility": "hidden"}
     )
 
     return dbc.Row(
@@ -196,9 +198,9 @@ def input_triggers_spinner(value):
                State('nr_users', 'value'),
                State('graph_type', 'value'),
                State('algorithm_type', 'value')])
-def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_type):
+def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
     if clicks is not None:
-        if not keyword or not nr_videos or not nr_users or not graph_type or not algorithm_type:
+        if not keyword or not nr_videos or not nr_users or not graph_type or not algorithm:
             logger.error("Invalid user input data")
             return '', failure_alert, ''
 
@@ -215,7 +217,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
 
         file_name = crawler.get_file_name()
 
-        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm_type, engine):
+        if not add_user_search(current_user.id, keyword, file_name, "Retrieving Data", nr_videos, limit, algorithm, engine):
             if not update_user_search(current_user.id, file_name, "Retrieving Data", engine):
                 return '', failure_alert, ''
 
@@ -236,15 +238,9 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
         network.set_file_name(file_name)
         network.create_network()
 
-        if algorithm_type == "page-rank":
-            network.compute_page_rank()
-        elif algorithm_type == "betweenness-centrality":
-            network.compute_betweenness_centrality()
-        elif algorithm_type == "vote-rank":
-            network.compute_vote_rank()
-        else:
+        if not network.compute_ranking(algorithm):
             delete_user_network(file_name, engine)
-            return '', graph_alert(algorithm_type), ''
+            return '', graph_alert(algorithm), ''
 
         network.store_network()
 
@@ -279,3 +275,17 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm_ty
         ), success_alert, ''
     else:
         return '', '', ''
+
+
+@app.callback(Output('result-card-id', 'style'),
+              [Input('submit-button', 'n_clicks')])
+def update_output(clicks):
+    if clicks is not None:
+        if clicks == 1:
+            return {"visibility": "visible"}
+        else:
+            return {}
+    else:
+        return {"visibility": "hidden"}
+
+

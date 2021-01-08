@@ -1,5 +1,26 @@
 import dash_table
 
+graph_actions = {
+    "Delete": "delete",
+    "Change algorithm": "change-algorithm",
+    "Change graph type": "change-graph"
+}
+graph_types = {
+    "3D Spring": '3',
+    "2D Graph": '2'
+}
+processing_algorithms = {
+    "Betweenness centrality": "betweenness-centrality",
+    "Degree centrality": "degree-centrality",
+    "Closeness centrality": "closeness-centrality",
+    "Eigenvector centrality": "eigenvector-centrality",
+    "Load centrality": "load-centrality",
+    "Harmonic centrality": "harmonic-centrality",
+    "PageRank": "page-rank",
+    "VoteRank": "vote-rank",
+    "GNN Ranking": "gnn-ranking",
+}
+
 
 def create_data_table_network(values, columns):
     """

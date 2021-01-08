@@ -8,16 +8,16 @@ from flask_login import current_user
 
 from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
-from application.youtube_api import YoutubeAPI
+from application.web_crawler import YoutubeAPI
 from server import app, engine
 from utilities.auth import layout_auth, get_user_searches, get_user_networks, get_user_networks_names, \
     delete_user_network, add_user_search, get_network, update_user_search
-from utilities.utils import create_data_table_network
+from utilities.utils import create_data_table_network, graph_actions, processing_algorithms
 
 
 def success_alert(message, action):
     return dbc.Alert(
-        message + " " + action + ' is successful. Reload page to see changes!',
+        message + " " + action + ' is successful',
         color='success',
         dismissable=True
     )
@@ -36,6 +36,14 @@ def parameters_alert(message):
         color='danger',
         dismissable=True,
         duration=5000
+    )
+
+
+def graph_alert(graph):
+    return dbc.Alert(
+        'Graph ' + graph + ' is not implemented',
+        color='danger',
+        dismissable=True
     )
 
 
@@ -61,7 +69,8 @@ def display_data(title, text, data_type, image):
                     no_gutters=True,
                     align="center")
             )
-        ], className="border-left-" + data_type + " shadow h-100 py-2"),
+        ],
+        className="border-left-" + data_type + " shadow h-100 py-2"),
         xl=3,
         md=4,
         className="mb-4"
@@ -103,78 +112,101 @@ def display_action_button():
     )
 
 
-def display_networks(networks, keywords, actions):
+def collapse(data):
     return dbc.Col(
         dbc.Card(
-            dbc.CardBody([
-                dbc.Row([
-                    dbc.Col([
-                        html.Div("Edit graph", className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
-                        dcc.Dropdown(
-                            id="edit-dropdown",
-                            options=[{'label': str(networks.index(j) + 1) + ". " + str(i), 'value': j}
-                                     for (i, j) in zip(keywords, networks)],
-                            placeholder="Select graph"
+            [
+                dbc.CardHeader(
+                    html.H6(
+                        dbc.Button(
+                            [html.I(className="fas fa-edit text-gray-300"), " Edit Searches", ],
+                            color="link",
+                            id="collapse-button",
                         ),
-                    ], className="mr-4", xl=5),
-                    dbc.Col([
-                        html.Div("Action", className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
-                        dcc.Dropdown(
-                            id="action-dropdown",
-                            options=[{'label': i, 'value': i} for i in actions],
-                            placeholder="Select action"
-                        ),
-                    ], className="mr-4", xl=5),
-                ],
-                    no_gutters=True,
-                    align="center"
+                        className="m-0 font-weight-bold text-primary"
+                    ),
                 ),
-                dbc.Row([
-                    dbc.Col([
-                        html.Div("Processing Algorithm",
-                                 className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
-                        dcc.Dropdown(
-                            id='algorithm-type',
-                            options=[
-                                {"label": "PageRank", "value": "page-rank"},
-                                {"label": "Betweenness Centrality", "value": "betweenness-centrality"},
-                                {"label": "VoteRank", "value": "vote-rank"},
-                            ],
-                            placeholder="Select algorithm"
-                        ),
-                    ], className="mr-4", xl=5),
-                    dbc.Col([
-                        html.Div("Number of users",
-                                 className="text-xs font-weight-bold text-primary text-uppercase mb-4"),
-                        dbc.Row([
-                            dbc.Col(
-                                dcc.Input(id='nr-users', value='30', type='range', placeholder="Valid from 1 to 100",
-                                          min=1, max=100, step=1),
-                            ),
-                            dbc.Col(
-                                html.Div(id="range-val"),
-                            ),
-                            dbc.Col(
-                                dbc.Button(
-                                    html.I(className="fas fa-play fa-2x text-gray-300"),
-                                    color="light",
-                                    id="action-button",
-                                    className="mr-2"
-                                ),
-                            )
-                        ])
-                    ], className="mr-4", xl=6),
-                ],
-                    no_gutters=True,
-                    align="center"
-                )
-            ]),
-            className="border-left-danger shadow h-100 py-2"
+                dbc.Collapse(
+                    dbc.CardBody(
+                        data,
+                    ),
+                    id="collapse",
+                ),
+            ],
+            className="border-left-danger shadow"
         ),
         xl=12,
         md=4,
         className="mb-4"
     )
+
+
+def display_networks(networks, keywords):
+    return [
+        dbc.Row([
+            dbc.Col([
+                dcc.Dropdown(
+                    id="edit-dropdown",
+                    options=[{'label': str(networks.index(j) + 1) + ". " + str(i), 'value': j}
+                             for (i, j) in zip(keywords, networks)],
+                    placeholder="Select graph"
+                ),
+            ], className="mr-4", xl=5, style={"margin-top": "20px"}),
+            dbc.Col([
+                dcc.Dropdown(
+                    id="action-dropdown",
+                    options=[{"label": graph, "value": graph_actions[graph]}
+                             for graph in graph_actions],
+                    placeholder="Select action"
+                ),
+            ], className="mr-4", xl=5, style={"margin-top": "20px"}),
+        ],
+            no_gutters=True,
+            align="center",
+            className="align-items-center",
+        ),
+        dbc.Row([
+            dbc.Col([
+                dcc.Dropdown(
+                    id='algorithm-type',
+                    options=[{"label": algo, "value": processing_algorithms[algo]}
+                             for algo in processing_algorithms],
+                    placeholder="Select algorithm"
+                ),
+            ], className="mr-4", xl=5, style={"margin-top": "20px"}),
+            dbc.Col([
+                dbc.Row([
+                    dbc.Col(
+                        dcc.Input(id='nr-users', value='30', type='range', placeholder="Valid from 1 to 100",
+                                  min=1, max=100, step=1, style={"margin-top": "20px"}),
+                    ),
+                    dbc.Col(
+                        html.Div(id="range-val", style={"margin-top": "20px"}),
+                    ),
+                ])
+            ], className="mr-4", xl=5),
+        ],
+            no_gutters=True,
+            align="center",
+            className="align-items-center",
+        ),
+
+        dbc.Row([
+            dbc.Col([
+                dbc.Button(
+                    html.I(className="fas fa-play fa-2x text-gray-300"),
+                    color="light",
+                    id="action-button",
+                    className="mr-2"
+                ),
+            ], className="mr-4", xl=5),
+        ],
+            no_gutters=True,
+            align="center",
+            className="align-items-center",
+            style={"margin-top": "20px"}
+        )
+    ]
 
 
 @layout_auth('require-authentication')
@@ -222,12 +254,13 @@ def layout():
     )
 
 
-# function to show profile values
+# function to show statistics
 @app.callback(
     Output('output-statistics-div', 'children'),
-    [Input('statistics-trigger', 'children')]
+    [Input('statistics-trigger', 'children'),
+     Input('dash-update-trigger', 'children')]
 )
-def profile_values(trigger):
+def statistics(set_trigger, update_trigger):
     nr_videos = 0
     nr_influencers = 0
 
@@ -243,23 +276,23 @@ def profile_values(trigger):
             nr_influencers += row[2]
 
     networks, keywords = get_user_networks_names(current_user.id, engine)
-    graph_actions = ["delete", "update"]
 
     return dbc.Row([
         display_data("Nr. of searches", str(nr_searches), "primary", "calendar"),
         display_data("Nr. of analyzed videos", str(nr_videos), "info", "video"),
         display_data("Nr. of influencers", str(nr_influencers), "warning", "user"),
         display_data("Latest search", search_status, "success", "spinner"),
-        display_networks(networks, keywords, graph_actions),
+        collapse(display_networks(networks, keywords)),
     ])
 
 
 # function to show results
 @app.callback(
     Output('output-results-div', 'children'),
-    [Input('results-trigger', 'children')]
+    [Input('results-trigger', 'children'),
+     Input('dash-update-trigger', 'children')]
 )
-def profile_values(trigger):
+def profile_values(set_trigger, update_trigger):
     results = []
     graph_type = "3"
 
@@ -320,8 +353,9 @@ def profile_values(trigger):
                             className="m-0 font-weight-bold text-primary", id="value_div"),
                     html.Div("Algorithm: " + algorithm),
                     html.Div(timestamp)
-                ],
-                    className="py-3 d-flex flex-row align-items-center justify-content-between"),
+                    ],
+                    className="py-3 d-flex flex-row align-items-center justify-content-between"
+                ),
                 dbc.CardBody(
                     [
                         html.Div(
@@ -385,7 +419,7 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
             return parameters_alert("action"), 0
         elif action == 'delete':
             delete_user_network(edit_network, engine)
-        elif action == 'update':
+        elif action == 'change-algorithm':
             if nr_users is None:
                 return parameters_alert("nr users"), 0
             if algorithm is None:
@@ -409,6 +443,9 @@ def profile_values(n_clicks, edit_network, action, nr_users, algorithm):
                 network.compute_betweenness_centrality()
             elif algorithm == "vote-rank":
                 network.compute_vote_rank()
+            else:
+                delete_user_network(file_name, engine)
+                return graph_alert(algorithm), 0
 
             network.set_file_name(file_name)
             network.store_network()
@@ -434,3 +471,14 @@ def register_success(value):
     if value is not None and value == 1:
         time.sleep(2)
         return dcc.Location(pathname='/dashboard', id="redirect", refresh=True)
+
+
+@app.callback(
+    Output("collapse", "is_open"),
+    [Input("collapse-button", "n_clicks")],
+    [State("collapse", "is_open")],
+)
+def toggle_collapse(n, is_open):
+    if n:
+        return not is_open
+    return is_open

@@ -14,20 +14,25 @@ The main components of the application are
     - SQLite.
 
 1. **Analysis** - Ranking algorithms:
-    - pagerank;
-    - betweenness centrality;
-    - voterank.
+   - betweenness centrality;
+   - degree centrality;
+   - closeness centrality;
+   - eigenvector centrality;
+   - load centrality;
+   - harmonic centrality;
+   - pagerank;
+   - voterank.
 
 ## Application structure
 ```
 influential_users_web
 ├── application
 |   ├── __init__.py
+|   ├── database.py
 |   ├── message_logger.py
-|   ├── mongodb.py
 |   ├── network_analysis.py
-|   ├── plotly_display.py
-|   └── youtube_api.py
+|   ├── network_display.py
+|   └── web_crawler.py
 ├── assets
 |   ├── css
 |   ├── image

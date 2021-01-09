@@ -80,6 +80,19 @@ footer = html.Footer(
     className="footer bg-light",
 )
 
+error_page = dbc.Container(
+    [
+        html.Div([
+            html.Div("404", className="error mx-auto"),
+            html.P("Page Not Found", className="lead text-gray-800 mb-5"),
+            html.P("It looks like you found a glitch in the matrix...", className="text-gray-500 mb-0"),
+            html.Br(),
+            dcc.Link("← Back to Home", href='/home')
+        ], className="text-center")
+    ],
+    className="container-fluid"
+)
+
 app.layout = html.Div(
     [
         header,
@@ -124,17 +137,6 @@ def router(pathname):
     elif pathname == '/discover':
         return discover.layout()
 
-    error_page = dbc.Container([
-            html.Div([
-                html.Div("404", className="error mx-auto"),
-                html.P("Page Not Found", className="lead text-gray-800 mb-5"),
-                html.P("It looks like you found a glitch in the matrix...", className="text-gray-500 mb-0"),
-                html.Br(),
-                dcc.Link("← Back to Home", href='/home')
-            ], className="text-center")
-        ],
-        className="container-fluid")
-
     return error_page
 
 
@@ -176,6 +178,9 @@ def profile_link(content, children):
     [State("navbar-collapse", "is_open")],
 )
 def toggle_navbar_collapse(n, is_open):
+    """
+    toggle the navbar dropdown menu
+    """
     if n:
         return not is_open
     return is_open
@@ -191,7 +196,7 @@ def user_logout(user_input):
     returns a navbar link to /logout or /login, respectively, if the user is authenticated or not
     """
     if current_user.is_authenticated:
-        return '', '', 'True'
+        return None, None, 'True'
     else:
         return 'Login', '/login', None
 

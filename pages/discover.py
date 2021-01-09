@@ -199,7 +199,7 @@ def input_triggers_spinner(value):
                State('nr_users', 'value'),
                State('graph_type', 'value'),
                State('algorithm_type', 'value')])
-def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
+def update_results(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
     if clicks is not None:
         if not keyword or not nr_videos or not nr_users or not graph_type or not algorithm:
             logger.error("Invalid user input data")
@@ -280,7 +280,7 @@ def update_output(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
 
 @app.callback(Output('result-card-id', 'style'),
               [Input('submit-button', 'n_clicks')])
-def update_output(clicks):
+def results_visibility(clicks):
     if clicks is not None:
         if clicks == 1:
             return {"visibility": "visible"}

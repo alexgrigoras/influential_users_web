@@ -36,10 +36,9 @@ processing_algorithms = {
 def create_data_table_network(values, columns):
     """
     Create Dash datatable from Pandas DataFrame.
-    :param columns:
-    :param labels:
-    :param values:
-    :return:
+    :param columns: the input columns
+    :param values: the input values
+    :return: the generated table
     """
     table = dash_table.DataTable(
         id='database-table',
@@ -58,6 +57,12 @@ def create_data_table_network(values, columns):
 
 
 def check_value(array, value):
+    """
+    Checks if a value exists in an array
+    :param array: the input array
+    :param value: the searched value
+    :return: the returned value or "x"
+    """
     if value in array:
         return array[value]
     else:
@@ -65,6 +70,10 @@ def check_value(array, value):
 
 
 def create_file_name():
+    """
+    Generates a random string
+    :return: the generated string
+    """
     file_name = "network_" + __random_string(STRING_LENGTH)
     while os.path.exists(NETWORKS_FOLDER + file_name + ".*"):
         file_name = "network_" + __random_string(STRING_LENGTH)
@@ -78,6 +87,5 @@ def __random_string(string_length):
     :param string_length: the length of the string that is generated
     :return: the generated string
     """
-
     letters = string.ascii_letters
     return ''.join(random.choice(letters) for i in range(string_length))

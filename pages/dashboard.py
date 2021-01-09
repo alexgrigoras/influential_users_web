@@ -279,13 +279,18 @@ def layout():
     )
 
 
-# function to show statistics
 @app.callback(
     Output('output-statistics-div', 'children'),
     [Input('statistics-trigger', 'children'),
      Input('dash-update-trigger', 'children')]
 )
 def statistics(set_trigger, update_trigger):
+    """
+    show statistics
+    :param set_trigger:
+    :param update_trigger:
+    :return:
+    """
     nr_videos = 0
     nr_influencers = 0
 
@@ -311,13 +316,18 @@ def statistics(set_trigger, update_trigger):
     ])
 
 
-# function to show results
 @app.callback(
     Output('output-results-div', 'children'),
     [Input('results-trigger', 'children'),
      Input('dash-update-trigger', 'children')]
 )
-def profile_values(set_trigger, update_trigger):
+def update_results(set_trigger, update_trigger):
+    """
+    show results
+    :param set_trigger:
+    :param update_trigger:
+    :return:
+    """
     results = []
 
     db_results = get_user_networks(current_user.id, engine)
@@ -450,7 +460,17 @@ def profile_values(set_trigger, update_trigger):
      State('algorithm-type', 'value'),
      State('graph-type', 'value')]
 )
-def profile_values(n_clicks, edit_network, action, nr_users, algorithm, graph):
+def edit_network(n_clicks, edit_network, action, nr_users, algorithm, graph):
+    """
+    Edit the network
+    :param n_clicks:
+    :param edit_network:
+    :param action:
+    :param nr_users:
+    :param algorithm:
+    :param graph:
+    :return:
+    """
     if n_clicks is not None and n_clicks > 0:
         if edit_network is None:
             return parameters_alert("network"), 0
@@ -526,7 +546,7 @@ def toggle_collapse(n, is_open):
                Output('graph-row-update', 'style')],
               [Input('edit-dropdown', 'value'),
                Input('action-dropdown', 'value')])
-def update_output(edit, action):
+def update_inputs(edit, action):
     if edit is not None:
         if action == 'change-algorithm':
             return {}, {}, {"display": "none"}

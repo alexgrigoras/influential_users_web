@@ -21,6 +21,8 @@ Column, String, Integer, DateTime = db.Column, db.String, db.Integer, db.DateTim
 ml = MessageLogger('auth')
 logger = ml.get_logger()
 
+# Users table
+
 
 class User(db.Model):
     id = Column(Integer, primary_key=True)
@@ -144,6 +146,9 @@ def change_user(first, last, email, engine):
         conn.execute(statement)
     # success value
     return True
+
+
+# Password change table
 
 
 class PasswordChange(db.Model):
@@ -384,6 +389,9 @@ def layout_auth(mode):
         return decorated_function
 
     return this_decorator
+
+
+# User searches table
 
 
 class UserSearches(db.Model):

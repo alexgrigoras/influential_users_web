@@ -1,5 +1,4 @@
 # Dash app initialization
-
 import os
 
 import dash
@@ -10,6 +9,7 @@ from flask_login import LoginManager, UserMixin
 from utilities.auth import db, User as Base
 from utilities.config import config, engine
 
+# dash application
 app = dash.Dash(
     __name__,
     external_stylesheets=[
@@ -19,8 +19,8 @@ app = dash.Dash(
         {
             "name": "viewport",
             "content": "width=device-width, initial-scale=1, shrink-to-fit=no",
-            "description": "",
-            "author": ""
+            "description": "Influential Users Web Platform",
+            "author": "Alexandru Grigoras"
         }
     ],
 )

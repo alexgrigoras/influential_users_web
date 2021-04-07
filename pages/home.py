@@ -18,10 +18,10 @@ header = html.Header([
         html.Div([
             html.Div(
                 [
-                    html.H1("INFLUENTIAL USERS",
+                    html.H1("MULTIMEDIA SOCIAL NETWORKS",
                             className="mb-10", style={"margin-top": "20px", "font-weight": "bold",
                                                       "text-shadow": "2px 2px grey"}),
-                    html.H1("Marketing Platform",
+                    html.H1("Influential Users identification",
                             className="mb-10",
                             style={"margin-bottom": "20px", "text-shadow": "2px 2px grey"}),
                     html.Br(),

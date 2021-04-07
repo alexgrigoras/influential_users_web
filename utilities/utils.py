@@ -15,6 +15,7 @@ graph_actions = {
 }
 graph_types = {
     "3D Spring": 'spring',
+    "3D Kamada Kawai": 'kamada-kawai',
     "3D Graphviz": 'graphviz',
     "3D Spectral": 'spectral',
     "3D Random": 'random',

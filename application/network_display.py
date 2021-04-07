@@ -15,6 +15,8 @@ def reformat_graph_layout(graph, layout):
         positions = graphviz_layout(graph)
     elif layout == "spring":
         positions = nx.fruchterman_reingold_layout(graph, dim=3, k=0.5, iterations=1000)
+    elif layout == "kamada-kawai":
+        positions = nx.kamada_kawai_layout(graph, dim=3)
     elif layout == "spectral":
         positions = nx.spectral_layout(graph, scale=0.1)
     elif layout == "random":

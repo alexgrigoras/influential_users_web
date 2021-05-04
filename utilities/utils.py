@@ -5,7 +5,8 @@ import string
 import dash_table
 
 STRING_LENGTH = 10
-COMMENT_PAGES_LIMIT = 3
+COMMENT_PAGES_LIMIT = 5
+NR_VIDEOS_LIMIT = 50
 NETWORKS_FOLDER = ".networks/"
 
 graph_actions = {

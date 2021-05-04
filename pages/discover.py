@@ -11,7 +11,7 @@ from server import app, engine
 from utilities.auth import layout_auth, send_finished_process_confirmation, add_user_search, update_search_status, \
     delete_user_network
 from utilities.utils import create_data_table_network, processing_algorithms, graph_types, create_file_name, \
-    NETWORKS_FOLDER, COMMENT_PAGES_LIMIT
+    NETWORKS_FOLDER, COMMENT_PAGES_LIMIT, NR_VIDEOS_LIMIT
 
 success_alert = dbc.Alert(
     'Finished searching',
@@ -91,8 +91,8 @@ def layout():
                 dcc.Input(id='keyword', value='', type='text', placeholder="type the keywords"),
                 html.Br(), html.Br(),
                 html.H5("Number of videos analyzed:"), html.Div(id="range-val-videos"),
-                dcc.Input(id='nr_videos', value='1', type='range', placeholder="Valid from 1 to 10", min=1,
-                          max=10,
+                dcc.Input(id='nr_videos', value='1', type='range', placeholder="Valid from 1 to " + str(NR_VIDEOS_LIMIT), min=1,
+                          max=NR_VIDEOS_LIMIT,
                           step=1),
                 html.Br(),
                 html.H5("Number of influencers found:"), html.Div(id="range-val-users"),

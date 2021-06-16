@@ -14,7 +14,7 @@ TOKENS_COLLECTION = "tokens"
 
 class MongoDB:
     """
-
+    MongoDB database connector for storing and retrieving YouTube data
     """
 
     """ Init """
@@ -30,9 +30,12 @@ class MongoDB:
 
         # connect to database
         try:
-            self.__mongo_client = pymongo.MongoClient(
-                "mongodb+srv://admin:gigel123@influential-users-cluster-slepf.gcp.mongodb.net/test?"
-                "retryWrites=true&w=majority")
+            # local database
+            self.__mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+            # cloud database
+            # self.__mongo_client = pymongo.MongoClient(
+            #    "mongodb+srv://user:name@location/test?"
+            #    "retryWrites=true&w=majority")
             self.__mongo_client.server_info()
         except errors.ConnectionFailure as e:
             self.logger.critical("MongoDB database: " + str(e))

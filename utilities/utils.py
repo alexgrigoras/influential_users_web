@@ -31,7 +31,6 @@ processing_algorithms = {
     "Harmonic centrality": "harmonic-centrality",
     "PageRank": "page-rank",
     "VoteRank": "vote-rank",
-    "GNN Ranking": "gnn-ranking",
 }
 
 

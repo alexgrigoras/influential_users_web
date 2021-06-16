@@ -1,7 +1,20 @@
-# Influential Users Web Application 
+# Social Influencers Web Application 
 
 ## Description
-Web framework using Flask with Plotly Dash for Influential Users Application (Determining the most influential users from the multimedia social network YouTube by creating a graph with the most important users / channels)
+
+Web application made for the dissertation thesis - Multimedia Social Networks Influential Users Identification.
+The application determines the most influential users from the YouTube platform and creates a graph with the most important users.
+
+## Installation
+
+1. Install requirements
+   ```sh
+   pip install -r requirements.txt
+   ```
+2. Run server
+   ```sh
+   python main.py
+   ```
 
 ## Architecture
 The main components of the application are
@@ -37,6 +50,7 @@ influential_users_web
 |   ├── css
 |   ├── image
 |   └── vendor
+├── logs
 ├── pages
 |   ├── auth_pages
 |   |   ├── __init__.py
@@ -46,20 +60,19 @@ influential_users_web
 |   |   ├── logout.py
 |   |   └── register.py
 |   ├── __init__.py
-|   ├── analysis.py
 |   ├── dashboard.py
+|   ├── discover.py
 |   ├── home.py
 |   └── profile.py
 ├── utilities
 |   ├── __init__.py
 |   ├── auth.py
 |   ├── config.py
-|   └── keys.py
+|   ├── keys.py
+|   └── utils.py
 ├── __init__.py
-├── app.yaml
 ├── config.txt
 ├── create_tables.py
-├── LICENSE
 ├── main.py
 ├── README.md
 ├── requirements.txt
@@ -69,9 +82,6 @@ influential_users_web
 
 ## Resources
 
-1. **Academic papers**
-
-
 1. **Web content**
 - [russellromney](https://github.com/russellromney) / [dash-auth-flow](https://github.com/russellromney/dash-auth-flow)
 - [startbootstrap](https://github.com/startbootstrap) / [startbootstrap-sb-admin-2](https://github.com/startbootstrap/startbootstrap-sb-admin-2)
@@ -80,4 +90,3 @@ influential_users_web
 - [Social media mess image](https://www.pinterest.com/pin/75716837455100871/)
 - [network-graphs](https://plotly.com/python/network-graphs)
 - [3d-network-graph](https://plotly.com/python/v3/3d-network-graph)
-

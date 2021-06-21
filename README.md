@@ -11,7 +11,27 @@ The application determines the most influential users from the YouTube platform 
    ```sh
    pip install -r requirements.txt
    ```
-2. Run server
+1. Add the API key file from Google Cloud in
+   ```sh
+   /application/key_file.json
+   ```
+1. Add the API dev key from Google Cloud in
+   ```sh
+   /application/.env
+   ```
+   With the content
+      ```sh
+   GOOGLE_DEV_KEY="[Add the key]"
+   ```
+1. For the mail functions to work, add the API key from Mailjet in
+   ```sh
+   /utilities/keys.py
+   ```
+1. Set the path for the Google Application credentials
+   ```sh
+   export GOOGLE_APPLICATION_CREDENTIALS="application/key_file.json"
+   ```
+1. Run server
    ```sh
    python main.py
    ```
@@ -20,21 +40,20 @@ The application determines the most influential users from the YouTube platform 
 The main components of the application are
 
 1. **Information Gathering** - Data:
-    - YouTube API.
+    - YouTube API
 
 1. **Data Storage** - Database:
-    - MongoDB;
-    - SQLite.
+    - MongoDB
+    - SQLite
 
 1. **Analysis** - Ranking algorithms:
-   - betweenness centrality;
-   - degree centrality;
-   - closeness centrality;
-   - eigenvector centrality;
-   - load centrality;
-   - harmonic centrality;
-   - pagerank;
-   - voterank.
+   - betweenness centrality
+   - degree centrality
+   - closeness centrality
+   - harmonic centrality
+   - eigenvector centrality
+   - pagerank
+   - voterank
 
 ## Application structure
 ```
@@ -82,7 +101,7 @@ influential_users_web
 
 ## Resources
 
-1. **Web content**
+**Web content**
 - [russellromney](https://github.com/russellromney) / [dash-auth-flow](https://github.com/russellromney/dash-auth-flow)
 - [startbootstrap](https://github.com/startbootstrap) / [startbootstrap-sb-admin-2](https://github.com/startbootstrap/startbootstrap-sb-admin-2)
 - [startbootstrap](https://github.com/startbootstrap) / [startbootstrap-landing-page](https://github.com/startbootstrap/startbootstrap-landing-page)

@@ -85,7 +85,7 @@ class NetworkAnalysis:
             exit(0)
 
         self.__graph = nx.read_edgelist(self.__networks_folder + self.__data_file + TEXT_EXTENSION,
-                                        create_using=nx.Graph(),
+                                        create_using=nx.DiGraph(),
                                         edgetype=str, delimiter=" ")
 
         self.__labels = pickle.load(open(self.__networks_folder + self.__data_file + OBJECT_EXTENSION, "rb"))

@@ -12,15 +12,11 @@ NETWORKS_FOLDER = ".networks/"
 graph_actions = {
     "Delete": "delete",
     "Change algorithm": "change-algorithm",
-    "Change graph type": "change-graph"
+    "Change graph type": "change-graph",
 }
 graph_types = {
     "3D Spring": 'spring',
     "3D Kamada Kawai": 'kamada-kawai',
-    "3D Graphviz": 'graphviz',
-    "3D Spectral": 'spectral',
-    "3D Random": 'random',
-    "2D Graph": '2d',
 }
 processing_algorithms = {
     "Betweenness centrality": "betweenness-centrality",

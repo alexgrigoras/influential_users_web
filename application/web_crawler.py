@@ -2,6 +2,7 @@ import math
 import os
 import pickle
 from datetime import datetime
+from pymongo import errors
 
 import httplib2
 from dotenv import load_dotenv
@@ -36,7 +37,10 @@ class YoutubeAPI:
         """
         ml = MessageLogger('youtube_api')
         self.__logger = ml.get_logger()
-        self.__db = MongoDB()                               # mongodb driver
+        try:
+            self.__db = MongoDB()                               # mongodb driver
+        except errors.ConnectionFailure:
+            raise errors.ConnectionFailure
         self.__max_results = 0                              # the maximum number of results
         self.__get_authentication_service()                 # get the authentication service for youtube api
         self.__file_name = file_name

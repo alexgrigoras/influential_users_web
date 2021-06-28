@@ -39,7 +39,7 @@ class MongoDB:
             self.__mongo_client.server_info()
         except errors.ConnectionFailure as e:
             self.logger.critical("MongoDB database: " + str(e))
-            exit(1)
+            raise errors.ConnectionFailure
         self.__db = self.__mongo_client[DATABASE_NAME]  # database: DATABASE_NAME
         self.__search_results_col = self.__db[SEARCH_RESULTS_COLLECTION]  # collection: SEARCH_RESULTS_COLLECTION
         self.__channels_col = self.__db[CHANNELS_COLLECTION]  # collection: CHANNELS_COLLECTION

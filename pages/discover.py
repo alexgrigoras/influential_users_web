@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input, State
 from flask_login import current_user
+from pymongo import errors
 
 from application.message_logger import MessageLogger
 from application.network_analysis import NetworkAnalysis
@@ -21,6 +22,12 @@ success_alert = dbc.Alert(
 
 failure_alert = dbc.Alert(
     'Parameters are invalid',
+    color='danger',
+    dismissable=True
+)
+
+database_alert = dbc.Alert(
+    'Application cannot connect to the database',
     color='danger',
     dismissable=True
 )
@@ -214,7 +221,10 @@ def update_results(clicks, keyword, nr_videos, nr_users, graph_type, algorithm):
 
         # create crawler and network object
         file_name = create_file_name()
-        crawler = YoutubeAPI(file_name, NETWORKS_FOLDER, COMMENT_PAGES_LIMIT)
+        try:
+            crawler = YoutubeAPI(file_name, NETWORKS_FOLDER, COMMENT_PAGES_LIMIT)
+        except errors.ConnectionFailure:
+            return '', database_alert, ''
         network = NetworkAnalysis(NETWORKS_FOLDER)
 
         if not add_user_search(current_user.id, keyword, file_name, file_name, "Retrieving Data", nr_videos, limit,
